@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9b181ecfb82a10b49b3372d11242ffb4, type: 3}
       propertyPath: m_Name
-      value: SM_GunRoom
+      value: GunRoomPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037808384902105566, guid: 9b181ecfb82a10b49b3372d11242ffb4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
