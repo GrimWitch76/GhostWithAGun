@@ -59,7 +59,6 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = (camRight * _input.MoveInput.x + camForward * _input.MoveInput.y).normalized;
 
-        Debug.Log(_input.MoveInput.y);
         if (_input.SprintHeld && _currentStamina > 0f)
         {
             _targetVelocity = move * _sprintSpeed;
