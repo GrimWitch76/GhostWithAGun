@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _staminaRecoveryRate = 1f;
 
     [Header("Jump Parameters")]
-    [SerializeField] private float _airControlMultipler = 0.25f;
     [SerializeField] private float _jumpForce = 5f;
 
     [Header("Misc Parameters")]
