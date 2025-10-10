@@ -110,7 +110,6 @@ MonoBehaviour:
   _staminaDrainSpeed: 2.5
   _maxStamina: 5
   _staminaRecoveryRate: 1
-  _airControlMultipler: 0.25
   _jumpForce: 5
   _groundCheckDistance: 0.2
   _groundMask:
@@ -129,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _playerController: {fileID: 2594025615531392401}
+  _playerInteraction: {fileID: 130201207005852422}
 --- !u!114 &3652896926413614612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +153,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52602a2ecec8fe34e8fac6f73b36ae9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _interactDistance: 3
+  _interactMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _holdPoint: {fileID: 0}
+  _verticalOffsetRange: 0.5
+  _throwForce: 5
 --- !u!54 &7742964838037931339
 Rigidbody:
   m_ObjectHideFlags: 0

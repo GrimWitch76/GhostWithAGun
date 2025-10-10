@@ -11,7 +11,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool SprintHeld { get; private set; }
 
     [SerializeField] private PlayerController _playerController;
-
+    [SerializeField] private PlayerInteraction _playerInteraction;
 
     public void OnMove(InputValue value)
     {
@@ -31,8 +31,7 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnInteract(InputValue value)
     {
         Debug.Log("Hold value:" + value.Get<float>());
-        throw new NotImplementedException();
-        //_playerInteractor.TryInteractPressed(value.Get<float>());
+        _playerInteraction.TryInteractPressed(value.Get<float>());
     }
 
     public void OnSprint(InputValue value)
@@ -46,5 +45,4 @@ public class PlayerInputHandler : MonoBehaviour
         Debug.Log("Crouch value:" + value.Get<float>());
         CrouchHeld = value.Get<float>() > 0.5f;
     }
-
 }
