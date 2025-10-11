@@ -31,8 +31,9 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnInteract(InputValue value)
     {
         Debug.Log("Hold value:" + value.Get<float>());
-        _playerInteraction.TryInteractPressed(value.Get<float>());
+        _playerInteraction.TryInteractPressed(value);
     }
+
 
     public void OnSprint(InputValue value)
     {

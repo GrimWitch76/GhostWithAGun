@@ -1,4 +1,5 @@
 using System.Reflection;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -15,12 +16,22 @@ public class PlayerController : MonoBehaviour
     [Header("Jump Parameters")]
     [SerializeField] private float _jumpForce = 5f;
 
+    [Header("Drag / Tether Settings")]
+    [SerializeField] private float _dragMoveSpeedMultiplier = 0.5f; // base movement reduction while dragging
+    [SerializeField] private float _tetherDistance = 2.0f;          // how far from the dragged object before slowdown
+    [SerializeField] private float _tetherSoftZone = 0.5f;          // how far before hitting hard zero
+    [SerializeField] private float _tetherLerpSpeed = 5f;
+    [SerializeField] private float _tetherMinMultiplier = 0.2f; // Minimum movement speed when fully tensed
+
+
     [Header("Misc Parameters")]
     [SerializeField] private float _groundCheckDistance = 0.2f;
     [SerializeField] private LayerMask _groundMask;
     [SerializeField] private float _customGravity = 20f;
     [SerializeField] private float _groundStickForce = 10f;
     [SerializeField] private float _slopeLimit = 45f;
+
+
 
     public Vector3 MoveSpeed => _targetVelocity;
     public bool IsGrounded => _isGrounded;
@@ -34,16 +45,19 @@ public class PlayerController : MonoBehaviour
     private Vector3 _targetVelocity;
     private RaycastHit _groundHit;
     private Rigidbody _rb;
+    private Rigidbody _draggedRb;
     private Transform _cam;
     private float _currentStamina;
     private bool _isGrounded;
     private bool _jumpPressed;
     private bool _isClimbing;
+    private bool _isDraggingHeavy;
     private Ladder _currentLadder;
     private Vector3 _ladderUp;
     private Vector3 _ladderForward;
     private Vector3 _ladderAttachPoint;
     private Vector3 _currentLadderPoint;
+    private float _currentDragSpeedMultiplier = 1f;
 
     private void Awake()
     {
@@ -109,6 +123,31 @@ public class PlayerController : MonoBehaviour
             moveInput = Vector3.ProjectOnPlane(moveInput, groundNormal).normalized;
 
         _targetVelocity = moveInput * targetSpeed;
+
+        if (_isDraggingHeavy && _draggedRb != null)
+        {
+            // --- Base slowdown while dragging ---
+            float baseMult = _dragMoveSpeedMultiplier;
+
+            // --- Compute distance ratio for tether tension ---
+            float dist = Vector3.Distance(transform.position, _draggedRb.position);
+            float tension = Mathf.InverseLerp(_tetherDistance, _tetherDistance + _tetherSoftZone, dist);
+            // tension = 0 when close, 1 when near limit
+
+            // --- Lerp between base drag speed and minimum tether multiplier ---
+            float targetMult = Mathf.Lerp(baseMult, _tetherMinMultiplier, tension);
+
+            _currentDragSpeedMultiplier = Mathf.Lerp(_currentDragSpeedMultiplier, targetMult, Time.deltaTime * _tetherLerpSpeed);
+
+            // --- Apply to movement velocity ---
+            _targetVelocity *= _currentDragSpeedMultiplier;
+
+        }
+        else
+        {
+            // Return to normal speed smoothly
+            _currentDragSpeedMultiplier = Mathf.Lerp(_currentDragSpeedMultiplier, 1f, Time.deltaTime * _tetherLerpSpeed);
+        }
 
         // --- Preserve vertical velocity ---
         Vector3 velocity = _rb.linearVelocity;
@@ -195,6 +234,18 @@ public class PlayerController : MonoBehaviour
         _isClimbing = false;
         _rb.useGravity = true;
         _currentLadder = null;
+    }
+
+    public void StartDragHeavy(Rigidbody heavyRb)
+    {
+        _draggedRb = heavyRb;
+        _isDraggingHeavy = true;
+    }
+
+    public void StopDragHeavy()
+    {
+        _draggedRb = null;
+        _isDraggingHeavy = false;
     }
 
     private void OnDrawGizmosSelected()

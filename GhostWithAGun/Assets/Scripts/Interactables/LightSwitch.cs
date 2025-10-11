@@ -15,7 +15,7 @@ public class LightSwitch : MonoBehaviour, IInteractable
         ToggleLights(isOn);
     }
 
-    public void Interact(PlayerInteraction interactor, float heldValue)
+    public void Interact(PlayerInteraction interactor)
     {
         if (_targetLights.Length == 0) return;
 

@@ -7,7 +7,7 @@ public class Ladder : MonoBehaviour, IInteractable
     [SerializeField] private Transform _bottomExitPoint; // Optional: exit point for bottom
     [SerializeField] private float _attachOffset = 0.5f; // How far from the ladder surface to snap player
 
-    public void Interact(PlayerInteraction interactor, float heldValue)
+    public void Interact(PlayerInteraction interactor)
     {
         PlayerController player = interactor.GetComponent<PlayerController>();
         if (player == null) return;
