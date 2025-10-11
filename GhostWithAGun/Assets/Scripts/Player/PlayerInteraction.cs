@@ -23,7 +23,7 @@ public class PlayerInteraction : MonoBehaviour
     private Moveable heldData;
     private bool isDraggingHeavy;
     private PlayerHealth _health;
-
+    private SoundEmitter _heldEmitter;
     private void Awake()
     {
         cam = Camera.main;
@@ -100,6 +100,7 @@ public class PlayerInteraction : MonoBehaviour
         if (heldData.IsHeavy)
         {
             // Dragging: stays on the ground
+            _heldEmitter = obj.GetComponent<SoundEmitter>();
             isDraggingHeavy = true;
             heldRb.useGravity = true;
             heldRb.linearDamping = 8f;
@@ -148,6 +149,8 @@ public class PlayerInteraction : MonoBehaviour
         heldData = null;
         isDraggingHeavy = false;
         _playerController.StopDragHeavy();
+        _heldEmitter?.StopDragging();
+        _heldEmitter = null;
     }
 
     public void ThrowObject(float throwForce)

@@ -19,7 +19,7 @@ public class LightSwitch : MonoBehaviour, IInteractable
     {
         if (_targetLights.Length == 0) return;
 
-        _soundEmitter?.MakeNoise();
+        _soundEmitter?.PlayOnce();
         isOn = !isOn;
         ToggleLights(isOn);
     }
