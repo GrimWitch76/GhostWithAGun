@@ -9,6 +9,8 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private float _verticalOffsetRange = 0.5f;
     [SerializeField] private float _throwForce = 5f;
 
+    [SerializeField] private PlayerController _playerController;
+
     private Camera cam;
     private GameObject heldObject;
     private Rigidbody heldRb;
@@ -21,6 +23,12 @@ public class PlayerInteraction : MonoBehaviour
 
     public void TryInteractPressed(float heldValue)
     {
+        if (_playerController.IsClimbing)
+        {
+            _playerController.EndClimb();
+            return;
+        }
+
         TryInteract(heldValue); // only try pickup if not holding anything
     }
 

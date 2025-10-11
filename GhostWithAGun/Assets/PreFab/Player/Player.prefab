@@ -110,11 +110,15 @@ MonoBehaviour:
   _staminaDrainSpeed: 2.5
   _maxStamina: 5
   _staminaRecoveryRate: 1
+  _climbSpeed: 4
   _jumpForce: 5
   _groundCheckDistance: 0.2
   _groundMask:
     serializedVersion: 2
     m_Bits: 64
+  _customGravity: 20
+  _groundStickForce: 10
+  _slopeLimit: 45
 --- !u!114 &1337593742159726769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +164,7 @@ MonoBehaviour:
   _holdPoint: {fileID: 0}
   _verticalOffsetRange: 0.5
   _throwForce: 5
+  _playerController: {fileID: 2594025615531392401}
 --- !u!54 &7742964838037931339
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -182,7 +187,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
