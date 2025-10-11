@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7357873077996410083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4285891110970448136}
+  - component: {fileID: 8802361038429704912}
+  - component: {fileID: 3393736204966217834}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4285891110970448136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357873077996410083}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4653.645, y: 2.19363, z: 1801.7167}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1512766019478860127}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8802361038429704912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357873077996410083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ce2423c77198f468ea35a44f4ccd12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveManager
+  collector: {fileID: 3393736204966217834}
+--- !u!114 &3393736204966217834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357873077996410083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b60c0c95f42546045a11180db0d5058e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveCollector
 --- !u!1 &7824713751913439458
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,6 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1512766019478860127}
   - component: {fileID: 6350627331901367103}
+  - component: {fileID: 2607764022059104712}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -29,7 +88,8 @@ Transform:
   m_LocalPosition: {x: 4655.547, y: 0, z: -1798.9014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4285891110970448136}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6350627331901367103
@@ -49,8 +109,37 @@ MonoBehaviour:
   dayStartHour: 12
   dayEndHour: 0
   nightStartHour: 0
-  nightEndHour: 6
+  nightEndHour: 12
   enableDebugControls: 0
   debugTimeSlider: 0
   applyDebugTime: 0
   _debugText: {fileID: 0}
+--- !u!114 &2607764022059104712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824713751913439458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efe595ddab87ab47b6a03dd9aec4186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DayCycleManager
+  _nightConfigs:
+  - {fileID: 11400000, guid: 20c8649aa05e76c419bf995d7275eb63, type: 2}
+  - {fileID: 11400000, guid: 19940da00127eae438c30eb760d5ac1c, type: 2}
+  - {fileID: 11400000, guid: 68f2d72b22a111d4d916444bab2e33cc, type: 2}
+  - {fileID: 11400000, guid: fc6439c585b410741b246d35d11ba68d, type: 2}
+  - {fileID: 11400000, guid: 04b6e6f0d99b90d4c9e79b6e8da7ed30, type: 2}
+  startingNightIndex: 0
+  ghostPrefab: {fileID: 0}
+  ghostSpawnPoints: []
+  ghostTag: Ghost
+  fadeOutDuration: 1
+  surviveMessageDuration: 2
+  fadeInDuration: 1
+  gunRoomWakePoint: {fileID: 0}
+  blackoutCanvas: {fileID: 0}
+  surviveText: {fileID: 0}
+  musicSource: {fileID: 0}

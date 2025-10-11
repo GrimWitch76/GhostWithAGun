@@ -51,6 +51,5 @@ public class Clock : MonoBehaviour
     private void PlayChime(int hour)
     {
         // TODO: trigger audio or animation
-        Debug.Log($"Chime! The time is now {hour}:00");
     }
 }

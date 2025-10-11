@@ -14,7 +14,6 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private float _maxHoldTime = 1.5f;
 
     private float _holdStartTime;
-    private bool _isHoldingInteract;
 
     [SerializeField] private PlayerController _playerController;
 
@@ -36,13 +35,11 @@ public class PlayerInteraction : MonoBehaviour
 
         if (pressed)
         {
-            _isHoldingInteract = true;
             _holdStartTime = Time.time;
         }
         else
         {
             float heldDuration = Time.time - _holdStartTime;
-            _isHoldingInteract = false;
 
             if (heldObject == null)
             {

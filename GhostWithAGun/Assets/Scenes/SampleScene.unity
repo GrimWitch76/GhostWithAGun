@@ -623,8 +623,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _hourHand: {fileID: 357936945}
   _minuteHand: {fileID: 1410672859}
-  hoursToDegrees: 30
-  minutesToDegrees: 6
+  _hoursToDegrees: 30
+  _minutesToDegrees: 6
+  _rotationOffset: 90
 --- !u!136 &848156992
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1208,6 +1209,10 @@ PrefabInstance:
       propertyPath: _debugText
       value: 
       objectReference: {fileID: 96552086}
+    - target: {fileID: 6350627331901367103, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
+      propertyPath: nightEndHour
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 7824713751913439458, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
       propertyPath: m_Name
       value: Managers
