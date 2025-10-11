@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6620566254431221909}
   - component: {fileID: 9109624476160811630}
   - component: {fileID: 7365429734057886738}
+  - component: {fileID: 1856194920271394702}
+  - component: {fileID: 1703806439833627725}
   m_Layer: 7
   m_Name: Light Moveable
   m_TagString: Untagged
@@ -155,3 +157,29 @@ MonoBehaviour:
   _isHeavy: 0
   _dragSpeed: 2
   _liftDistance: 2
+--- !u!114 &1856194920271394702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453614619771129597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49fb79a5c8d298488655e74c7d16440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableEntity
+  guid: 19c7b0f251cf4841ae6cde996d484d32
+--- !u!114 &1703806439833627725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453614619771129597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be24b048fffb1154cbe2dd5a03e55add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveableSaveable
+  rb: {fileID: 9109624476160811630}

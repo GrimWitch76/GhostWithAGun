@@ -16,6 +16,7 @@ public class Door : MonoBehaviour, IInteractable
     private bool _isClosing;
     private float _targetAngle = 0f;
 
+    public bool IsOpen => _isOpen;
     private void Awake()
     {
         _rb.maxAngularVelocity = 10f;
@@ -104,5 +105,22 @@ public class Door : MonoBehaviour, IInteractable
                 _rb.AddTorque(_door.up * force, ForceMode.Impulse);
             }
         }
+    }
+
+    public float GetCurrentAngle()
+    {
+        return _door.localEulerAngles.y;
+    }
+
+    public void SetHingePostion(float position)
+    {
+        Vector3 euler = _door.localEulerAngles;
+        euler.y = position;
+        _door.localEulerAngles = euler;
+    }
+    
+    public void SetDoorOpen(bool open)
+    {
+        _isOpen = open;
     }
 }

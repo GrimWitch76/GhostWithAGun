@@ -30,20 +30,17 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnInteract(InputValue value)
     {
-        Debug.Log("Hold value:" + value.Get<float>());
         _playerInteraction.TryInteractPressed(value);
     }
 
 
     public void OnSprint(InputValue value)
     {
-        Debug.Log("Sprint value:" + value.Get<float>());
         SprintHeld = value.Get<float>() > 0.5f;
     }
 
     public void OnCrouch(InputValue value)
     {
-        Debug.Log("Crouch value:" + value.Get<float>());
         CrouchHeld = value.Get<float>() > 0.5f;
     }
 }

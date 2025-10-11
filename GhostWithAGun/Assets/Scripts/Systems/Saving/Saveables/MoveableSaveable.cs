@@ -1,0 +1,49 @@
+using UnityEngine;
+
+[RequireComponent(typeof(SaveableEntity))]
+public class MoveableSaveable : MonoBehaviour, ISaveable
+{
+    [SerializeField] private Rigidbody rb;
+
+    public object CaptureState()
+    {
+        return new MovableState
+        {
+            pos = new[] { transform.position.x, transform.position.y, transform.position.z },
+            rot = new[] { transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w },
+            //health = health,
+            destroyed = !gameObject.activeSelf
+        };
+    }
+
+    public void RestoreState(object state)
+    {
+        var s = (MovableState)state;
+        if (s.destroyed) { gameObject.SetActive(false); return; }
+
+        transform.SetPositionAndRotation(
+            new Vector3(s.pos[0], s.pos[1], s.pos[2]),
+            new Quaternion(s.rot[0], s.rot[1], s.rot[2], s.rot[3])
+        );
+        //health = Mathf.Clamp(s.health, 0, maxHealth);
+
+        if (rb)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.Sleep(); 
+        }
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

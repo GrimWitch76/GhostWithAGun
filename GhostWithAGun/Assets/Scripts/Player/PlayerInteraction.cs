@@ -42,7 +42,6 @@ public class PlayerInteraction : MonoBehaviour
         else
         {
             float heldDuration = Time.time - _holdStartTime;
-            Debug.Log("Held Duration" + heldDuration);
             _isHoldingInteract = false;
 
             if (heldObject == null)
