@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask _groundMask;
     [SerializeField] private float _customGravity = 20f;
     [SerializeField] private float _groundStickForce = 10f;
-    [SerializeField] private float _slopeLimit = 45f;
 
 
 

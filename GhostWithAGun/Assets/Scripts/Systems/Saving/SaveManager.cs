@@ -47,4 +47,9 @@ public class SaveManager : MonoBehaviour
         CurrentNight = Mathf.Clamp(CurrentNight + 1, 1, 5);
         SaveStorage.WriteJson(Slot, json);
     }
+
+    public void SetCurrentNight(int night)
+    {
+        CurrentNight = night;
+    }
 }
