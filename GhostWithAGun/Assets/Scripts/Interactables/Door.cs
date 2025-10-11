@@ -112,13 +112,34 @@ public class Door : MonoBehaviour, IInteractable
         return _door.localEulerAngles.y;
     }
 
-    public void SetHingePostion(float position)
+    public void SetHingePosition(float position)
     {
-        Vector3 euler = _door.localEulerAngles;
-        euler.y = position;
-        _door.localEulerAngles = euler;
+        // Temporarily disable physics
+        _rb.isKinematic = true;
+
+        // Get the hinge’s anchor and axis in world space
+        Vector3 hingeAnchorWorld = transform.TransformPoint(_hinge.anchor);
+        Vector3 hingeAxisWorld = transform.TransformDirection(_hinge.axis);
+
+        // Compute desired rotation around hinge
+        Quaternion rotation = Quaternion.AngleAxis(position, hingeAxisWorld);
+
+        // Rotate the door around the hinge anchor
+        Vector3 doorPos = _door.position;
+        Vector3 dirFromAnchor = doorPos - hingeAnchorWorld;
+        dirFromAnchor = rotation * dirFromAnchor;
+        Vector3 newPos = hingeAnchorWorld + dirFromAnchor;
+
+        // Apply rotation and position to the door
+        _door.SetPositionAndRotation(newPos, rotation * _door.rotation);
+
+        // Zero velocities and re-enable physics
+        _rb.angularVelocity = Vector3.zero;
+        _rb.angularVelocity = Vector3.zero;
+        _rb.isKinematic = false;
+        _rb.Sleep();
     }
-    
+
     public void SetDoorOpen(bool open)
     {
         _isOpen = open;

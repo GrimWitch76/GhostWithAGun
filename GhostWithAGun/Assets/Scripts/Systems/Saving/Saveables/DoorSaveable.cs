@@ -4,9 +4,6 @@ using UnityEngine;
 public class DoorSaveable : MonoBehaviour, ISaveable
 {
     [SerializeField] private Door _door;
-    public bool IsOpen;
-    public float health = 100f;
-
 
     // Hook these into your actual door code (e.g., hinge angle mapping).
     public object CaptureState()
@@ -21,7 +18,7 @@ public class DoorSaveable : MonoBehaviour, ISaveable
     public void RestoreState(object state)
     {
         var s = (DoorState)state;
-        _door.SetHingePostion(s.doorAngle);
+        _door.SetHingePosition(s.doorAngle);
         _door.SetDoorOpen(s.isOpen);
     }
 }
