@@ -1,5 +1,3 @@
-using System.Reflection;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -67,8 +65,8 @@ public class PlayerController : MonoBehaviour
         _input = GetComponent<PlayerInputHandler>();
         _cam = Camera.main.transform;
         _currentStamina = _maxStamina;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     private void FixedUpdate()

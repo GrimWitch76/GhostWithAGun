@@ -36,4 +36,15 @@ public class LightSwitch : MonoBehaviour, IInteractable
     {
         throw new System.NotImplementedException();
     }
+
+    public void SetState(bool isOn)
+    {
+        this.isOn = isOn;
+        ToggleLights(isOn);
+    }
+
+    public bool GetState()
+    {
+        return isOn;
+    }    
 }

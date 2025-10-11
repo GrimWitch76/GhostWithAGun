@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6768130991136583494}
   - component: {fileID: 8359387136474009774}
   - component: {fileID: 4432656777815426355}
+  - component: {fileID: 3544511988626288864}
+  - component: {fileID: 4677245612693947751}
   m_Layer: 7
   m_Name: Headvy Moveable
   m_TagString: Untagged
@@ -155,3 +157,29 @@ MonoBehaviour:
   _isHeavy: 1
   _dragSpeed: 10
   _liftDistance: 2
+--- !u!114 &3544511988626288864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2627425007247721431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49fb79a5c8d298488655e74c7d16440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableEntity
+  guid: dda896dc37c7431aafdf080f84c08a69
+--- !u!114 &4677245612693947751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2627425007247721431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be24b048fffb1154cbe2dd5a03e55add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveableSaveable
+  rb: {fileID: 8359387136474009774}

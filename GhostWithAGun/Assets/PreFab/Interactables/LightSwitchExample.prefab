@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 67402287189889520}
   - component: {fileID: 5317999425771085983}
   - component: {fileID: 4284376655416762449}
+  - component: {fileID: 834930473355679043}
+  - component: {fileID: 276312785913532425}
   m_Layer: 7
   m_Name: LightSwitchExample
   m_TagString: Untagged
@@ -224,3 +226,29 @@ MonoBehaviour:
   - {fileID: 67402287189889520}
   _startOn: 1
   _soundEmitter: {fileID: 0}
+--- !u!114 &834930473355679043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92128383814366614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49fb79a5c8d298488655e74c7d16440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableEntity
+  guid: aad3977e6eee41db9c8f93ef267081c4
+--- !u!114 &276312785913532425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92128383814366614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e290f1054a04c4e967c57fd105cbe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightSaveable
+  target: {fileID: 4284376655416762449}
