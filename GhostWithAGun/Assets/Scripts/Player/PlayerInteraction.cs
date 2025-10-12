@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private LayerMask _interactMask;
 
     [SerializeField] private Transform _holdPoint; // empty GameObject in front of camera
-    [SerializeField] private float _verticalOffsetRange = 0.5f;
+    //[SerializeField] private float _verticalOffsetRange = 0.5f;
 
     [SerializeField] private float _minThrowForce = 5f;
     [SerializeField] private float _maxThrowForce = 20f;
