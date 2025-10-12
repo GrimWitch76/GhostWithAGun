@@ -11,10 +11,17 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private float fadeTime = 0.5f;
 
+    [SerializeField] private GameObject _settings;
+    [SerializeField] private GameObject _reviews;
+
     private AsyncOperation loadingScreenOp;
     private AsyncOperation gameplayOp;
 
-
+    private void Start()
+    {
+        UI_CloseReviews();
+        UI_CloseSettings();
+    }
 
     public void UI_PlayGame()
     {
@@ -28,12 +35,22 @@ public class MainMenu : MonoBehaviour
 
     public void UI_OpenReviews()
     {
+        _reviews.SetActive(true);
+    }
 
+    public void UI_CloseReviews()
+    {
+        _reviews.SetActive(false);
     }
 
     public void UI_OpenSettings()
     {
-        
+        _settings.SetActive(true);
+    }
+
+    public void UI_CloseSettings()
+    {
+        _settings.SetActive(false);
     }
 
     private IEnumerator LoadGameRoutine(bool resetGame)
