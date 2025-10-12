@@ -365,38 +365,42 @@ public class GhostBrain : MonoBehaviour
 
     private void HandleArmedChase()
     {
-        //Vector3 origin = transform.position + Vector3.up * 1.5f;
+        Vector3 origin = transform.position + Vector3.up * 1.5f;
 
-        //if (_vision.CanSeePlayer)
-        //{
-        //    Vector3 playerPos = _vision.LastSeenPosition;
-        //    float dist = Vector3.Distance(transform.position, playerPos);
+        if (_vision.CanSeePlayer)
+        {
+            Vector3 playerPos = _vision.LastSeenPosition;
+            float dist = Vector3.Distance(transform.position, playerPos);
 
-        //    if (dist > _tuning.shootRange * 0.9f)
-        //    {
-        //        _movement.MoveToPoint(playerPos);
-        //    }
-        //    else
-        //    {
-        //        _movement.Stop();
-        //        _movement.LookAt(playerPos);
+            if (dist > _tuning.shootRange * 0.9f)
+            {
+                _movement.MoveToPoint(playerPos);
+            }
+            else
+            {
+                _movement.Stop();
+                _movement.LookAt(playerPos);
 
-        //        if (shootTimer <= 0f)
-        //        {
-        //            if (gun.CanFire) gun.Fire(origin, playerPos);
-        //            else gun.Reload();
+                if (shootTimer <= 0f)
+                {
+                    if (gun.CanFire)
+                    {
+                        gun.Fire(origin, playerPos);
+                        Debug.Log("Bang");
+                    } 
+                    else gun.Reload();
 
-        //            shootTimer = _tuning.shootCooldown;
-        //        }
-        //    }
-        //}
-        //else
-        //{
-        //    SetState(GhostStates.Search);
-        //    _movement.MoveToPoint(_vision.LastSeenPosition);
-        //}
+                    shootTimer = _tuning.shootCooldown;
+                }
+            }
+        }
+        else
+        {
+            SetState(GhostStates.Search);
+            _movement.MoveToPoint(_vision.LastSeenPosition);
+        }
 
-        //if (shootTimer > 0f) shootTimer -= Time.deltaTime;
+        if (shootTimer > 0f) shootTimer -= Time.deltaTime;
     }
 
     public void AddSuspicion(float amount, Vector3 source)

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent (typeof(SoundEmitter))]
 public class SoundEmitter : MonoBehaviour
 {
     [Header("Audio Settings")]
@@ -71,10 +72,11 @@ public class SoundEmitter : MonoBehaviour
     }
 
     /// <summary>Plays and broadcasts a single sound event with default loudness.</summary>
-    public void PlayOnce()
+    public void PlayOnce(float loudness = 1, bool broadCast = true)
     {
-        PlaySound(_baseLoudness);
-        BroadCastNoise(_baseLoudness);
+        PlaySound(loudness);
+        if(broadCast)
+            BroadCastNoise(_baseLoudness);
     }
 
     /// <summary>Starts a looping sound and periodically broadcasts noise while playing.</summary>
@@ -112,7 +114,7 @@ public class SoundEmitter : MonoBehaviour
             return;
 
         _audioSource.clip = GetRandomClip();
-        _audioSource.volume = Normalize(loudness, _baseLoudness, _maxLoudness, _minVolume, _maxVolume);
+        _audioSource.volume = Normalize(loudness, _minVolume, _maxVolume, _minVolume, _maxVolume);
         _audioSource.maxDistance = Normalize(loudness, _baseLoudness, _maxLoudness, 5f, 25f);
         _audioSource.Play();
     }

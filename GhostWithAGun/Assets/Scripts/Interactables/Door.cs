@@ -19,7 +19,7 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] private float _barricadeCheckDelay = 0.5f; //check every half a second.
     [SerializeField] private NavMeshObstacle _navObstacle;
 
-
+    [SerializeField] private SoundEmitter _doorSound;
     [SerializeField] private Transform _door;
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private HingeJoint _hinge;
@@ -43,6 +43,7 @@ public class Door : MonoBehaviour, IInteractable
         Vector3 doorForward = _door.forward;
         float dot = Vector3.Dot(toDoor, doorForward);
         float direction = dot > 0 ? -1f : 1f;
+        _doorSound.PlayOnce();
 
         if (_isOpen)
             BeginClose();
@@ -56,7 +57,7 @@ public class Door : MonoBehaviour, IInteractable
         Vector3 doorForward = _door.forward;
         float dot = Vector3.Dot(toDoor, doorForward);
         float direction = dot > 0 ? -1f : 1f;
-
+        _doorSound.PlayOnce(1, false);
 
         OpenDoor(direction);
     }

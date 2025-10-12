@@ -201,18 +201,18 @@ public class DayCycleManager : MonoBehaviour
 
     private void DespawnGhost()
     {
-        //if (activeGhost)
-        //{
-        //    Destroy(activeGhost);
-        //    activeGhost = null;
-        //}
+        if (activeGhost)
+        {
+            Destroy(activeGhost);
+            activeGhost = null;
+        }
 
-        //// Also clean up any lingering ghosts by tag (failsafe)
-        //if (!string.IsNullOrEmpty(ghostTag))
-        //{
-        //    var leftovers = GameObject.FindGameObjectsWithTag(ghostTag);
-        //    foreach (var g in leftovers) Destroy(g);
-        //}
+        // Also clean up any lingering ghosts by tag (failsafe)
+        if (!string.IsNullOrEmpty(ghostTag))
+        {
+            var leftovers = GameObject.FindGameObjectsWithTag(ghostTag);
+            foreach (var g in leftovers) Destroy(g);
+        }
     }
 
     // ---------- Sunrise (Survived) Sequence ----------
@@ -276,7 +276,10 @@ public class DayCycleManager : MonoBehaviour
             CurrentNightIndex++;
             OnNightAdvanced?.Invoke(CurrentNightIndex);
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            _dayText.text = "Day: " + CurrentNightIndex.ToString();
+            if (_dayText != null)
+            {
+                _dayText.text = "Day: " + CurrentNightIndex.ToString();
+            }
 #endif
         }
 

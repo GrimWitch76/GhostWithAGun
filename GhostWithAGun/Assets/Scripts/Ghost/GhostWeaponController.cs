@@ -127,11 +127,14 @@ public class GhostWeaponController : MonoBehaviour
 
     private void SpawnTracer(Vector3 start, Vector3 end)
     {
-        GameObject tracer = Instantiate(tracerPrefab);
-        LineRenderer lr = tracer.GetComponent<LineRenderer>();
-        lr.SetPosition(0, start);
-        lr.SetPosition(1, end);
-        Destroy(tracer, tracerLife);
+        if (tracerPrefab != null)
+        {
+            GameObject tracer = Instantiate(tracerPrefab);
+            LineRenderer lr = tracer.GetComponent<LineRenderer>();
+            lr.SetPosition(0, start);
+            lr.SetPosition(1, end);
+            Destroy(tracer, tracerLife);
+        }
     }
 
     public void Reload()

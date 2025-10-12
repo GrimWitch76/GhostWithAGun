@@ -72,6 +72,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        transform.localScale = new Vector3(1, 1f, 1);
+
         if (_isClimbing)
         {
             // Move toward the ladder position smoothly to stay attached
@@ -110,6 +112,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (_input.CrouchHeld)
         {
+            transform.localScale = new Vector3(1, 0.5f, 1);
             targetSpeed = _crouchSpeed;
         }
         else
