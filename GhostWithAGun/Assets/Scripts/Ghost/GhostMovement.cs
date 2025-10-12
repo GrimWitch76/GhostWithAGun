@@ -1,20 +1,27 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class GhostMovement : MonoBehaviour
 {
-    [SerializeField] private float _turnSpeed = 2f;
-    [SerializeField] private float roamRadius = 10f;
-    [SerializeField] private float roamDelay = 3f;
+
 
     private NavMeshAgent agent;
     private GhostBrain _brain;
     private float roamTimer;
     private bool _wander;
 
-    void Awake() => agent = GetComponent<NavMeshAgent>();
+    private List<RoomAnchor> _rooms = new();
+    public Vector3 CurrentDestination => agent.destination;
     void OnEnable() => _brain = GetComponent<GhostBrain>();
+
+    void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        _rooms = FindObjectsByType<RoomAnchor>(FindObjectsSortMode.None).ToList();
+    }
 
     public bool AtDestination() =>
         !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance;
@@ -24,19 +31,62 @@ public class GhostMovement : MonoBehaviour
         if (_wander)
         {
             roamTimer += Time.deltaTime;
-
-            if (roamTimer >= roamDelay && !agent.pathPending && agent.remainingDistance < 0.5f)
+            if (roamTimer >= _brain.Tuning.roamDelay && !agent.pathPending && agent.remainingDistance < 0.5f)
             {
-                agent.isStopped = false;
-                Vector3 newPos = RandomNavSphere(transform.position, roamRadius, NavMesh.AllAreas);
-                SetDestinationSafe(newPos);
-                roamTimer = 0;
+                Vector3 newPos = PickSmartWanderPoint();
+                agent.SetDestination(newPos);
+                roamTimer = 0f;
             }
         }
     }
 
-    public void StartWander() => _wander = true;
+    private Vector3 PickSmartWanderPoint()
+    {
+        if (_rooms == null || _rooms.Count == 0)
+            return RandomNavSphere(transform.position, 10f, NavMesh.AllAreas);
 
+        // Occasionally move to a *different* room to cover more ground
+        RoomAnchor targetRoom;
+        if (Random.value < _brain.Tuning.longRangeChance)
+        {
+            // Weighted pick based on room weights
+            float totalWeight = _rooms.Sum(r => r.weight);
+            float pick = Random.value * totalWeight;
+            float cumulative = 0;
+            targetRoom = _rooms.FirstOrDefault(r => (cumulative += r.weight) >= pick);
+        }
+        else
+        {
+            // Otherwise pick nearest 2–3 rooms and pick one of those
+            var nearest = _rooms
+                .OrderBy(r => Vector3.Distance(transform.position, r.transform.position))
+                .Take(3)
+                .ToList();
+            targetRoom = nearest[Random.Range(0, nearest.Count)];
+        }
+
+        Vector3 chosenCenter = targetRoom.transform.position;
+
+        // Small offset around the center so it doesn’t stand exactly on the marker
+        Vector3 randomOffset = Random.insideUnitSphere * _brain.Tuning.roomCenterBiasRadius;
+        randomOffset.y = 0;
+
+        Vector3 candidate = chosenCenter + randomOffset;
+
+        // Snap to NavMesh
+        if (NavMesh.SamplePosition(candidate, out NavMeshHit hit, 2f, NavMesh.AllAreas))
+            return hit.position;
+
+        return chosenCenter;
+    }
+
+    public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
+    {
+        Vector3 randDirection = Random.insideUnitSphere * dist;
+        randDirection += origin;
+        NavMesh.SamplePosition(randDirection, out NavMeshHit navHit, dist, layermask);
+        return navHit.position;
+    }
     public void MoveToPoint(Vector3 pt)
     {
         _wander = false;
@@ -58,14 +108,7 @@ public class GhostMovement : MonoBehaviour
             // In practice, the brain will detect blockage near doors and escalate.
         }
     }
-
-    public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
-    {
-        Vector3 randDirection = Random.insideUnitSphere * dist;
-        randDirection += origin;
-        NavMesh.SamplePosition(randDirection, out NavMeshHit navHit, dist, layermask);
-        return navHit.position;
-    }
+    public void StartWander() => _wander = true;
 
     public void Stop() => agent.isStopped = true;
 
@@ -90,7 +133,7 @@ public class GhostMovement : MonoBehaviour
     {
         while (Quaternion.Angle(transform.rotation, target) > 0.1f)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * _turnSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * _brain.Tuning._turnSpeed);
             yield return null;
         }
         transform.rotation = target;
@@ -124,7 +167,7 @@ public class GhostMovement : MonoBehaviour
         if (door == null) return;
 
         // Don’t care about closing; only opening/breaking if it blocks us.
-        if (!door.IsOpen)
+        if (!door.IsOpen && _brain.HasGun)
             StartCoroutine(HandleDoor(door));
     }
 
@@ -141,7 +184,7 @@ public class GhostMovement : MonoBehaviour
             yield return null;
         }
 
-        if (door.IsOpen) yield break;
+        if (!door.IsBarricaded) yield break;
 
         // If still blocked: decide to break or path around
         bool canReachAround = false;
@@ -161,7 +204,7 @@ public class GhostMovement : MonoBehaviour
             }
             else
             {
-                _brain.ReArm(); 
+                _brain.ReArm();
             }
         }
     }
@@ -169,24 +212,24 @@ public class GhostMovement : MonoBehaviour
     private IEnumerator BreakDoorRoutine(Door door)
     {
         yield return null;
-    //    agent.isStopped = true;
-    //    LookAt(door.transform.position);
+        //    agent.isStopped = true;
+        //    LookAt(door.transform.position);
 
-    //    // Fire until it opens (lock/barricade breaks)
-    //    while (!door.IsOpen && door.IsBarricaded))
-    //    {
-    //        if (_brain.Gun.CanFire)
-    //        {
-    //            _brain.Gun.Fire(transform.position + Vector3.up * 1.5f, door.transform.position);
-    //            if (door.IsBarricaded) door.BreakBarricade();
-    //        }
-    //        else
-    //        {
-    //            _brain.Gun.Reload();
-    //        }
-    //        yield return null;
-    //    }
+        //    // Fire until it opens (lock/barricade breaks)
+        //    while (!door.IsOpen && door.IsBarricaded))
+        //    {
+        //        if (_brain.Gun.CanFire)
+        //        {
+        //            _brain.Gun.Fire(transform.position + Vector3.up * 1.5f, door.transform.position);
+        //            if (door.IsBarricaded) door.BreakBarricade();
+        //        }
+        //        else
+        //        {
+        //            _brain.Gun.Reload();
+        //        }
+        //        yield return null;
+        //    }
 
-    //    agent.isStopped = false;
+        //    agent.isStopped = false;
     }
 }

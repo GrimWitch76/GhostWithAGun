@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class VisionSensor : MonoBehaviour
@@ -74,5 +75,29 @@ public class VisionSensor : MonoBehaviour
 
         hitPos = default;
         return false;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (_tuning == null) return;
+
+        Vector3 origin = transform.position + Vector3.up * 1.5f;
+        Vector3 forward = transform.forward;
+
+        // Primary cone
+        Handles.color = new Color(1, 0, 0, 0.2f);
+        Handles.DrawSolidArc(origin, Vector3.up,
+            Quaternion.Euler(0, -_tuning.primaryConeAngle * 0.5f, 0) * forward,
+            _tuning.primaryConeAngle, _tuning.primaryRange);
+
+        // Secondary cone
+        Handles.color = new Color(1, 1, 0, 0.15f);
+        Handles.DrawSolidArc(origin, Vector3.up,
+            Quaternion.Euler(0, -_tuning.secondaryConeAngle * 0.5f, 0) * forward,
+            _tuning.secondaryConeAngle, _tuning.secondaryRange);
+
+        // Forward line
+        Handles.color = Color.white;
+        Handles.DrawLine(origin, origin + forward * _tuning.primaryRange);
     }
 }

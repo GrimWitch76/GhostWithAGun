@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public enum DayCycleState
@@ -43,6 +44,9 @@ public class DayCycleManager : MonoBehaviour
     public Action<int> OnNightSurvived;       // called with currentNightIndex
     public Action OnAllNightsComplete;
 
+    [Header("Debug")]
+    public TextMeshProUGUI _dayText;
+
     public DayCycleState State { get; private set; }
     public int CurrentNightIndex { get; private set; }
 
@@ -50,6 +54,7 @@ public class DayCycleManager : MonoBehaviour
     private GameObject _player;
     private SaveManager _saveManager;
     private bool nightWasActiveThisCycle;
+    private bool _gameWon;
 
     private void Awake()
     {
@@ -74,7 +79,9 @@ public class DayCycleManager : MonoBehaviour
         // Initialize progression
         CurrentNightIndex = Mathf.Clamp(startingNightIndex, 0, MaxNightIndex());
         State = DayCycleState.Day;
-
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+        _dayText.text = "Day: " + CurrentNightIndex.ToString();
+#endif
         // Ensure blackout is hidden initially
         if (blackoutCanvas) blackoutCanvas.alpha = 0f;
         if (surviveText) surviveText.enabled = false;
@@ -205,6 +212,13 @@ public class DayCycleManager : MonoBehaviour
         // Fade to black
         yield return FadeCanvas(blackoutCanvas, 0f, 1f, fadeOutDuration);
 
+        if(CurrentNightIndex == 4)
+        {
+            _gameWon = true;
+            GameWinSequence();
+            Debug.Log("You win");
+            yield break;
+        }
         // Show “You survived Night N” message
         if (surviveText)
         {
@@ -235,6 +249,7 @@ public class DayCycleManager : MonoBehaviour
             // All nights complete – wrap up
             OnAllNightsComplete?.Invoke();
             State = DayCycleState.GameComplete;
+
             // (Optional) Load an end scene, show credits, etc.
             // SceneManager.LoadScene("EndingScene");
         }
@@ -242,6 +257,9 @@ public class DayCycleManager : MonoBehaviour
         {
             CurrentNightIndex++;
             OnNightAdvanced?.Invoke(CurrentNightIndex);
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            _dayText.text = "Day: " + CurrentNightIndex.ToString();
+#endif
         }
 
         // Resume time and fade back in to day
@@ -257,6 +275,17 @@ public class DayCycleManager : MonoBehaviour
         }
         _saveManager.SetCurrentNight(CurrentNightIndex);
         _saveManager.SaveNight();
+    }
+
+    private void GameWinSequence()
+    {
+        surviveText.enabled = true;
+        surviveText.text = $"You Survived Night {CurrentNightIndex + 1}";
+    }
+
+    private void GameLoss()
+    {
+
     }
 
     // ---------- Utilities ----------
@@ -284,5 +313,7 @@ public class DayCycleManager : MonoBehaviour
         // Optionally pause time, show “You Died” and present retry/quit
         // This can be integrated with your existing GameManager
     }
+
+    
 
 }

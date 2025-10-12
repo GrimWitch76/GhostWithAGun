@@ -17,6 +17,20 @@ public class GhostTuning : ScriptableObject
     public float frustrationDecayPerSecondWhenStimulated = 8f;
     public float frustrationToDropGun = 70f;
 
+    [Header("Targeted Wander")]
+    public float targetedWanderDuration = 30f;
+    public float targetedWanderMaxRadius = 20f;
+    public float targetedWanderMinRadius = 3f;
+    public float targetedWanderTightenRate = 0.9f; // multiply radius every X seconds
+    public float targetedWanderTightenInterval = 5f;
+
+    [Header("Roaming")]
+    public float _turnSpeed = 2f;
+    public float roamRadius = 10f;
+    public float roamDelay = 3f;
+    public float roomCenterBiasRadius = 2f;
+    public float longRangeChance = 0.25f;
+
     [Header("Vision")]
     public float primaryConeAngle = 90f;
     public float primaryRange = 10f;

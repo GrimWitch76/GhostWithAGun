@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Door : MonoBehaviour, IInteractable
 {
@@ -16,6 +17,8 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] private float _minBarricadeHeight = 0.3f;
     [SerializeField] private float _unbarricadeDelay = 0.5f;
     [SerializeField] private float _barricadeCheckDelay = 0.5f; //check every half a second.
+    [SerializeField] private NavMeshObstacle _navObstacle;
+
 
     [SerializeField] private Transform _door;
     [SerializeField] private Rigidbody _rb;
@@ -30,6 +33,8 @@ public class Door : MonoBehaviour, IInteractable
     private void Awake()
     {
         _rb.maxAngularVelocity = 10f;
+        _navObstacle.carving = false;
+        _navObstacle.enabled = false;
     }
 
     public void Interact(PlayerInteraction interactor)
@@ -141,12 +146,16 @@ public class Door : MonoBehaviour, IInteractable
         {
             _isBarricaded = true;
             _barricadeTimer = 0f;
+            _navObstacle.enabled = true;
+            _navObstacle.carving = true;
         }
         else if (_isBarricaded)
         {
             _barricadeTimer += Time.fixedDeltaTime;
             if (_barricadeTimer >= _unbarricadeDelay)
                 _isBarricaded = false;
+            _navObstacle.carving = false;
+            _navObstacle.enabled = false;
         }
     }
 

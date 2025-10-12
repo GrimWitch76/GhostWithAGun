@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public enum GhostStates
 {
     Wander,
+    TargetedWander,
     Chase,
     Search,
     InvestigateSound,
@@ -25,23 +27,35 @@ public class GhostBrain : MonoBehaviour
     [SerializeField] private VisionSensor _vision;
     [SerializeField] private GhostMovement _movement;
     [SerializeField] private GhostWeaponController gun;
+    //[SerializeField] private GhostCollisionController _collisionController;
     [SerializeField] private GameObject _gunRoot;
     [SerializeField] private Transform gunPickupPoint;
+    [SerializeField] private PlayerController _player;
 
-    [Header("Internal")]
+
+    [Header("Debug Gizmos")]
+    [SerializeField] private bool _drawDebugGizmos = true;
+    [SerializeField] private Color _primaryConeColor = new Color(1, 0, 0, 0.25f);
+    [SerializeField] private Color _secondaryConeColor = new Color(1, 1, 0, 0.15f);
+    [SerializeField] private Color _targetColor = Color.cyan;
+    [SerializeField] private Color _suspectColor = Color.magenta;
+    [SerializeField] private Color _wanderRadiusColor = Color.green;
+    [SerializeField] private Color _targetedRadiusColor = Color.blue;
+
     private GhostStates _currentState = GhostStates.Wander;
     private Vector3 lastKnownPlayerPos;
-
     public float Suspicion => _suspicion;
     public float Frustration => _frustration;
     public bool HasGun => _hasGun;
-
     public GhostTuning Tuning => _tuning;
 
     private float shootTimer = 0f;
     private float searchTimer;
     private float lookTimer;
-
+    private float targetedWanderTimer;
+    private float targetedWanderRadius;
+    private float tightenTimer;
+    private bool _everSeenPlayer;
     // For sound handling priority
     private float _currentSoundPriority;
 
@@ -51,8 +65,10 @@ public class GhostBrain : MonoBehaviour
 
     void Start()
     {
+        _everSeenPlayer = false;
         _movement.StartWander();
         ApplyTuningToSensors();
+        //_collisionController.SetDoorCollision(false);
     }
 
     void Update()
@@ -78,6 +94,7 @@ public class GhostBrain : MonoBehaviour
             case GhostStates.InvestigateRoom: HandleInvestigateRoom(); break; // NEW
             case GhostStates.RetrieveGun: HandleRetrieveGun(); break;
             case GhostStates.ArmedChase: HandleArmedChase(); break;
+            case GhostStates.TargetedWander: HandleTargetedWander(); break;
         }
     }
 
@@ -103,6 +120,7 @@ public class GhostBrain : MonoBehaviour
         _gunRoot.SetActive(false);
         _hasGun = false;
         _gunDroppedThisCycle = true;
+        //_collisionController.SetDoorCollision(false);
 
         // Move to last known player pos and search thoroughly unarmed
         SetState(GhostStates.InvestigateRoom);
@@ -112,7 +130,7 @@ public class GhostBrain : MonoBehaviour
         if (lastKnownPlayerPos != Vector3.zero)
             _movement.MoveToPoint(lastKnownPlayerPos);
         else
-            _movement.StartWander();
+            StartTargetedWander();
     }
 
     public void ReArm()
@@ -192,6 +210,44 @@ public class GhostBrain : MonoBehaviour
         {
             if (_hasGun) SetState(GhostStates.ArmedChase);
             else SetState(GhostStates.Chase);
+        }
+    }
+
+    private void HandleTargetedWander()
+    {
+        // Basic lifetime
+        targetedWanderTimer += Time.deltaTime;
+        tightenTimer += Time.deltaTime;
+
+        // Shrink search radius over time
+        if (tightenTimer >= _tuning.targetedWanderTightenInterval)
+        {
+            tightenTimer = 0f;
+            targetedWanderRadius *= _tuning.targetedWanderTightenRate;
+            targetedWanderRadius = Mathf.Max(targetedWanderRadius, _tuning.targetedWanderMinRadius);
+        }
+
+        // Pick random nearby destination if idle
+        if (_movement.AtDestination())
+        {
+            Vector3 playerPos = _player.gameObject.transform.position;
+            Vector3 offset = Random.insideUnitSphere * targetedWanderRadius;
+            offset.y = 0;
+            _movement.MoveToPoint(playerPos + offset);
+        }
+
+        // Exit conditions
+        if (targetedWanderTimer >= _tuning.targetedWanderDuration)
+        {
+            SetState(GhostStates.Wander);
+            _movement.StartWander();
+        }
+
+        // Reactivity
+        if (_vision.CanSeePlayer)
+        {
+            _everSeenPlayer = true;
+            ReArm(); // resume normal chase flow
         }
     }
 
@@ -287,24 +343,26 @@ public class GhostBrain : MonoBehaviour
 
     private void HandleRetrieveGun()
     {
-        //if (_movement.AtDestination())
-        //{
-        //    hasGun = true;
-        //    _gunRoot.SetActive(true);
-        //    gun.PlayPickUpSfx();
+        if (_movement.AtDestination())
+        {
+            _hasGun = true;
+            //_collisionController.SetDoorCollision(true); // re-enable collisions
 
-        //    // After re-arming, go toward last known pos and Search/Chase
-        //    if (lastKnownPlayerPos != Vector3.zero)
-        //    {
-        //        _movement.MoveToPoint(lastKnownPlayerPos);
-        //        SetState(GhostStates.Search);
-        //    }
-        //    else
-        //    {
-        //        SetState(GhostStates.Wander);
-        //        _movement.StartWander();
-        //    }
-        //}
+            _gunRoot.SetActive(true);
+            gun.PlayPickUpSfx();
+
+            // After re-arming, go toward last known pos and Search/Chase
+            if (lastKnownPlayerPos != Vector3.zero)
+            {
+                _movement.MoveToPoint(lastKnownPlayerPos);
+                SetState(GhostStates.Search);
+            }
+            else
+            {
+                SetState(GhostStates.Wander);
+                _movement.StartWander();
+            }
+        }
     }
 
     private void HandleArmedChase()
@@ -358,6 +416,70 @@ public class GhostBrain : MonoBehaviour
     private void SetState(GhostStates newState)
     {
         _currentState = newState;
+    }
+    private void StartTargetedWander()
+    {
+        SetState(GhostStates.TargetedWander);
+        targetedWanderTimer = 0f;
+        tightenTimer = 0f;
+        targetedWanderRadius = _tuning.targetedWanderMaxRadius;
+
+        // initial move near player
+        Vector3 playerPos = _player.gameObject.transform.position;
+        Vector3 offset = Random.insideUnitSphere * targetedWanderRadius;
+        offset.y = 0;
+        _movement.MoveToPoint(playerPos + offset);
+    }
+
+
+
+    private void OnDrawGizmos()
+    {
+        if (!_drawDebugGizmos) return;
+
+        // --- Suspicion bar (existing) ---
+        Gizmos.color = Color.Lerp(Color.green, Color.red, _suspicion / _tuning.suspicionMax);
+        Gizmos.DrawCube(transform.position + Vector3.up * 2f, new Vector3(1f, 0.2f, 0.2f));
+
+        // --- Target position ---
+        if (_movement != null)
+        {
+            Vector3 target = _movement.CurrentDestination;
+            Gizmos.color = _targetColor;
+            Gizmos.DrawSphere(target + Vector3.up * 0.2f, 0.2f);
+            Gizmos.DrawLine(transform.position + Vector3.up * 0.2f, target + Vector3.up * 0.2f);
+        }
+
+        // --- Last known player position ---
+        if (lastKnownPlayerPos != Vector3.zero)
+        {
+            Gizmos.color = _suspectColor;
+            Gizmos.DrawSphere(lastKnownPlayerPos + Vector3.up * 0.2f, 0.25f);
+        }
+
+        // --- Wander / targeted wander radius ---
+        if (_currentState == GhostStates.Wander)
+        {
+            Gizmos.color = _wanderRadiusColor;
+            Gizmos.DrawWireSphere(transform.position, _tuning.roamRadius);
+        }
+        else if (_currentState == GhostStates.TargetedWander)
+        {
+            Gizmos.color = _targetedRadiusColor;
+            Gizmos.DrawWireSphere(_player.transform.position, targetedWanderRadius);
+        }
+
+        // --- Gun range ---
+        if (HasGun && gun != null)
+        {
+            Gizmos.color = new Color(1f, 0f, 0f, 0.25f);
+            Gizmos.DrawWireSphere(transform.position, _tuning.shootRange);
+
+#if UNITY_EDITOR
+            UnityEditor.Handles.color = new Color(1f, 0f, 0f, 0.1f);
+            UnityEditor.Handles.DrawSolidDisc(transform.position, Vector3.up, _tuning.shootRange);
+#endif
+        }
     }
 
 }
