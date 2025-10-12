@@ -9,14 +9,24 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] private float _stopAngleEpsilon = 1f;
     [SerializeField] private float _stopVelocityEpsilon = 0.1f;
 
+    [Header("Barricade Settings")]
+    [SerializeField] private float _barricadeCheckRadius = 0.6f;
+    [SerializeField] private float _barricadeCheckDepth = 0.3f;
+    [SerializeField] private float _minBarricadeMass = 8f;
+    [SerializeField] private float _minBarricadeHeight = 0.3f;
+    [SerializeField] private float _unbarricadeDelay = 0.5f;
+    [SerializeField] private float _barricadeCheckDelay = 0.5f; //check every half a second.
+
     [SerializeField] private Transform _door;
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private HingeJoint _hinge;
     private bool _isOpen;
     private bool _isClosing;
+    private bool _isBarricaded;
     private float _targetAngle = 0f;
-
+    private float _barricadeTimer;
     public bool IsOpen => _isOpen;
+    public bool IsBarricaded => _isBarricaded;
     private void Awake()
     {
         _rb.maxAngularVelocity = 10f;
@@ -35,7 +45,16 @@ public class Door : MonoBehaviour, IInteractable
             OpenDoor(direction);
     }
 
-    public void GhostInteract(GhostInteraction interactor) { }
+    public void GhostInteract(GameObject ghost)
+    {
+        Vector3 toDoor = (_door.position - ghost.transform.position).normalized;
+        Vector3 doorForward = _door.forward;
+        float dot = Vector3.Dot(toDoor, doorForward);
+        float direction = dot > 0 ? -1f : 1f;
+
+
+        OpenDoor(direction);
+    }
 
     private void OpenDoor(float direction)
     {
@@ -55,6 +74,8 @@ public class Door : MonoBehaviour, IInteractable
     {
         if (_isClosing)
             ApplyClosePD();
+
+        UpdateBarricadeStatus();
     }
 
     private void ApplyClosePD()
@@ -112,6 +133,23 @@ public class Door : MonoBehaviour, IInteractable
         return _door.localEulerAngles.y;
     }
 
+    private void UpdateBarricadeStatus()
+    {
+        bool blocked = CheckForBarricade();
+
+        if (blocked)
+        {
+            _isBarricaded = true;
+            _barricadeTimer = 0f;
+        }
+        else if (_isBarricaded)
+        {
+            _barricadeTimer += Time.fixedDeltaTime;
+            if (_barricadeTimer >= _unbarricadeDelay)
+                _isBarricaded = false;
+        }
+    }
+
     public void SetHingePosition(float position)
     {
         // Temporarily disable physics
@@ -144,4 +182,57 @@ public class Door : MonoBehaviour, IInteractable
     {
         _isOpen = open;
     }
+
+    private bool CheckForBarricade()
+    {
+        // Door forward points *outward* from the hinge pivot side
+        Vector3 doorCenter = _door.position;
+        Vector3 halfExtents = new Vector3(_barricadeCheckRadius, 1f, _barricadeCheckDepth);
+
+        // Create a small overlap box just in front of the door plane
+        Collider[] hits = Physics.OverlapBox(
+            doorCenter + _door.forward * _barricadeCheckDepth * 0.5f,
+            halfExtents,
+            _door.rotation,
+            ~0, // all layers (optional: restrict to props)
+            QueryTriggerInteraction.Ignore
+        );
+
+        foreach (Collider hit in hits)
+        {
+            if (hit.attachedRigidbody == null) continue;
+            Rigidbody rb = hit.attachedRigidbody;
+            if (rb == _rb) continue; // ignore the door itself
+
+            // Check mass
+            if (rb.mass < _minBarricadeMass) continue;
+
+            // Check vertical height (top of object)
+            Bounds bounds = hit.bounds;
+            float height = bounds.max.y - transform.position.y;
+            if (height < _minBarricadeHeight) continue;
+
+            // Optional: ensure it’s actually close to the door plane
+            Vector3 closest = hit.ClosestPoint(doorCenter);
+            float dist = Vector3.Dot(closest - doorCenter, _door.forward);
+            if (Mathf.Abs(dist) > _barricadeCheckDepth) continue;
+
+            // All checks passed — consider this a barricade
+            return true;
+        }
+
+        return false;
+    }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmosSelected()
+    {
+        if (_door == null) return;
+        Gizmos.color = _isBarricaded ? Color.red : Color.green;
+        Vector3 center = _door.position + _door.forward * _barricadeCheckDepth * 0.5f;
+        Vector3 size = new Vector3(_barricadeCheckRadius * 2, 2f, _barricadeCheckDepth * 2);
+        Gizmos.matrix = Matrix4x4.TRS(center, _door.rotation, Vector3.one);
+        Gizmos.DrawWireCube(Vector3.zero, size);
+    }
+#endif
 }

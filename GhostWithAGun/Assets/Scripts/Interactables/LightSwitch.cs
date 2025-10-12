@@ -32,7 +32,7 @@ public class LightSwitch : MonoBehaviour, IInteractable
         }
     }
 
-    public void GhostInteract(GhostInteraction interactor)
+    public void GhostInteract(GameObject interactor)
     {
         throw new System.NotImplementedException();
     }

@@ -27,7 +27,7 @@ public class Ladder : MonoBehaviour, IInteractable
         }
     }
 
-    public void GhostInteract(GhostInteraction interactor)
+    public void GhostInteract(GameObject interactor)
     {
         // Not needed for now
     }

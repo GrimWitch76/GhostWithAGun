@@ -51,12 +51,6 @@ public class GlobalLightingController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void DayStarted()
     {
         if (_transitionRoutine != null)

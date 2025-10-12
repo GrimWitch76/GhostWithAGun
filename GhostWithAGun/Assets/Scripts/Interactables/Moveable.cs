@@ -16,5 +16,5 @@ public class Moveable : MonoBehaviour, IInteractable
         interactor.TryPickup(this);
     }
 
-    public void GhostInteract(GhostInteraction interactor) { }
+    public void GhostInteract(GameObject interactor) { }
 }

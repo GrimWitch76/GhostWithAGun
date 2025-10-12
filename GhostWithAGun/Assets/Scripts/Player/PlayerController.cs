@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 MoveSpeed => _targetVelocity;
     public bool IsGrounded => _isGrounded;
     public bool IsClimbing => _isClimbing;
+    public bool IsCrouching => _isCrouching;
 
 
     private CharacterController _controller;
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
     private bool _isGrounded;
     private bool _jumpPressed;
     private bool _isClimbing;
+    private bool _isCrouching;
     private bool _isDraggingHeavy;
     private Ladder _currentLadder;
     private Vector3 _ladderUp;
@@ -177,6 +179,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        _isCrouching = false;
+
         // --- Rotate player root with camera yaw ---
         Vector3 camForward = _cam.forward;
         camForward.y = 0f;
@@ -194,6 +198,7 @@ public class PlayerController : MonoBehaviour
 
         if (_input.CrouchHeld && _isGrounded)
         {
+            _isCrouching = true;
             Debug.Log("Crouching");
         }
 
