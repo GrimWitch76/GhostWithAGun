@@ -602,6 +602,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1092373893 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -570679673214062671, guid: 9c87ca228923b614cb458081c52961a5, type: 3}
+  m_PrefabInstance: {fileID: 2067871077}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1140626700
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,6 +623,7 @@ GameObject:
   - component: {fileID: 1140626703}
   - component: {fileID: 1140626702}
   - component: {fileID: 1140626701}
+  - component: {fileID: 1140626709}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -745,11 +751,11 @@ MonoBehaviour:
   _tuning: {fileID: 11400000, guid: 489893da5b89cad43befd6bbecc30e35, type: 2}
   _suspicion: 0
   _frustration: 0
-  _hasGun: 0
-  _vision: {fileID: 0}
-  _movement: {fileID: 0}
-  gun: {fileID: 0}
-  _gunRoot: {fileID: 0}
+  _hasGun: 1
+  _vision: {fileID: 1140626704}
+  _movement: {fileID: 1140626706}
+  gun: {fileID: 1140626705}
+  _gunRoot: {fileID: 1092373893}
   gunPickupPoint: {fileID: 0}
 --- !u!4 &1140626708
 Transform:
@@ -767,6 +773,28 @@ Transform:
   - {fileID: 2067871078}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &1140626709
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140626700}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1386309489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -822,6 +850,10 @@ PrefabInstance:
     - target: {fileID: 6998530167792735254, guid: 81a132ef304348a428c6ec3fa3421e31, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502181120811924680, guid: 81a132ef304348a428c6ec3fa3421e31, type: 3}
+      propertyPath: _barricadeCheckDepth
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 8536709203242649726, guid: 81a132ef304348a428c6ec3fa3421e31, type: 3}
       propertyPath: m_Mass
@@ -1064,13 +1096,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747389634}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.026431559, y: -0.9985887, z: -0.019583302, w: 0.041696012}
-  m_LocalPosition: {x: 2.467, y: 0.847, z: -3.392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.535, y: 0.642, z: -3.596}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -2.115, y: -175.16, z: -3.122}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2067871077
 PrefabInstance:
   m_ObjectHideFlags: 0

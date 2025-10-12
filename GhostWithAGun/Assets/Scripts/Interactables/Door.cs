@@ -191,7 +191,7 @@ public class Door : MonoBehaviour, IInteractable
 
         // Create a small overlap box just in front of the door plane
         Collider[] hits = Physics.OverlapBox(
-            doorCenter + _door.forward * _barricadeCheckDepth * 0.5f,
+            doorCenter,
             halfExtents,
             _door.rotation,
             ~0, // all layers (optional: restrict to props)
@@ -229,7 +229,7 @@ public class Door : MonoBehaviour, IInteractable
     {
         if (_door == null) return;
         Gizmos.color = _isBarricaded ? Color.red : Color.green;
-        Vector3 center = _door.position + _door.forward * _barricadeCheckDepth * 0.5f;
+        Vector3 center = _door.position;
         Vector3 size = new Vector3(_barricadeCheckRadius * 2, 2f, _barricadeCheckDepth * 2);
         Gizmos.matrix = Matrix4x4.TRS(center, _door.rotation, Vector3.one);
         Gizmos.DrawWireCube(Vector3.zero, size);

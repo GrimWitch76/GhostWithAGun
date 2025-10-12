@@ -1819,6 +1819,12 @@ MonoBehaviour:
   _closeDamping: 3
   _stopAngleEpsilon: 3
   _stopVelocityEpsilon: 0.3
+  _barricadeCheckRadius: 0.6
+  _barricadeCheckDepth: 0.54
+  _minBarricadeMass: 8
+  _minBarricadeHeight: 0.3
+  _unbarricadeDelay: 0.5
+  _barricadeCheckDelay: 0.5
   _door: {fileID: 956085692}
   _rb: {fileID: 956085694}
   _hinge: {fileID: 956085693}
