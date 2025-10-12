@@ -22,6 +22,7 @@ public class SaveManager : MonoBehaviour
         var env = collector.CaptureAll(CurrentNight);
         string json = JsonUtility.ToJson(env);
         SaveStorage.WriteJson(Slot, json);
+        SaveStorage.SaveCurrentNight(CurrentNight);
         Debug.Log($"Saved night {CurrentNight}");
     }
 
@@ -46,6 +47,7 @@ public class SaveManager : MonoBehaviour
         var json = SaveStorage.ReadJson(Slot);
         CurrentNight = Mathf.Clamp(CurrentNight + 1, 1, 5);
         SaveStorage.WriteJson(Slot, json);
+        SaveStorage.SaveCurrentNight(CurrentNight);
     }
 
     public void SetCurrentNight(int night)

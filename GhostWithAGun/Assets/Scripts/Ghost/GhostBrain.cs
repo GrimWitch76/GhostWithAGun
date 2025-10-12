@@ -444,7 +444,7 @@ public class GhostBrain : MonoBehaviour
         // --- Target position ---
         if (_movement != null)
         {
-            Vector3 target = _movement.CurrentDestination;
+            Vector3 target = _movement.GetDestination();
             Gizmos.color = _targetColor;
             Gizmos.DrawSphere(target + Vector3.up * 0.2f, 0.2f);
             Gizmos.DrawLine(transform.position + Vector3.up * 0.2f, target + Vector3.up * 0.2f);

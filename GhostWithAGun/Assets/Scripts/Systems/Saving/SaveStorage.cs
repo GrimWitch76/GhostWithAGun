@@ -1,5 +1,6 @@
 using System.Text;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public static class SaveStorage
 {
@@ -32,6 +33,16 @@ public static class SaveStorage
         PlayerPrefs.Save(); // flush to IndexedDB
     }
 
+    public static void SaveCurrentNight(int nightId)
+    {
+        PlayerPrefs.SetInt("CurrentNight", nightId);
+    }
+
+    public static int GetCurrentNight()
+    {
+       return PlayerPrefs.GetInt("CurrentNight", -1);
+    }
+
     public static string ReadJson(string slot)
     {
         Debug.Log("attempting to read from slot " + slot);
@@ -55,5 +66,25 @@ public static class SaveStorage
             PlayerPrefs.DeleteKey($"{SaveKeyPrefix}{slot}_count");
             PlayerPrefs.Save();
         }
+        SaveCurrentNight(-1);
+    }
+
+    public static void ClearAll()
+    {
+        int possibleNights = 5;
+        for (int i = 0; i < possibleNights; i++)
+        {
+            string slot = "Night_" + i;
+            Debug.Log("attempting to clear save in slot " + slot);
+            int c = PlayerPrefs.GetInt($"{SaveKeyPrefix}{slot}_count", -1);
+            if (c >= 0)
+            {
+                for (int j = 0; j < c; j++)
+                    PlayerPrefs.DeleteKey($"{SaveKeyPrefix}{slot}_{j}");
+                PlayerPrefs.DeleteKey($"{SaveKeyPrefix}{slot}_count");
+                PlayerPrefs.Save();
+            }
+        }
+        SaveCurrentNight(-1);
     }
 }

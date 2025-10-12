@@ -14,7 +14,6 @@ public class GhostMovement : MonoBehaviour
     private bool _wander;
 
     private List<RoomAnchor> _rooms = new();
-    public Vector3 CurrentDestination => agent.destination;
     void OnEnable() => _brain = GetComponent<GhostBrain>();
 
     void Awake()
@@ -93,6 +92,15 @@ public class GhostMovement : MonoBehaviour
         agent.isStopped = false;
         roamTimer = 0;
         SetDestinationSafe(pt);
+    }
+
+    public Vector3 GetDestination()
+    {
+        if(agent != null)
+        {
+            return agent.destination;
+        }
+        return Vector3.zero;
     }
 
     private void SetDestinationSafe(Vector3 dst)

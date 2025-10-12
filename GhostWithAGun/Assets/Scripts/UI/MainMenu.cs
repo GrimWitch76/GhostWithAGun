@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,12 +18,12 @@ public class MainMenu : MonoBehaviour
 
     public void UI_PlayGame()
     {
-        StartCoroutine(LoadGameRoutine());
+        StartCoroutine(LoadGameRoutine(false));
     }
 
     public void UI_ResetGame()
     {
-
+        StartCoroutine(LoadGameRoutine(true));
     }
 
     public void UI_OpenReviews()
@@ -35,7 +36,7 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    private IEnumerator LoadGameRoutine()
+    private IEnumerator LoadGameRoutine(bool resetGame)
     {
         // 1. Load the loading screen
         loadingScreenOp = SceneManager.LoadSceneAsync(_loadingSceneName, LoadSceneMode.Additive);
@@ -68,7 +69,14 @@ public class MainMenu : MonoBehaviour
         SceneManager.SetActiveScene(gameplayScene);
 
         // 6. Run your save system
-        yield return LoadSaveData();
+        if(resetGame)
+        {
+            yield return ResetSaveGame();
+        }
+        else
+        {
+            yield return LoadSaveData();
+        }
 
         // 7. Fade out and unload the loading screen
         yield return loadingScreen.FadeIn();
@@ -90,7 +98,29 @@ public class MainMenu : MonoBehaviour
         var saveManager = UnityEngine.Object.FindAnyObjectByType<SaveManager>();
         if (saveManager)
         {
-            bool loaded = saveManager.LoadNight(1);
+            int currentNight = SaveStorage.GetCurrentNight();
+            bool loaded = saveManager.LoadNight(currentNight);
+            if (loaded)
+                Debug.Log("Loaded saved state successfully.");
+            else
+                Debug.Log("No save found, starting fresh.");
+        }
+        else
+        {
+            Debug.LogWarning("No SaveManager found in loaded scene!");
+        }
+    }
+
+    private IEnumerator ResetSaveGame()
+    {
+        // Give the scene one frame to settle
+        yield return null;
+        var saveManager = UnityEngine.Object.FindAnyObjectByType<SaveManager>();
+        if (saveManager)
+        {
+            SaveStorage.ClearAll();
+            int currentNight = SaveStorage.GetCurrentNight();
+            bool loaded = saveManager.LoadNight(currentNight);
             if (loaded)
                 Debug.Log("Loaded saved state successfully.");
             else
