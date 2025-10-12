@@ -133,8 +133,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fc6439c585b410741b246d35d11ba68d, type: 2}
   - {fileID: 11400000, guid: 04b6e6f0d99b90d4c9e79b6e8da7ed30, type: 2}
   startingNightIndex: 0
-  ghostPrefab: {fileID: 0}
-  ghostSpawnPoints: []
+  DayOnePlayerSpawn: {fileID: 0}
+  NormalPlayerSpawn: {fileID: 0}
+  ghostPrefab: {fileID: 4043967352267577481, guid: 889c9de5f5a2b6a44969c83b7bd56e69, type: 3}
+  ghostSpawnPoints:
+  - {fileID: 0}
   ghostTag: Ghost
   fadeOutDuration: 1
   surviveMessageDuration: 2
@@ -143,3 +146,4 @@ MonoBehaviour:
   blackoutCanvas: {fileID: 0}
   surviveText: {fileID: 0}
   musicSource: {fileID: 0}
+  _dayText: {fileID: 0}
