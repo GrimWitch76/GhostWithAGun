@@ -21,6 +21,10 @@ public class DayCycleManager : MonoBehaviour
     [Tooltip("Start night index (0-based).")]
     public int startingNightIndex = 0;
 
+    [Header("Player")]
+    public Transform DayOnePlayerSpawn;
+    public Transform NormalPlayerSpawn;
+
     [Header("Ghost")]
     public GameObject ghostPrefab;
     public Transform[] ghostSpawnPoints;
@@ -76,8 +80,13 @@ public class DayCycleManager : MonoBehaviour
 
     private void Start()
     {
+
+    }
+
+    public void InitalizeGame(int night)
+    {
         // Initialize progression
-        CurrentNightIndex = Mathf.Clamp(startingNightIndex, 0, MaxNightIndex());
+        CurrentNightIndex = Mathf.Clamp(night, 0, MaxNightIndex());
         State = DayCycleState.Day;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         _dayText.text = "Day: " + CurrentNightIndex.ToString();
@@ -86,6 +95,15 @@ public class DayCycleManager : MonoBehaviour
         if (blackoutCanvas) blackoutCanvas.alpha = 0f;
         if (surviveText) surviveText.enabled = false;
         HandleDayStarted();
+
+        if(night == 1)
+        {
+            _player.transform.position = DayOnePlayerSpawn.position;
+        }
+        else
+        {
+            _player.transform.position = NormalPlayerSpawn.position;
+        }
     }
 
     private int MaxNightIndex() => _nightConfigs.Length;

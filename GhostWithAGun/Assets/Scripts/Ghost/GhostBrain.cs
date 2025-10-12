@@ -30,13 +30,11 @@ public class GhostBrain : MonoBehaviour
     //[SerializeField] private GhostCollisionController _collisionController;
     [SerializeField] private GameObject _gunRoot;
     [SerializeField] private Transform gunPickupPoint;
-    [SerializeField] private PlayerController _player;
+    private PlayerController _player;
 
 
     [Header("Debug Gizmos")]
     [SerializeField] private bool _drawDebugGizmos = true;
-    [SerializeField] private Color _primaryConeColor = new Color(1, 0, 0, 0.25f);
-    [SerializeField] private Color _secondaryConeColor = new Color(1, 1, 0, 0.15f);
     [SerializeField] private Color _targetColor = Color.cyan;
     [SerializeField] private Color _suspectColor = Color.magenta;
     [SerializeField] private Color _wanderRadiusColor = Color.green;
@@ -68,7 +66,7 @@ public class GhostBrain : MonoBehaviour
         _everSeenPlayer = false;
         _movement.StartWander();
         ApplyTuningToSensors();
-        //_collisionController.SetDoorCollision(false);
+        _player = FindFirstObjectByType<PlayerController>();
     }
 
     void Update()

@@ -20,6 +20,7 @@ public class GhostMovement : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         _rooms = FindObjectsByType<RoomAnchor>(FindObjectsSortMode.None).ToList();
+        Debug.Log("Ghost found "+ _rooms.Count.ToString() + " room anchors");
     }
 
     public bool AtDestination() =>
