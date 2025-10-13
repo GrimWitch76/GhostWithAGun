@@ -57,24 +57,33 @@ public class VisionSensor : MonoBehaviour
         Vector3 forward = transform.forward;
         float half = angle * 0.5f;
 
+        bool sawPlayer = false;
+        hitPos = default;
+
         for (int i = 0; i < _rayCount; i++)
         {
             float t = i / Mathf.Max(1f, (_rayCount - 1f));
             float a = Mathf.Lerp(-half, half, t);
             Vector3 dir = Quaternion.Euler(0, a, 0) * forward;
 
+            // Perform raycast
             if (Physics.Raycast(origin, dir, out RaycastHit hit, range, _visionMask))
             {
+                Debug.DrawLine(origin, hit.point, hit.transform.CompareTag("Player") ? Color.red : Color.green);
+
                 if (hit.transform.CompareTag("Player"))
                 {
                     hitPos = hit.transform.position;
-                    return true;
+                    sawPlayer = true;
                 }
+            }
+            else
+            {
+                Debug.DrawRay(origin, dir * range, Color.gray);
             }
         }
 
-        hitPos = default;
-        return false;
+        return sawPlayer;
     }
 
 #if UNITY_EDITOR

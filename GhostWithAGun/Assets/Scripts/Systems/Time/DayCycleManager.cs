@@ -51,6 +51,7 @@ public class DayCycleManager : MonoBehaviour
     public Action<int> OnNightAdvanced;       // called with nextNightIndex
     public Action<int> OnGhostSpawned;        // called with currentNightIndex
     public Action<int> OnNightSurvived;       // called with currentNightIndex
+    public Action<int> OnDayStart;       // called with currentNightIndex
     public Action OnAllNightsComplete;
 
     [Header("Debug")]
@@ -136,6 +137,7 @@ public class DayCycleManager : MonoBehaviour
     private void HandleDayStarted()
     {
         musicManager.TransitionToDay();
+        OnDayStart.Invoke(CurrentNightIndex);
         // If we came from night, handle sunrise transition
         if (nightWasActiveThisCycle)
         {
@@ -365,6 +367,7 @@ public class DayCycleManager : MonoBehaviour
     {
         // Stop ghost, show fail UI, etc.
         DespawnGhost();
+        TimeManager.Instance.PauseTime(true);
         StartCoroutine(GameLoss());
 
         // Optionally pause time, show “You Died” and present retry/quit
@@ -384,7 +387,7 @@ public class DayCycleManager : MonoBehaviour
 
             // Lerp skybox and ambient lighting
             currentLerpValue = Mathf.Lerp(startValue, endValue, t);
-            float ambient = Mathf.Lerp(startValue, endValue, t);
+            float ambient = Mathf.Lerp(startValue, endAmbient, t);
 
             skyboxMaterial.SetFloat("_DayNightLerp", currentLerpValue);
             RenderSettings.ambientIntensity = ambient;
@@ -394,7 +397,7 @@ public class DayCycleManager : MonoBehaviour
 
         // Final set to ensure exact end values
         skyboxMaterial.SetFloat("_DayNightLerp", endValue);
-        RenderSettings.ambientIntensity = endValue;
+        RenderSettings.ambientIntensity = endAmbient;
     }
 
 

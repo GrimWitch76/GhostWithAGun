@@ -15,7 +15,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private float _fadeTime = 2f;
     [SerializeField] private bool _crossFade = true;
 
-    private bool _isDay = true;
+    private bool _isDay = false;
     private AudioSource _activeSource;
     private AudioSource _inactiveSource;
     private Coroutine _transitionRoutine;
