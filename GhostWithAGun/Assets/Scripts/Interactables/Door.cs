@@ -23,6 +23,7 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] private Transform _door;
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private HingeJoint _hinge;
+    [SerializeField] private GameObject _shatteredDoor;
     private bool _isOpen;
     private bool _isClosing;
     private bool _isBarricaded;
@@ -246,4 +247,15 @@ public class Door : MonoBehaviour, IInteractable
         Gizmos.DrawWireCube(Vector3.zero, size);
     }
 #endif
+
+    public void TakeDamage(float amount)
+    {
+        Shatter();
+    }
+
+    public void Shatter()
+    {
+        GameObject newObject = Instantiate(_shatteredDoor, transform.position, transform.rotation);
+        gameObject.SetActive(false);
+    }
 }

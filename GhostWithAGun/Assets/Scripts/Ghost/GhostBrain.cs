@@ -44,6 +44,8 @@ public class GhostBrain : MonoBehaviour
     public bool HasGun => _hasGun;
     public GhostTuning Tuning => _tuning;
 
+    public GhostWeaponController Gun => gun;
+
     private float shootTimer = 0f;
     private float searchTimer;
     private float lookTimer;

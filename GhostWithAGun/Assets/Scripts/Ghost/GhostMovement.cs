@@ -184,7 +184,6 @@ public class GhostMovement : MonoBehaviour
     {
         // First try open
         door.GhostInteract(gameObject);
-
         // Give it a tiny moment to respond
         float t = 0f;
         while (!door.IsOpen && t < 0.5f)
@@ -221,24 +220,30 @@ public class GhostMovement : MonoBehaviour
     private IEnumerator BreakDoorRoutine(Door door)
     {
         yield return null;
-        //    agent.isStopped = true;
-        //    LookAt(door.transform.position);
 
-        //    // Fire until it opens (lock/barricade breaks)
-        //    while (!door.IsOpen && door.IsBarricaded))
-        //    {
-        //        if (_brain.Gun.CanFire)
-        //        {
-        //            _brain.Gun.Fire(transform.position + Vector3.up * 1.5f, door.transform.position);
-        //            if (door.IsBarricaded) door.BreakBarricade();
-        //        }
-        //        else
-        //        {
-        //            _brain.Gun.Reload();
-        //        }
-        //        yield return null;
-        //    }
+        agent.isStopped = true;
+        LookAt(door.transform.position);
+        door.Shatter();
 
-        //    agent.isStopped = false;
+        // Fire until it opens (lock/barricade breaks)
+        while (!door.IsOpen && door.IsBarricaded)
+        {
+            if (_brain.Gun.CanFire)
+            {
+                _brain.Gun.Fire(transform.position + Vector3.up * 1.5f, door.transform.position);
+
+                if (door.IsBarricaded)
+                    door.Shatter();
+            }
+            else
+            {
+                _brain.Gun.Reload();
+            }
+
+            yield return null;
+        }
+
+        // Resume movement after door is open
+        agent.isStopped = false;
     }
 }
