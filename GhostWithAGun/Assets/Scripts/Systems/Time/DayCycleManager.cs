@@ -47,7 +47,7 @@ public class DayCycleManager : MonoBehaviour
     [SerializeField] private float nightAmbientIntensity = 0.1f;
 
     [Header("Hooks (Optional)")]
-    public AudioSource musicSource;
+    public MusicManager musicManager;
     public Action<int> OnNightAdvanced;       // called with nextNightIndex
     public Action<int> OnGhostSpawned;        // called with currentNightIndex
     public Action<int> OnNightSurvived;       // called with currentNightIndex
@@ -135,6 +135,7 @@ public class DayCycleManager : MonoBehaviour
 
     private void HandleDayStarted()
     {
+        musicManager.TransitionToDay();
         // If we came from night, handle sunrise transition
         if (nightWasActiveThisCycle)
         {
@@ -156,6 +157,7 @@ public class DayCycleManager : MonoBehaviour
     private void HandleNightStarted()
     {
         if (State == DayCycleState.GameComplete) return;
+        musicManager.TransitionToNight();
         State = DayCycleState.NightWaitingForSpawn;
         StartCoroutine(LerpDayNight(1f, 0f, 5f));
         // Start the spawn timer

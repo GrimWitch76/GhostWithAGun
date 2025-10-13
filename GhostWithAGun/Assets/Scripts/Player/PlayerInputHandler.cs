@@ -12,6 +12,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private PlayerInteraction _playerInteraction;
+    [SerializeField] private FlashLight _flashLight;
 
     public void OnMove(InputValue value)
     {
@@ -33,7 +34,6 @@ public class PlayerInputHandler : MonoBehaviour
         _playerInteraction.TryInteractPressed(value);
     }
 
-
     public void OnSprint(InputValue value)
     {
         SprintHeld = value.Get<float>() > 0.5f;
@@ -42,5 +42,10 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnCrouch(InputValue value)
     {
         CrouchHeld = value.Get<float>() > 0.5f;
+    }
+
+    public void OnFlashlight(InputValue value)
+    {
+        _flashLight.ToggleLight();
     }
 }
