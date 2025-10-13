@@ -5003,6 +5003,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -8913151797941868603, guid: 2f64e1b3c29ca004f946a480610ea77c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2415781453151589942, guid: b912eed85baa45745b8c06361971dda4, type: 3}
     - target: {fileID: -8881122290563283968, guid: 2f64e1b3c29ca004f946a480610ea77c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -7995,7 +7999,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 4878538906166550744, guid: 2f64e1b3c29ca004f946a480610ea77c, type: 3}
+  m_Mesh: {fileID: 2415781453151589942, guid: b912eed85baa45745b8c06361971dda4, type: 3}
 --- !u!1001 &8414254340707886027
 PrefabInstance:
   m_ObjectHideFlags: 0
