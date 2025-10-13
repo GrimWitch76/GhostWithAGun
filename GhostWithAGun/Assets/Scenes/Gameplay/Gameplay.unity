@@ -297,23 +297,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5932462753948256122, guid: b2ceac8d71dceb545af766462c8f882d, type: 3}
---- !u!1 &59370443 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7824713751913439458, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
-  m_PrefabInstance: {fileID: 95192587}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &59370447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59370443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b209135e5c41762479b2e0223e0979f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoundGizmoDrawer
 --- !u!1001 &68691119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -489,10 +472,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9115970935562943520}
     - target: {fileID: 2607764022059104712, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
-      propertyPath: skyboxMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 37ed593304c014648b0044011c6f10fd, type: 2}
-    - target: {fileID: 2607764022059104712, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
       propertyPath: gunRoomWakePoint
       value: 
       objectReference: {fileID: 1918741526}
@@ -519,17 +498,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7824713751913439458, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 59370447}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
 --- !u!114 &95192588 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2607764022059104712, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
   m_PrefabInstance: {fileID: 95192587}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59370443}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1efe595ddab87ab47b6a03dd9aec4186, type: 3}
@@ -1324,10 +1300,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2981490094280174571, guid: 827ee122b4936ba4091a20b7c8f6b570, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4658056201294373119, guid: 827ee122b4936ba4091a20b7c8f6b570, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.218
@@ -1371,10 +1343,6 @@ PrefabInstance:
     - target: {fileID: 6437171829020654643, guid: 827ee122b4936ba4091a20b7c8f6b570, type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 8592522706511668176, guid: 827ee122b4936ba4091a20b7c8f6b570, type: 3}
-      propertyPath: near clip plane
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2055,33 +2023,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
-      propertyPath: onPlayerDied.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
-      propertyPath: onPlayerDied.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
       propertyPath: onPlayerDied.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 95192588}
-    - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
-      propertyPath: onPlayerDied.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
-      propertyPath: onPlayerDied.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPlayerDied
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
-      propertyPath: onPlayerDied.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DayCycleManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
-      propertyPath: onPlayerDied.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 5492427657518952725, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
       propertyPath: m_Name
       value: Player

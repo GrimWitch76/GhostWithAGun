@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 1512766019478860127}
   - component: {fileID: 6350627331901367103}
   - component: {fileID: 2607764022059104712}
+  - component: {fileID: 4065195834731199365}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -145,5 +146,22 @@ MonoBehaviour:
   gunRoomWakePoint: {fileID: 0}
   blackoutCanvas: {fileID: 0}
   surviveText: {fileID: 0}
+  skyboxMaterial: {fileID: 2100000, guid: 37ed593304c014648b0044011c6f10fd, type: 2}
+  dayAmbientIntensity: 1
+  nightAmbientIntensity: 0.1
   musicSource: {fileID: 0}
   _dayText: {fileID: 0}
+  _deathCanvas: {fileID: 0}
+  _winCanvas: {fileID: 0}
+--- !u!114 &4065195834731199365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824713751913439458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b209135e5c41762479b2e0223e0979f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundGizmoDrawer
