@@ -39,6 +39,8 @@ public class DayCycleManager : MonoBehaviour
     [Tooltip("Where the player wakes up between nights.")]
     public Transform gunRoomWakePoint;
     public CanvasGroup blackoutCanvas;     // simple full-screen canvas group
+    public GameObject _playerGuide;     // simple full-screen canvas group
+    public GameObject _playerGuideOld;     // simple full-screen canvas group
     public TMPro.TMP_Text surviveText;     // optional “You Survived” text
 
     [Header("Skybox and Lighting")]
@@ -123,10 +125,15 @@ public class DayCycleManager : MonoBehaviour
         if (night == 1)
         {
             _player.transform.position = DayOnePlayerSpawn.position;
+            _playerGuide.SetActive(true);
+            _playerGuideOld.SetActive(false);
+
         }
         else
         {
             _player.transform.position = NormalPlayerSpawn.position;
+            _playerGuide.SetActive(false);
+            _playerGuideOld.SetActive(true);
         }
     }
 
