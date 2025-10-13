@@ -12,10 +12,10 @@ namespace PSX
         public FloatParameter ditherThreshold = new FloatParameter(512);
         public FloatParameter ditherStrength = new FloatParameter(1);
         public FloatParameter ditherScale = new FloatParameter(2);
-        
-        
+
+
         //INTERFACE REQUIREMENT 
-        public bool IsActive() => true;
+        public bool IsActive() => active && ditherStrength.value > 0f;
         public bool IsTileCompatible() => false;
     }
 }
