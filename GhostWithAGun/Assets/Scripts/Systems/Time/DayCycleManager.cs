@@ -36,6 +36,9 @@ public class DayCycleManager : MonoBehaviour
     public float surviveMessageDuration = 2.0f;
     public float fadeInDuration = 1.0f;
 
+    [Header("World References I'm too lazy to connect properly")]
+    [SerializeField] GameObject _normalGuide, _cursedGuide;
+
     [Tooltip("Where the player wakes up between nights.")]
     public Transform gunRoomWakePoint;
     public CanvasGroup blackoutCanvas;     // simple full-screen canvas group
@@ -106,7 +109,7 @@ public class DayCycleManager : MonoBehaviour
         CurrentNightIndex = Mathf.Clamp(night, 0, MaxNightIndex());
         State = DayCycleState.Day;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
-        if(_dayText != null)
+        if (_dayText != null)
             _dayText.text = "Day: " + CurrentNightIndex.ToString();
 #endif
         // Ensure blackout is hidden initially
@@ -129,7 +132,7 @@ public class DayCycleManager : MonoBehaviour
         }
     }
 
-    private int MaxNightIndex() => _nightConfigs.Length-1;
+    private int MaxNightIndex() => _nightConfigs.Length - 1;
 
     private NightConfig CurrentNight => _nightConfigs[CurrentNightIndex];
 
@@ -150,6 +153,15 @@ public class DayCycleManager : MonoBehaviour
             // Normal daytime idle
             State = DayCycleState.Day;
             // Optional: day music / ambience here
+
+            _normalGuide?.SetActive(false);
+            _cursedGuide?.SetActive(true);
+
+            if (CurrentNightIndex == 0)
+            {
+                _normalGuide?.SetActive(true);
+                _cursedGuide?.SetActive(false);
+            }
         }
     }
 
@@ -255,7 +267,7 @@ public class DayCycleManager : MonoBehaviour
         // Fade to black
         yield return FadeCanvas(blackoutCanvas, 0f, 1f, fadeOutDuration);
 
-        if(CurrentNightIndex == 4)
+        if (CurrentNightIndex == 4)
         {
             _gameWon = true;
             yield return GameWinSequence();
@@ -266,7 +278,7 @@ public class DayCycleManager : MonoBehaviour
         if (surviveText)
         {
             surviveText.enabled = true;
-            surviveText.text = $"You Survived Night {CurrentNightIndex+1}";
+            surviveText.text = $"You Survived Night {CurrentNightIndex + 1}";
         }
         OnNightSurvived?.Invoke(CurrentNightIndex);
 
@@ -278,7 +290,7 @@ public class DayCycleManager : MonoBehaviour
         // Teleport player to gun room / reset position
         if (gunRoomWakePoint)
         {
-            if(_player == null) //cache for future use
+            if (_player == null) //cache for future use
             {
                 _player = FindFirstObjectByType<CharacterController>().gameObject;
             }
@@ -315,7 +327,7 @@ public class DayCycleManager : MonoBehaviour
         State = DayCycleState.Day;
 
         // Optional: trigger save here
-        if(_saveManager == null)
+        if (_saveManager == null)
         {
             _saveManager = FindFirstObjectByType<SaveManager>();
         }
@@ -373,7 +385,7 @@ public class DayCycleManager : MonoBehaviour
     {
         float time = 0f;
         float startAmbient = Mathf.Lerp(dayAmbientIntensity, nightAmbientIntensity, startValue);
-        float endAmbient = Mathf.Lerp(nightAmbientIntensity, dayAmbientIntensity , endValue);
+        float endAmbient = Mathf.Lerp(nightAmbientIntensity, dayAmbientIntensity, endValue);
         float currentLerpValue;
         while (time < duration)
         {

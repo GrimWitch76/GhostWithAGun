@@ -148,9 +148,8 @@ public class GhostWeaponController : MonoBehaviour
         // Example weights: Head 5%, Torso 50%, Arm 25%, Leg 20%
         float roll = Random.value;
 
-        if (roll < 0.05f) return BodyPart.Head;
-        else if (roll < 0.55f) return BodyPart.Torso;
-        else if (roll < 0.80f) return BodyPart.Arm;
+        if (roll < 0.50f) return BodyPart.Torso;
+        else if (roll < 0.75f) return BodyPart.Arm;
         else return BodyPart.Leg;
     }
 
