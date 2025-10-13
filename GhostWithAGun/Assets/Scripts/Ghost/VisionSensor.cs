@@ -77,6 +77,7 @@ public class VisionSensor : MonoBehaviour
         return false;
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
         if (_tuning == null) return;
@@ -100,4 +101,5 @@ public class VisionSensor : MonoBehaviour
         Handles.color = Color.white;
         Handles.DrawLine(origin, origin + forward * _tuning.primaryRange);
     }
+#endif
 }

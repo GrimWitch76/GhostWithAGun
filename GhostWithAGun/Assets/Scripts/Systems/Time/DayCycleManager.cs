@@ -41,6 +41,11 @@ public class DayCycleManager : MonoBehaviour
     public CanvasGroup blackoutCanvas;     // simple full-screen canvas group
     public TMPro.TMP_Text surviveText;     // optional “You Survived” text
 
+    [Header("Skybox and Lighting")]
+    [SerializeField] private Material skyboxMaterial;  // Reference to your skybox material
+    [SerializeField] private float dayAmbientIntensity = 1f;
+    [SerializeField] private float nightAmbientIntensity = 0.1f;
+
     [Header("Hooks (Optional)")]
     public AudioSource musicSource;
     public Action<int> OnNightAdvanced;       // called with nextNightIndex
@@ -84,6 +89,9 @@ public class DayCycleManager : MonoBehaviour
     {
         _winCanvas.blocksRaycasts = false;
         _deathCanvas.blocksRaycasts = false;
+
+        skyboxMaterial.SetFloat("_DayNightLerp", 1);
+        RenderSettings.ambientIntensity = dayAmbientIntensity;
     }
 
     public void ReloadNight()
@@ -149,7 +157,7 @@ public class DayCycleManager : MonoBehaviour
     {
         if (State == DayCycleState.GameComplete) return;
         State = DayCycleState.NightWaitingForSpawn;
-
+        StartCoroutine(LerpDayNight(1f, 0f, 5f));
         // Start the spawn timer
         if (spawnRoutine != null) StopCoroutine(spawnRoutine);
         spawnRoutine = StartCoroutine(Co_SpawnGhostAfterDelay());
@@ -234,10 +242,12 @@ public class DayCycleManager : MonoBehaviour
 
     private IEnumerator SunriseSequence()
     {
-        State = DayCycleState.SunriseTransition;
-
         // Stop ghost & night content
+        State = DayCycleState.SunriseTransition;
         DespawnGhost();
+
+        StartCoroutine(LerpDayNight(0f, 1f, 5f));
+
 
         // Pause world time during transition (optional)
         TimeManager.Instance.PauseTime(true);
@@ -359,6 +369,31 @@ public class DayCycleManager : MonoBehaviour
         // This can be integrated with your existing GameManager
     }
 
-    
+    private IEnumerator LerpDayNight(float startValue, float endValue, float duration)
+    {
+        float time = 0f;
+        float startAmbient = Mathf.Lerp(dayAmbientIntensity, nightAmbientIntensity, startValue);
+        float endAmbient = Mathf.Lerp(nightAmbientIntensity, dayAmbientIntensity , endValue);
+        float currentLerpValue;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            float t = Mathf.Clamp01(time / duration);
+
+            // Lerp skybox and ambient lighting
+            currentLerpValue = Mathf.Lerp(startValue, endValue, t);
+            float ambient = Mathf.Lerp(startValue, endValue, t);
+
+            skyboxMaterial.SetFloat("_DayNightLerp", currentLerpValue);
+            RenderSettings.ambientIntensity = ambient;
+
+            yield return null;
+        }
+
+        // Final set to ensure exact end values
+        skyboxMaterial.SetFloat("_DayNightLerp", endValue);
+        RenderSettings.ambientIntensity = endValue;
+    }
+
 
 }

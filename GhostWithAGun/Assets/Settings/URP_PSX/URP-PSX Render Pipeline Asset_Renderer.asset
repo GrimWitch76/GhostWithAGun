@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7813741425bf9df4b8f6b5a4f6b1f66f, type: 3}
   m_Name: Crt
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   material: {fileID: 2100000, guid: 7b9364e15d2cc0c438c168e6bb1ab60f, type: 2}
 --- !u!114 &-1925210268287778290
 MonoBehaviour:
@@ -26,7 +26,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a17da147615463497e4bd9e04f0dce1, type: 3}
   m_Name: Dithering
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,4 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df6534dd185a4f18b50629b58de296b6, type: 3}
   m_Name: Pixelation
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0

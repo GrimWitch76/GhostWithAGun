@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_Sky
+  m_Shader: {fileID: -6465566751694194690, guid: 3cba4b7e4aeff4d479fc0a6ab902b240, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AuroraBlend: 1
+    - _AuroraIntensity: 0
+    - _AuroraNoiseScale: 0
+    - _AuroraPower: 0
+    - _AuroraTwirlStrength: 0
+    - _ColourSpeed: 0
+    - _Corruption: 1
+    - _DayNightLerp: 0
+    - _DistortionSpeed: 0
+    - _Float: 0
+    - _GradientOffset: 0
+    - _HorizonBlend: 2.78
+    - _MoonSize: 0
+    - _MoonSize_Two: 0
+    - _NadirBlend: 1
+    - _PerlinScale: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _StarHeight: 765.4
+    - _StarIntensity: 1314.4
+    - _StarPower: 50.4
+    - _SunSize: 0
+    - _SunSize_Two: 0
+    - _ZenithBlend: 0.44
+    m_Colors:
+    - _AuroraScrollSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _AuroraTiling: {r: 0, g: 0, b: 0, a: 0}
+    - _DistortionMinMAx: {r: 0, g: 0, b: 0, a: 0}
+    - _GroundColour: {r: 0.3537736, g: 0.78965944, b: 1, a: 0}
+    - _HorizonColour: {r: 0, g: 0.6745095, b: 1, a: 1}
+    - _HorizonColourTwo: {r: 0, g: 0, b: 0, a: 0}
+    - _MoonColour: {r: 0, g: 0, b: 0, a: 0}
+    - _MoonColourTwo: {r: 0, g: 0, b: 0, a: 0}
+    - _MoonOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _MoonOffsetTwo: {r: 0, g: 0, b: 0, a: 0}
+    - _SkyColour: {r: 0.16509432, g: 0.8657603, b: 1, a: 0}
+    - _SunDirection: {r: 0, g: 0, b: 0, a: 0}
+    - _SunDirection_two: {r: 0, g: 0, b: 0, a: 0}
+    - _TwirlOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _Vector2: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
+--- !u!114 &1262808819424759414
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10
