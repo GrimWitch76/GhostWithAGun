@@ -384,12 +384,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbd5350051ab02d41859075e20a33d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeManager
-  dayDuration: 15
-  nightDuration: 15
+  dayDuration: 120
+  nightDuration: 300
   dayStartHour: 12
   dayEndHour: 0
   nightStartHour: 0
-  nightEndHour: 12
+  nightEndHour: 5
   enableDebugControls: 0
   debugTimeSlider: 0
   applyDebugTime: 0
@@ -427,7 +427,7 @@ MonoBehaviour:
   surviveText: {fileID: 0}
   skyboxMaterial: {fileID: 2100000, guid: 37ed593304c014648b0044011c6f10fd, type: 2}
   dayAmbientIntensity: 1
-  nightAmbientIntensity: 0.1
+  nightAmbientIntensity: 0.25
   musicManager: {fileID: 6782627455293673577}
   _dayText: {fileID: 0}
   _deathCanvas: {fileID: 0}

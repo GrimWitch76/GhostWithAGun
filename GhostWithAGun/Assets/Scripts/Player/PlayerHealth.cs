@@ -13,8 +13,9 @@ public class PlayerHealth : MonoBehaviour
 {
     [Header("General Health")]
     [SerializeField] private float maxTorsoHealth = 100f;
-    [SerializeField] private float limbHealth = 50f;
+    [SerializeField] private float limbHealth = 25f;
     [SerializeField] private float bleedDamagePerSecond = 2f;
+    [SerializeField] private ScreenDamageIndicator _screenDamage;
 
     [Header("Events")]
     public UnityEvent onPlayerDamaged;
@@ -50,26 +51,31 @@ public class PlayerHealth : MonoBehaviour
         switch (part)
         {
             case BodyPart.Head:
-                Debug.Log("Headshot! Instant death.");
-                Die();
                 return;
 
             case BodyPart.Torso:
                 torsoHealth -= amount;
+                _screenDamage.UpdateBaseHealth(torsoHealth / maxTorsoHealth);
                 if (torsoHealth <= 0) Die();
-                else bleeding = true; // first torso damage triggers bleed
                 break;
 
             case BodyPart.Arm:
                 armHits++;
+                torsoHealth -= amount;
+                _screenDamage.UpdateBaseHealth(torsoHealth / maxTorsoHealth);
+                _screenDamage.DamageLimb(part);
                 if (armHits == 1) Debug.Log("One arm injured: can't throw.");
                 if (armHits >= 2) Debug.Log("Both arms injured: can't pick up items.");
                 break;
 
             case BodyPart.Leg:
                 legHits++;
+                torsoHealth -= amount;
+                _screenDamage.UpdateBaseHealth(torsoHealth / maxTorsoHealth);
+                _screenDamage.DamageLimb(part);
                 if (legHits == 1) Debug.Log("One leg injured: can't sprint.");
                 if (legHits >= 2) Debug.Log("Both legs crippled: crawl speed only.");
+
                 break;
         }
 
