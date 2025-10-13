@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent (typeof(SoundEmitter))]
 public class SoundEmitter : MonoBehaviour
 {
     [Header("Audio Settings")]
