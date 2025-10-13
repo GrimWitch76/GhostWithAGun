@@ -50,6 +50,8 @@ public class DayCycleManager : MonoBehaviour
 
     [Header("Debug")]
     public TextMeshProUGUI _dayText;
+    public CanvasGroup _deathCanvas;
+    public CanvasGroup _winCanvas;
 
     public DayCycleState State { get; private set; }
     public int CurrentNightIndex { get; private set; }
@@ -80,23 +82,36 @@ public class DayCycleManager : MonoBehaviour
 
     private void Start()
     {
+        _winCanvas.blocksRaycasts = false;
+        _deathCanvas.blocksRaycasts = false;
+    }
+
+    public void ReloadNight()
+    {
 
     }
 
     public void InitalizeGame(int night)
     {
+        blackoutCanvas.alpha = 0;
         // Initialize progression
         CurrentNightIndex = Mathf.Clamp(night, 0, MaxNightIndex());
         State = DayCycleState.Day;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
-        _dayText.text = "Day: " + CurrentNightIndex.ToString();
+        if(_dayText != null)
+            _dayText.text = "Day: " + CurrentNightIndex.ToString();
 #endif
         // Ensure blackout is hidden initially
         if (blackoutCanvas) blackoutCanvas.alpha = 0f;
         if (surviveText) surviveText.enabled = false;
         HandleDayStarted();
 
-        if(night == 1)
+        if (_player == null) //cache for future use
+        {
+            _player = FindFirstObjectByType<PlayerController>().gameObject;
+        }
+
+        if (night == 1)
         {
             _player.transform.position = DayOnePlayerSpawn.position;
         }
@@ -106,7 +121,7 @@ public class DayCycleManager : MonoBehaviour
         }
     }
 
-    private int MaxNightIndex() => _nightConfigs.Length;
+    private int MaxNightIndex() => _nightConfigs.Length-1;
 
     private NightConfig CurrentNight => _nightConfigs[CurrentNightIndex];
 
@@ -233,15 +248,15 @@ public class DayCycleManager : MonoBehaviour
         if(CurrentNightIndex == 4)
         {
             _gameWon = true;
-            GameWinSequence();
+            yield return GameWinSequence();
             Debug.Log("You win");
             yield break;
         }
-        // Show “You survived Night N” message
+
         if (surviveText)
         {
             surviveText.enabled = true;
-            surviveText.text = $"You Survived Night {CurrentNightIndex + 1}";
+            surviveText.text = $"You Survived Night {CurrentNightIndex+1}";
         }
         OnNightSurvived?.Invoke(CurrentNightIndex);
 
@@ -298,15 +313,22 @@ public class DayCycleManager : MonoBehaviour
         _saveManager.SaveNight();
     }
 
-    private void GameWinSequence()
+    private IEnumerator GameWinSequence()
     {
-        surviveText.enabled = true;
-        surviveText.text = $"You Survived Night {CurrentNightIndex + 1}";
+        yield return FadeCanvas(blackoutCanvas, 0f, 1f, fadeOutDuration);
+        yield return FadeCanvas(_winCanvas, 0f, 1f, fadeOutDuration);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        _winCanvas.blocksRaycasts = true;
     }
 
-    private void GameLoss()
+    private IEnumerator GameLoss()
     {
-
+        yield return FadeCanvas(blackoutCanvas, 0f, 1f, fadeOutDuration);
+        yield return FadeCanvas(_deathCanvas, 0f, 1f, fadeOutDuration);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        _deathCanvas.blocksRaycasts = true;
     }
 
     // ---------- Utilities ----------
@@ -331,6 +353,8 @@ public class DayCycleManager : MonoBehaviour
     {
         // Stop ghost, show fail UI, etc.
         DespawnGhost();
+        StartCoroutine(GameLoss());
+
         // Optionally pause time, show “You Died” and present retry/quit
         // This can be integrated with your existing GameManager
     }

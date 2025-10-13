@@ -118,9 +118,15 @@ public class MainMenu : MonoBehaviour
             int currentNight = SaveStorage.GetCurrentNight();
             bool loaded = saveManager.LoadNight(currentNight);
             if (loaded)
+            {
+                FindFirstObjectByType<DayCycleManager>().InitalizeGame(currentNight);
                 Debug.Log("Loaded saved state successfully.");
+            }
             else
+            {
+                FindFirstObjectByType<DayCycleManager>().InitalizeGame(1);
                 Debug.Log("No save found, starting fresh.");
+            }
         }
         else
         {
@@ -147,6 +153,8 @@ public class MainMenu : MonoBehaviour
         {
             Debug.LogWarning("No SaveManager found in loaded scene!");
         }
+
+        FindFirstObjectByType<DayCycleManager>().InitalizeGame(1);
     }
 
     private void HideMenu()

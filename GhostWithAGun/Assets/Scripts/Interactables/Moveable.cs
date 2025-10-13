@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -8,6 +9,8 @@ public class Moveable : MonoBehaviour, IInteractable, IDestructable
     [SerializeField] private float _liftDistance = 2f; // distance from camera when held
     [SerializeField] private float _maxHealth;
 
+
+    [SerializeField] public float value;
     private float _currentHealth;
 
     public bool IsHeavy => _isHeavy;

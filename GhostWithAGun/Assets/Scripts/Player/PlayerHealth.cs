@@ -81,7 +81,7 @@ public class PlayerHealth : MonoBehaviour
         if (dead) return;
         dead = true;
         onPlayerDied?.Invoke();
-        Debug.Log("Player died!");
+        Debug.LogError("Player died!");
     }
 
     // Accessors for other scripts (movement, interaction, etc.)

@@ -11,7 +11,8 @@ public class NightConfig : ScriptableObject
     public float SpawnDelayVariance = 0f;
 
     [Header("Ghost Behavior Params")]
-    //Ty just add whatever tuning peramiters we've got in here for the desingers to tweak the ghost behaviour each night. 
+    public GhostTuning ghostTuning;
+    public WeaponTuning weaponTuning;
 
     [Header("Overrides (Optional)")]
     [Tooltip("If true, during day time will not progress (used for day 1).")]
