@@ -12,8 +12,8 @@ namespace PSX
 
         protected Fog fog;
         
-        [Range(0,50)]
-        [SerializeField] protected float fogDensity = 1.0f;
+        [Range(0,0.02f)]
+        [SerializeField] protected float fogDensity = 0.01f;
         [Range(0,1000)]
         [SerializeField] protected float fogDistance = 10.0f;
         [Range(0,100)]
