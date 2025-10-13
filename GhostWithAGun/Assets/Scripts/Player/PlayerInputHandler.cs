@@ -13,6 +13,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private PlayerInteraction _playerInteraction;
     [SerializeField] private FlashLight _flashLight;
+    [SerializeField] private GameObject _pauseScreen;
 
     public void OnMove(InputValue value)
     {
@@ -47,5 +48,10 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnFlashlight(InputValue value)
     {
         _flashLight.ToggleLight();
+    }
+
+    public void OnPause(InputValue value)
+    {
+        _pauseScreen.SetActive(true);
     }
 }

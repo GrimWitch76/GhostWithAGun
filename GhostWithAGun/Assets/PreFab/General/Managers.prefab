@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6782627455293673577}
   - component: {fileID: 1501272860841799882}
   - component: {fileID: 1541707928762428468}
+  - component: {fileID: 1671632858555516485}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -246,6 +247,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1671632858555516485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2368375374486697620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5faf8fb064697f14387de1f2809bae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &4992849327795930130
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +437,8 @@ MonoBehaviour:
   fadeInDuration: 1
   gunRoomWakePoint: {fileID: 0}
   blackoutCanvas: {fileID: 0}
+  _playerGuide: {fileID: 0}
+  _playerGuideOld: {fileID: 0}
   surviveText: {fileID: 0}
   skyboxMaterial: {fileID: 2100000, guid: 37ed593304c014648b0044011c6f10fd, type: 2}
   dayAmbientIntensity: 1

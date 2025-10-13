@@ -16,3 +16,5 @@ public class WeaponTuning : ScriptableObject
     [SerializeField] public AudioClip _shootAudio;
     [SerializeField] public AudioClip _reloadAudio;
 }
+
+

@@ -1,45 +1,126 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 public class SettingsItem : MonoBehaviour
 {
-    [SerializeField] private string _settingsName;
+    [Header("Setting Config")]
+    [SerializeField] private string _settingsName;              // e.g. "MasterVolume"
+    [SerializeField] private SettingType _settingType;
     [SerializeField] private TextMeshProUGUI _sliderText;
 
+    [Header("Optional References")]
     [SerializeField] private Slider _slider;
     [SerializeField] private Toggle _toggle;
+    [SerializeField] private AudioMixer _audioMixer;            // Assign your main mixer here
+    [SerializeField] private Volume _postProcessVolume;         // For gamma/exposure changes
+
+    private ColorAdjustments _colorAdjustments;
+
+    public static event Action<string, float> OnFloatSettingChanged;
+    public static event Action<string, bool> OnBoolSettingChanged;
+
+    private enum SettingType
+    {
+        MasterVolume,
+        MusicVolume,
+        SFXVolume,
+        Gamma,
+        Fullscreen,
+        VSync,
+        Sensitivity
+    }
 
     private void Start()
     {
-        if (_sliderText != null)
+        if (_slider != null)
         {
-            _sliderText.text = PlayerPrefs.GetInt(_settingsName, 100).ToString();
+            float savedValue = PlayerPrefs.GetFloat(_settingsName, GetDefaultValue());
+            _slider.value = savedValue;
+            UpdateSliderUI(savedValue);
+            ApplySetting(savedValue);
         }
 
         if (_toggle != null)
         {
-            
-            bool newValue = PlayerPrefs.GetInt(_settingsName, 1) == 1 ? true : false;
-            _toggle.isOn = newValue;
+            bool savedBool = PlayerPrefs.GetInt(_settingsName, 1) == 1;
+            _toggle.isOn = savedBool;
+            ApplySetting(savedBool);
         }
+    }
 
-        if(_slider != null)
-        {
-            _slider.value = PlayerPrefs.GetInt(_settingsName, 100);
-        }
+    private float GetDefaultValue()
+    {
+        return _settingType == SettingType.Gamma ? 1f : 100f;
     }
 
     public void UpdateSettingValue(float value)
     {
-        _sliderText.text = value.ToString();
-        PlayerPrefs.SetInt(_settingsName, (int)value);
+        PlayerPrefs.SetFloat(_settingsName, value);
+        UpdateSliderUI(value);
+        ApplySetting(value);
+        OnFloatSettingChanged?.Invoke(_settingsName, value);
     }
 
-    public void UpdateSettingsValue(bool value)
+    public void UpdateSettingValue(bool value)
     {
-        int newValue = value ? 1 : 0;
-        PlayerPrefs.SetInt(_settingsName, newValue);
+        PlayerPrefs.SetInt(_settingsName, value ? 1 : 0);
+        ApplySetting(value);
+        OnBoolSettingChanged?.Invoke(_settingsName, value);
+    }
+
+    private void UpdateSliderUI(float value)
+    {
+        if (_sliderText != null)
+        {
+            _sliderText.text = _settingType == SettingType.Gamma
+                ? value.ToString("F2")
+                : Mathf.RoundToInt(value).ToString();
+        }
+    }
+
+    private void ApplySetting(float value)
+    {
+        switch (_settingType)
+        {
+            case SettingType.MasterVolume:
+                SetVolume("MasterVolume", value);
+                break;
+            case SettingType.MusicVolume:
+                SetVolume("Music", value);
+                break;
+            case SettingType.SFXVolume:
+                SetVolume("SFX", value);
+                break;
+        }
+    }
+
+    private void ApplySetting(bool value)
+    {
+        switch (_settingType)
+        {
+            case SettingType.Fullscreen:
+                Screen.fullScreen = value;
+                break;
+            case SettingType.VSync:
+                QualitySettings.vSyncCount = value ? 1 : 0;
+                break;
+        }
+    }
+
+    private void SetVolume(string parameterName, float value)
+    {
+        if (_audioMixer == null) return;
+
+        // Convert 0–100 slider to decibels (-80 dB to 0 dB)
+        float dB = Mathf.Lerp(-80f, 0f, value / 100f);
+        _audioMixer.SetFloat(parameterName, dB);
+        float val;
+        _audioMixer.GetFloat(parameterName, out val);
+        Debug.Log(val);
     }
 }
