@@ -130,6 +130,7 @@ public class Door : MonoBehaviour, IInteractable
                 Vector3 pushDir = collision.relativeVelocity;
                 float force = pushDir.magnitude * 0.5f;
                 _rb.AddTorque(_door.up * force, ForceMode.Impulse);
+                _doorSound.PlayOnce();
             }
         }
     }

@@ -12,6 +12,8 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private float _minThrowForce = 5f;
     [SerializeField] private float _maxThrowForce = 20f;
     [SerializeField] private float _maxHoldTime = 1.5f;
+    [SerializeField] private float verticalOffsetRange = 0.5f;
+
 
     private float _holdStartTime;
 
@@ -135,6 +137,28 @@ public class PlayerInteraction : MonoBehaviour
             heldRb.linearVelocity = moveDir * 10f;
         }
     }
+
+
+    private void LateUpdate()
+    {
+        // Base hold position directly in front of the camera
+        _holdPoint.position = cam.transform.position + cam.transform.forward * 2f;
+
+        // Get pitch from camera (local X angle)
+        float pitch = cam.transform.localEulerAngles.x;
+        if (pitch > 180f) pitch -= 360f; // wrap so -90..90
+
+        // Normalize pitch to -1..1
+        float normalizedPitch = Mathf.Clamp(pitch / 90f, -1f, 1f);
+
+        // Apply vertical offset
+        Vector3 offset = Vector3.up * (normalizedPitch * verticalOffsetRange);
+        _holdPoint.position += offset;
+
+        // Always face forward
+        _holdPoint.rotation = cam.transform.rotation;
+    }
+
 
     public void DropObject()
     {
