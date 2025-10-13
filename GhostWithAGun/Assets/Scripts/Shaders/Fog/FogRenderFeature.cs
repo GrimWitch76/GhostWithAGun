@@ -9,6 +9,7 @@ namespace PSX
     public class FogRenderFeature : ScriptableRendererFeature
     {
         FogPass fogPass;
+        Fog fog;
 
         public override void Create()
         {
@@ -17,6 +18,14 @@ namespace PSX
 
         public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
         {
+            var stack = VolumeManager.instance.stack;
+            fog = stack.GetComponent<Fog>();
+
+            if (fog == null || !fog.IsActive())
+            {
+                Debug.Log("No fog. Deactivated.");
+                return;
+            }
             renderer.EnqueuePass(fogPass);
         }
 
