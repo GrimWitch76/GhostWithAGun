@@ -50,7 +50,7 @@ public class CRTEffectController : MonoBehaviour
         if (this.crt == null) volumeProfile.TryGet<Crt>(out this.crt);
         if (this.crt == null) return;
 
-        crt.active = isEnabled;
+        crt.enabled.value = isEnabled;
         if (!this.isEnabled) return;
 
 

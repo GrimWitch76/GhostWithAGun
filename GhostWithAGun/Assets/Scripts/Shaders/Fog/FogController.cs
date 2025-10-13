@@ -48,7 +48,7 @@ namespace PSX
             if (!volumeProfile) return;
             if (fog == null && !volumeProfile.TryGet(out fog)) return;
 
-            fog.active = isEnabled;
+            fog.enabled.value = isEnabled;
             if (!isEnabled) return;
 
             if (fogFar <= fogNear + 1e-5f) fogFar = fogNear + 1f;

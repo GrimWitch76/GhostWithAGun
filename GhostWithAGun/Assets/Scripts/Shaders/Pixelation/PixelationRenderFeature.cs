@@ -9,6 +9,7 @@ namespace PSX
     public class PixelationRenderFeature : ScriptableRendererFeature
     {
         PixelationPass pixelationPass;
+        Pixelation pixelation;
 
         public override void Create()
         {
@@ -17,6 +18,14 @@ namespace PSX
 
         public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
         {
+            var stack = VolumeManager.instance.stack;
+            pixelation = stack.GetComponent<Pixelation>();
+
+            if (pixelation == null || !pixelation.IsActive())
+            {
+                Debug.Log("No Pixelation. Deactivated.");
+                return;
+            }
             renderer.EnqueuePass(pixelationPass);
         }
 
