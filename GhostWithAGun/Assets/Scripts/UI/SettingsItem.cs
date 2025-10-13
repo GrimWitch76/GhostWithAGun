@@ -77,9 +77,7 @@ public class SettingsItem : MonoBehaviour
     {
         if (_sliderText != null)
         {
-            _sliderText.text = _settingType == SettingType.Gamma
-                ? value.ToString("F2")
-                : Mathf.RoundToInt(value).ToString();
+            _sliderText.text = Mathf.RoundToInt(value).ToString();
         }
     }
 

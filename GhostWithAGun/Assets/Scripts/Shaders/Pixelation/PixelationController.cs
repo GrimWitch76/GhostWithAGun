@@ -20,6 +20,11 @@ namespace PSX
             this.SetParams();
         }
 
+        public void SetEnabled(bool enabled)
+        {
+            isEnabled = enabled;
+        }
+
         protected void SetParams()
         {
 

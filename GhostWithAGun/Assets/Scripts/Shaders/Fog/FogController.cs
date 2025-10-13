@@ -43,6 +43,12 @@ namespace PSX
         void OnValidate() => Apply();
         protected void Update() => Apply();
 
+        public void SetEnabled(bool enabled)
+        {
+            isEnabled = enabled;
+            Apply();
+        }
+
         void Apply()
         {
             if (!volumeProfile) return;
