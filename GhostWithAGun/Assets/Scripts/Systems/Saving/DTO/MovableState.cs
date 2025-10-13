@@ -7,4 +7,5 @@ public class MovableState
     public float[] pos;   // x,y,z
     public float[] rot;   // x,y,z,w
     public bool destroyed;
+    public float health;
 }
