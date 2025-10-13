@@ -23,7 +23,6 @@ public class Moveable : MonoBehaviour, IInteractable, IDestructable
     public void Interact(PlayerInteraction interactor)
     {
         interactor.TryPickup(this);
-        Shatter();
     }
 
     public void GhostInteract(GameObject interactor) { }
