@@ -24,10 +24,13 @@ namespace PSX
 
         protected void SetParams()
         {
-            if (!this.isEnabled) return; 
             if (this.volumeProfile == null) return;
             if (this.dithering == null) volumeProfile.TryGet<Dithering>(out this.dithering);
             if (this.dithering == null) return;
+
+            dithering.active = isEnabled;
+
+            if (!this.isEnabled) return;
 
             this.dithering.patternIndex.value = this.patternIndex;
             this.dithering.ditherThreshold.value = this.ditherThreshold;

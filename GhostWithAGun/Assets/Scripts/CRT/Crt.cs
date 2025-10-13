@@ -37,6 +37,6 @@ public class Crt : VolumeComponent, IPostProcessComponent
 
 
     //INTERFACE REQUIREMENT 
-    public bool IsActive() => true;
+    public bool IsActive() => active;
     public bool IsTileCompatible() => false;
 }

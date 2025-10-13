@@ -1519,9 +1519,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeProfile: {fileID: 11400000, guid: 7bbe35cdf5d69e14abbb03eccedaa5bd, type: 2}
   isEnabled: 1
-  widthPixelation: 512
-  heightPixelation: 256
-  colorPrecision: 16
+  widthPixelation: 640
+  heightPixelation: 480
+  colorPrecision: 32
 --- !u!114 &1289996575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1536,10 +1536,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeProfile: {fileID: 11400000, guid: 7bbe35cdf5d69e14abbb03eccedaa5bd, type: 2}
   isEnabled: 1
-  patternIndex: 1
+  patternIndex: 3
   ditherThreshold: 6.97
-  ditherStrength: 3
-  ditherScale: 2.43
+  ditherStrength: 0.71
+  ditherScale: 2.74
 --- !u!114 &1289996576
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -28,7 +28,13 @@ namespace PSX
         public FloatParameter noiseStrength = new FloatParameter(0.05f);
 
         //INTERFACE REQUIREMENT 
-        public bool IsActive() => true;
+        public bool IsActive()
+        {
+            const float kEps = 1e-6f;
+            return active
+                && fogDensity.value > kEps
+                && fogFar.value > fogNear.value + kEps;
+        }
         public bool IsTileCompatible() => false;
     }
 }
