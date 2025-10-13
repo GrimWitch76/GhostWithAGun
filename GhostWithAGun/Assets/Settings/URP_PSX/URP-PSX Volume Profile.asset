@@ -187,6 +187,9 @@ MonoBehaviour:
   grilleShift:
     m_OverrideState: 1
     m_Value: {x: 2, y: 2, z: 2}
+  enabled:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &-7260127642741136214
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -383,6 +386,9 @@ MonoBehaviour:
   colorPrecision:
     m_OverrideState: 1
     m_Value: 32
+  enabled:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &-1810992125250442448
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -485,16 +491,19 @@ MonoBehaviour:
   active: 1
   patternIndex:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 1
   ditherThreshold:
     m_OverrideState: 1
-    m_Value: 6.97
+    m_Value: 13.24
   ditherStrength:
     m_OverrideState: 1
     m_Value: 0.71
   ditherScale:
     m_OverrideState: 1
     m_Value: 2.74
+  enabled:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &-116846316165763493
 MonoBehaviour:
   m_ObjectHideFlags: 3

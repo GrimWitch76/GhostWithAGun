@@ -12,9 +12,11 @@ namespace PSX
         
         //COLOR PRECISION 
         public FloatParameter colorPrecision = new FloatParameter(32.0f);
-        
+
+        public BoolParameter enabled = new BoolParameter(false);
+
         //INTERFACE REQUIREMENT 
-        public bool IsActive() => active;
+        public bool IsActive() => enabled.value;
         public bool IsTileCompatible() => false;
     }
 }

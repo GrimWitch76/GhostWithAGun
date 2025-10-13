@@ -9,6 +9,7 @@ namespace PSX
     public class DitheringRenderFeature : ScriptableRendererFeature
     {
         DitheringPass ditheringPass;
+        Dithering dithering;
 
         public override void Create()
         {
@@ -17,6 +18,14 @@ namespace PSX
 
         public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
         {
+            var stack = VolumeManager.instance.stack;
+            dithering = stack.GetComponent<Dithering>();
+
+            if (dithering == null || !dithering.IsActive())
+            {
+                Debug.Log("No Dithering. Deactivated.");
+                return;
+            }
             renderer.EnqueuePass(ditheringPass);
         }
 

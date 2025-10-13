@@ -28,7 +28,7 @@ namespace PSX
             if (this.dithering == null) volumeProfile.TryGet<Dithering>(out this.dithering);
             if (this.dithering == null) return;
 
-            dithering.active = isEnabled;
+            dithering.enabled.value = isEnabled;
 
             if (!this.isEnabled) return;
 

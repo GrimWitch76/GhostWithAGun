@@ -26,7 +26,7 @@ namespace PSX
             if (this.volumeProfile == null) return;
             if (this.pixelation == null) volumeProfile.TryGet<Pixelation>(out this.pixelation);
             if (this.pixelation == null) return;
-            pixelation.active = isEnabled;
+            pixelation.enabled.value = isEnabled;
 
             if (!this.isEnabled) return;
 

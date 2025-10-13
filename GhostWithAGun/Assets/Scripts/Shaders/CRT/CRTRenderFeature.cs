@@ -1,6 +1,7 @@
 ﻿using System.Security.Cryptography;
 using NUnit.Framework.Internal;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.RenderGraphModule;
 using UnityEngine.Rendering.RenderGraphModule.Util;
@@ -12,7 +13,7 @@ namespace PSX
     public class CRTRenderFeature : ScriptableRendererFeature
     {
         CRTPass crtPass;
-
+        Crt crt;
         public Material material;
 
         public override void Create()
@@ -32,6 +33,15 @@ namespace PSX
             */
 
             //crtPass.Setup(material);
+            var stack = VolumeManager.instance.stack;
+            crt = stack.GetComponent<Crt>();
+
+            if (crt == null || !crt.IsActive())
+            {
+                Debug.Log("No CRT. Deactivated.");
+                return;
+            }
+
             renderer.EnqueuePass(crtPass);
         }
 
