@@ -17,6 +17,9 @@ public class GhostWeaponController : MonoBehaviour
 
     [Header("VFX/SFX")]
     [SerializeField] private AudioSource gunAudio;
+    [SerializeField] private AudioClip shotClip;
+    [SerializeField] private AudioClip reloadClip;
+    [SerializeField] private AudioClip pickUpClip;
     [SerializeField] private Light muzzleFlash;
     [SerializeField] private float flashDuration = 0.05f;
 
@@ -37,7 +40,7 @@ public class GhostWeaponController : MonoBehaviour
 
         hasPlayedEquipSound = true;
         Debug.Log("Cocking Gun");
-        //gunAudio.PlayOneShot(pickUpClip);
+        gunAudio.PlayOneShot(pickUpClip);
     }
     public bool CanFire => !reloading && currentAmmo > 0;
 
@@ -48,7 +51,7 @@ public class GhostWeaponController : MonoBehaviour
         currentAmmo--;
 
         // Play SFX & flash
-        if (gunAudio && _currentWeaponTuning._shootAudio) gunAudio.PlayOneShot(_currentWeaponTuning._shootAudio);
+        if (gunAudio && shotClip) gunAudio.PlayOneShot(shotClip);
         if (muzzleFlash != null) StartCoroutine(FlashLight());
 
         // Miss-first-shot logic
@@ -154,7 +157,7 @@ public class GhostWeaponController : MonoBehaviour
     private IEnumerator ReloadRoutine()
     {
         reloading = true;
-        if (gunAudio && _currentWeaponTuning._reloadAudio) gunAudio.PlayOneShot(_currentWeaponTuning._reloadAudio);
+        if (gunAudio && reloadClip) gunAudio.PlayOneShot(reloadClip);
 
         float wait = Random.Range(_currentWeaponTuning.reloadDelayRange.x, _currentWeaponTuning.reloadDelayRange.y);
         yield return new WaitForSeconds(wait);

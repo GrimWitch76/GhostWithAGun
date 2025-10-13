@@ -2405,6 +2405,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -8071258233095175390, guid: e416278b0df1de849bac259c50bc4a31, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3803671349029830759, guid: 8ce7ab14e9830084bbdde744b6e9173c, type: 3}
     - target: {fileID: -7635002808763871599, guid: e416278b0df1de849bac259c50bc4a31, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -2456,6 +2460,14 @@ PrefabInstance:
     - target: {fileID: -4203778190356381085, guid: e416278b0df1de849bac259c50bc4a31, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -3715938465753621398, guid: e416278b0df1de849bac259c50bc4a31, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.81858623
+      objectReference: {fileID: 0}
+    - target: {fileID: -3715938465753621398, guid: e416278b0df1de849bac259c50bc4a31, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.651
       objectReference: {fileID: 0}
     - target: {fileID: -2956115958781826618, guid: e416278b0df1de849bac259c50bc4a31, type: 3}
       propertyPath: m_Layer
@@ -2977,7 +2989,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -3803671349029830759, guid: e416278b0df1de849bac259c50bc4a31, type: 3}
+  m_Mesh: {fileID: -3803671349029830759, guid: 8ce7ab14e9830084bbdde744b6e9173c, type: 3}
 --- !u!1 &4334733008051747896 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2076225157446436464, guid: e416278b0df1de849bac259c50bc4a31, type: 3}

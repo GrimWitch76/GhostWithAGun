@@ -78,11 +78,6 @@ public class SoundEmitter : MonoBehaviour
             BroadCastNoise(_baseLoudness);
     }
 
-    public void PlayOnce()
-    {
-        PlaySound(_baseLoudness);
-    }
-
     /// <summary>Starts a looping sound and periodically broadcasts noise while playing.</summary>
     public void PlayLooped()
     {
