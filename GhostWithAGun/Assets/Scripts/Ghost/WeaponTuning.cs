@@ -13,4 +13,6 @@ public class WeaponTuning : ScriptableObject
     [SerializeField] public int shotgunPellets = 6;     // number of pellets
     [SerializeField] public Vector2 reloadDelayRange = new Vector2(1.5f, 3.5f);
     [SerializeField] public AmmoType ammoType = AmmoType.Normal;
+    [SerializeField] public AudioClip _shootAudio;
+    [SerializeField] public AudioClip _reloadAudio;
 }

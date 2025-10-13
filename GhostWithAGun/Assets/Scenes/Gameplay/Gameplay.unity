@@ -1368,6 +1368,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1384885852019613190, guid: cc2709b2a69c02d43b2776608881091d, type: 3}
   m_PrefabInstance: {fileID: 524836438}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &534465020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5492427657518952725, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
+  m_PrefabInstance: {fileID: 1046755581}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &534465029 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1904116682701402239, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
+  m_PrefabInstance: {fileID: 1046755581}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &534465030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534465020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd315fc27a400144b611afb9026cd6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEmitter
+  _audioClips:
+  - {fileID: 8300000, guid: c0ae672486a72d94a9739da15464862a, type: 3}
+  _audioSource: {fileID: 534465029}
+  _minVolume: 0.2
+  _maxVolume: 1
+  _baseLoudness: 1
+  _maxLoudness: 10
+  _importance: 1
+  _surfaceModifier: 1
+  _broadcastOnCollision: 0
+  _velocityScale: 1
+  _minVelocityThreshold: 1
 --- !u!64 &541833964
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2271,6 +2305,18 @@ PrefabInstance:
       propertyPath: onPlayerDied.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 95192588}
+    - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
+      propertyPath: onPlayerDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 534465030}
+    - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
+      propertyPath: onPlayerDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOnce
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
+      propertyPath: onPlayerDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SoundEmitter, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5492427657518952725, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2282,7 +2328,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5492427657518952725, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 534465030}
   m_SourcePrefab: {fileID: 100100000, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
 --- !u!1 &1063369648
 GameObject:
