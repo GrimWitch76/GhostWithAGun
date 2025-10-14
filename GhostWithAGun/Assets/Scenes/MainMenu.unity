@@ -1379,7 +1379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -416.6, y: -35.64}
+  m_AnchoredPosition: {x: -416.6, y: -4}
   m_SizeDelta: {x: 711.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &186378999
@@ -1515,7 +1515,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -1.0999756, y: 153.4}
+  m_AnchoredPosition: {x: -1.0999756, y: 161}
   m_SizeDelta: {x: 711.77, y: 1}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &206728063
@@ -5368,7 +5368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -415.2, y: -123.3}
+  m_AnchoredPosition: {x: -415.2, y: -98.3}
   m_SizeDelta: {x: 711.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647888288
@@ -5391,9 +5391,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cell service is limited but don\u2019t worry! This means you will not
-    be tracked and can relax at ease!\LWe will not be liable for any injuries or
-    death on the premise."
+  m_text: 'Walk - WASD
+
+    Run - Shift
+
+    Crouch - Ctrl
+
+    Interact - E
+
+    Pause
+    - ESC or P'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -9028,7 +9035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -661.4, y: 110}
+  m_AnchoredPosition: {x: -661.4, y: 124.99999}
   m_SizeDelta: {x: 206.5, y: 58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &973920171
@@ -10720,7 +10727,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -415.2, y: 17.9}
+  m_AnchoredPosition: {x: -415.2, y: 47}
   m_SizeDelta: {x: 711.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1118013191
@@ -12300,7 +12307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -416.6, y: -106.4}
+  m_AnchoredPosition: {x: -416.6, y: -72}
   m_SizeDelta: {x: 711.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219752729
@@ -12323,7 +12330,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Other things to note
+  m_text: Controls
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -17487,7 +17494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -415.2, y: -51.4}
+  m_AnchoredPosition: {x: -415.2, y: -19.759995}
   m_SizeDelta: {x: 711.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1712582372
@@ -17625,7 +17632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -1.0999756, y: 70.9}
+  m_AnchoredPosition: {x: -1.0999756, y: 92}
   m_SizeDelta: {x: 711.77, y: 1}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1713325878

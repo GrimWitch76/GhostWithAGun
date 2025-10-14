@@ -592,7 +592,7 @@ MonoBehaviour:
   _maxStamina: 5
   _staminaRecoveryRate: 1
   _climbSpeed: 4
-  _jumpForce: 5
+  _jumpForce: 10
   _dragMoveSpeedMultiplier: 0.5
   _tetherDistance: 2
   _tetherSoftZone: 0.5
@@ -619,6 +619,7 @@ MonoBehaviour:
   _playerController: {fileID: 2594025615531392401}
   _playerInteraction: {fileID: 130201207005852422}
   _flashLight: {fileID: 0}
+  _pauseScreen: {fileID: 0}
 --- !u!114 &3652896926413614612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,6 +743,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1573491308766716776}
     m_Modifications:
+    - target: {fileID: 492671783207360836, guid: ae3e6c922b3a488489490713d4448542, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602700307365580107, guid: ae3e6c922b3a488489490713d4448542, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4213580919402903537, guid: ae3e6c922b3a488489490713d4448542, type: 3}
       propertyPath: m_Pivot.x
       value: 0
