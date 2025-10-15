@@ -142,7 +142,7 @@ MonoBehaviour:
   _destructable: 1
   _maxHealth: 0
   _value: 0
-  _destructablePrefab: {fileID: 0}
+  _destructablePrefab: {fileID: 1708468582035278862, guid: 4a9e9ed44d4406043b3e276a4632eb29, type: 3}
 --- !u!114 &6739546614345350164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be24b048fffb1154cbe2dd5a03e55add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveableSaveable
-  rb: {fileID: 0}
+  rb: {fileID: 304614888252160542}
 --- !u!1 &854877103186479550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1010131414876797777, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}

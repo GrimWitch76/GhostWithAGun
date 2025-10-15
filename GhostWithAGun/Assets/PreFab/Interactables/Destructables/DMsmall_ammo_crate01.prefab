@@ -93,7 +93,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3208499211857459516}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   _destructable: 1
   _maxHealth: 1
   _value: 10
-  _destructablePrefab: {fileID: 0}
+  _destructablePrefab: {fileID: 1782390664509568922, guid: b11bf119725be6a49b78efa5df99ac31, type: 3}
 --- !u!114 &5098669098710251472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be24b048fffb1154cbe2dd5a03e55add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveableSaveable
-  rb: {fileID: 0}
+  rb: {fileID: 6749456239257174738}
 --- !u!65 &3914184912858482525
 BoxCollider:
   m_ObjectHideFlags: 0

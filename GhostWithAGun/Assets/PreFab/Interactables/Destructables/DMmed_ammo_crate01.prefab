@@ -130,7 +130,7 @@ MonoBehaviour:
   _destructable: 1
   _maxHealth: 2
   _value: 15
-  _destructablePrefab: {fileID: 0}
+  _destructablePrefab: {fileID: 8442524405749134234, guid: 6ff805c3f73e04e4eae660eb563d6c5b, type: 3}
 --- !u!114 &3888299308888981075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be24b048fffb1154cbe2dd5a03e55add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveableSaveable
-  rb: {fileID: 0}
+  rb: {fileID: 8645559420824661948}
 --- !u!65 &4607972461839672513
 BoxCollider:
   m_ObjectHideFlags: 0
