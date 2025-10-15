@@ -7691,7 +7691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4843065223755924583, guid: 94d210c165e34dc4681315f8b59ffd5d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.076145
+      value: -6.366
       objectReference: {fileID: 0}
     - target: {fileID: 4843065223755924583, guid: 94d210c165e34dc4681315f8b59ffd5d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10040,6 +10040,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Sink_02
       objectReference: {fileID: 0}
+    - target: {fileID: 3733752971203925982, guid: 6a0917741dd70aa43aa6b659548cd9b1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f70ba4a9f094328438b79400994d6553, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
