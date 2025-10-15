@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ddbca4d6ae603774ea9b6c7dfb8e9a57, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: fcec14348a3e92e40bee89b6c3f1eff7, type: 2}
     - target: {fileID: 919132149155446097, guid: ddbca4d6ae603774ea9b6c7dfb8e9a57, type: 3}
       propertyPath: m_Name
       value: DM_med_cabinet
@@ -89,7 +93,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320091579049084875}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -124,8 +128,8 @@ MonoBehaviour:
   _dragSpeed: 2
   _liftDistance: 2
   _destructable: 1
-  _maxHealth: 0
-  _value: 0
+  _maxHealth: 20
+  _value: 100
   _destructablePrefab: {fileID: 0}
 --- !u!114 &2316178316569286022
 MonoBehaviour:
