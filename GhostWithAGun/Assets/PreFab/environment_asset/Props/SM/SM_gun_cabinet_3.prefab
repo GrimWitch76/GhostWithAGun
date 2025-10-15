@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4179139139271047994, guid: e17127685a60f66498d0f72d57d1b08a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 68cfd4012b537614fb9af86033fcd786, type: 2}
+    - target: {fileID: -2744191654213499683, guid: e17127685a60f66498d0f72d57d1b08a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3276cf79406ba034ebcd46e92e790287, type: 2}
     - target: {fileID: 919132149155446097, guid: e17127685a60f66498d0f72d57d1b08a, type: 3}
       propertyPath: m_Name
       value: SM_gun_cabinet_3
