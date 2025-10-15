@@ -7181,6 +7181,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8006191873526712500, guid: 66776073ccbb88a4498acacd972d1d29, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5987f73b2562ad94b8789cce7865c86c, type: 2}
     - target: {fileID: 8366361439895710049, guid: 66776073ccbb88a4498acacd972d1d29, type: 3}
       propertyPath: m_Name
       value: SM_beer
@@ -7195,7 +7199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9174001540479988699, guid: 66776073ccbb88a4498acacd972d1d29, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.99245
+      value: -1.958
       objectReference: {fileID: 0}
     - target: {fileID: 9174001540479988699, guid: 66776073ccbb88a4498acacd972d1d29, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7248,11 +7252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1110180325097804630, guid: 4b3f5d983e0fb4640ad5f6f8eae6542f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.94
+      value: 4.82
       objectReference: {fileID: 0}
     - target: {fileID: 1110180325097804630, guid: 4b3f5d983e0fb4640ad5f6f8eae6542f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.99245
+      value: -1.97
       objectReference: {fileID: 0}
     - target: {fileID: 1110180325097804630, guid: 4b3f5d983e0fb4640ad5f6f8eae6542f, type: 3}
       propertyPath: m_LocalRotation.w
