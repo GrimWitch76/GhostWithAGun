@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.VFX;
 public enum AmmoType
 {
     Normal,
@@ -40,7 +41,18 @@ public class GhostWeaponController : MonoBehaviour
     [SerializeField] private AudioClip SniperpickUpClip;
 
 
-    [SerializeField] private Light muzzleFlash;
+    [SerializeField] private Light revolvermuzzleFlash;
+    [SerializeField] private Light SMGmuzzleFlash;
+    [SerializeField] private Light shotgunmuzzleFlash;
+    [SerializeField] private Light LMGmuzzleFlash;
+    [SerializeField] private Light snipermuzzleFlash;
+
+    [SerializeField] private VisualEffect revolvershotEffect;
+    [SerializeField] private VisualEffect smgshotEffect;
+    [SerializeField] private VisualEffect shotgunshotEffect;
+    [SerializeField] private VisualEffect LMGshotEffect;
+    [SerializeField] private VisualEffect SnipershotEffect;
+
     [SerializeField] private float flashDuration = 0.05f;
 
     public int currentGunIndex = 0;
@@ -51,7 +63,11 @@ public class GhostWeaponController : MonoBehaviour
     private void Awake()
     {
         currentAmmo = _currentWeaponTuning.maxAmmo;
-        if (muzzleFlash != null) muzzleFlash.enabled = false;
+        revolvermuzzleFlash.enabled = false;
+        SMGmuzzleFlash.enabled = false;
+        shotgunmuzzleFlash.enabled = false;
+        LMGmuzzleFlash.enabled = false;
+        snipermuzzleFlash.enabled = false;
     }
 
     public void SetWeaponInt(int weapon)
@@ -101,23 +117,28 @@ public class GhostWeaponController : MonoBehaviour
         {
             case 0:
                 gunAudio.PlayOneShot(RevolvershotClip);
+                StartCoroutine(FlashLight());
                 break;
             case 1:
                 gunAudio.PlayOneShot(SMGshotClip);
+                StartCoroutine(FlashLight());
                 break;
             case 2:
                 gunAudio.PlayOneShot(ShotgunshotClip);
+                StartCoroutine(FlashLight());
                 break;
             case 3:
                 gunAudio.PlayOneShot(LMGshotClip);
+                StartCoroutine(FlashLight());
                 break;
             case 4:
                 gunAudio.PlayOneShot(SnipershotClip);
+                StartCoroutine(FlashLight());
                 break;
             default:
                 break;
         }
-        if (muzzleFlash != null) StartCoroutine(FlashLight());
+        
 
         // Miss-first-shot logic
         bool shouldMiss = _currentWeaponTuning.missFirstShot && !hasMissedOnce;
@@ -165,7 +186,6 @@ public class GhostWeaponController : MonoBehaviour
             IDestructable blockable = hit.collider.GetComponent<IDestructable>();
             if (blockable != null)
             {
-                SpawnTracer(muzzleFlash.transform.position, hit.point);
                 blockable.TakeDamage(_currentWeaponTuning.damage);
                 return; // bullet stopped
             }
@@ -176,7 +196,6 @@ public class GhostWeaponController : MonoBehaviour
                 PlayerHealth health = hit.collider.GetComponent<PlayerHealth>();
                 if (health != null)
                 {
-                    SpawnTracer(muzzleFlash.transform.position, hit.point);
                     BodyPart part = RollHitLocation();
                     health.ApplyDamage(part, _currentWeaponTuning.damage);
                 }
@@ -186,7 +205,6 @@ public class GhostWeaponController : MonoBehaviour
                 // TODO: impact effects for walls etc.
             }
 
-            SpawnTracer(muzzleFlash.transform.position, hit.point);
         }
     }
 
@@ -252,9 +270,52 @@ public class GhostWeaponController : MonoBehaviour
 
     private System.Collections.IEnumerator FlashLight()
     {
-        muzzleFlash.enabled = true;
+        switch (currentGunIndex)
+        {
+            case 0:
+                revolvermuzzleFlash.enabled = true;
+                revolvershotEffect.Play();
+                break;
+            case 1:
+                SMGmuzzleFlash.enabled = true;
+                smgshotEffect.Play();
+                break;
+            case 2:
+                shotgunmuzzleFlash.enabled = true;
+                shotgunshotEffect.Play();
+                break;
+            case 3:
+                LMGmuzzleFlash.enabled = true;
+                LMGshotEffect.Play();
+                break;
+            case 4:
+                snipermuzzleFlash.enabled = true;
+                SnipershotEffect.Play();
+                break;
+            default:
+                break;
+        }
         yield return new WaitForSeconds(flashDuration);
-        muzzleFlash.enabled = false;
+        switch (currentGunIndex)
+        {
+            case 0:
+                revolvermuzzleFlash.enabled = false;
+                break;
+            case 1:
+                SMGmuzzleFlash.enabled = false;
+                break;
+            case 2:
+                shotgunmuzzleFlash.enabled = false;
+                break;
+            case 3:
+                LMGmuzzleFlash.enabled = false;
+                break;
+            case 4:
+                snipermuzzleFlash.enabled = false;
+                break;
+            default:
+                break;
+        }
     }
 
     private Vector3 ApplySpread(Vector3 dir, float angle)
