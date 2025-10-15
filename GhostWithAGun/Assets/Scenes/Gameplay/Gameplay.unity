@@ -7184,7 +7184,7 @@ PrefabInstance:
     - target: {fileID: 8006191873526712500, guid: 66776073ccbb88a4498acacd972d1d29, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5987f73b2562ad94b8789cce7865c86c, type: 2}
+      objectReference: {fileID: 2100000, guid: 8c2686678d090a447a96cc2cdb926bc8, type: 2}
     - target: {fileID: 8366361439895710049, guid: 66776073ccbb88a4498acacd972d1d29, type: 3}
       propertyPath: m_Name
       value: SM_beer
@@ -7286,6 +7286,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2022884405095403976, guid: 4b3f5d983e0fb4640ad5f6f8eae6542f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84fd072d8ac1e574199734c893e47d15, type: 2}
+    - target: {fileID: 2623095077444583460, guid: 4b3f5d983e0fb4640ad5f6f8eae6542f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84fd072d8ac1e574199734c893e47d15, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10251,7 +10259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3697678867954178582, guid: 290baa8d38ccea34ba0450c4d43e9379, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.99245
+      value: -2.868
       objectReference: {fileID: 0}
     - target: {fileID: 3697678867954178582, guid: 290baa8d38ccea34ba0450c4d43e9379, type: 3}
       propertyPath: m_LocalRotation.w
