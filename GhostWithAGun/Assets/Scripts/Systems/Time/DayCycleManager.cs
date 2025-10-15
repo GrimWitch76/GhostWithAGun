@@ -361,10 +361,10 @@ public class DayCycleManager : MonoBehaviour
         //Fade in crack
         yield return FadeCanvas(deathCrack, 0f, .25f, fadeOutDuration);
         //Fade in ghost
-
+        yield return new WaitForSeconds(2f);
         //Gun shot
 
-        //
+        yield return new WaitForSeconds(1f);
 
 
         yield return FadeCanvas(blackoutCanvas, 0f, 1f, fadeOutDuration);
