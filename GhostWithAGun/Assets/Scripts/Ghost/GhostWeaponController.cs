@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 public enum AmmoType
@@ -17,12 +18,32 @@ public class GhostWeaponController : MonoBehaviour
 
     [Header("VFX/SFX")]
     [SerializeField] private AudioSource gunAudio;
-    [SerializeField] private AudioClip shotClip;
-    [SerializeField] private AudioClip reloadClip;
-    [SerializeField] private AudioClip pickUpClip;
+    [Header("Revolver")]
+    [SerializeField] private AudioClip RevolvershotClip;
+    [SerializeField] private AudioClip RevolverreloadClip;
+    [SerializeField] private AudioClip RevolverpickUpClip;
+    [Header("SMG")]
+    [SerializeField] private AudioClip SMGshotClip;
+    [SerializeField] private AudioClip SMGreloadClip;
+    [SerializeField] private AudioClip SMGpickUpClip;
+    [Header("Shotgun")]
+    [SerializeField] private AudioClip ShotgunshotClip;
+    [SerializeField] private AudioClip ShotgunreloadClip;
+    [SerializeField] private AudioClip ShotgunpickUpClip;
+    [Header("LMG")]
+    [SerializeField] private AudioClip LMGshotClip;
+    [SerializeField] private AudioClip LMGreloadClip;
+    [SerializeField] private AudioClip LMGpickUpClip;
+    [Header("Sniper")]
+    [SerializeField] private AudioClip SnipershotClip;
+    [SerializeField] private AudioClip SniperreloadClip;
+    [SerializeField] private AudioClip SniperpickUpClip;
+
+
     [SerializeField] private Light muzzleFlash;
     [SerializeField] private float flashDuration = 0.05f;
 
+    public int currentGunIndex = 0;
     private int currentAmmo;
     private bool hasMissedOnce = false;
     private bool reloading = false;
@@ -33,6 +54,11 @@ public class GhostWeaponController : MonoBehaviour
         if (muzzleFlash != null) muzzleFlash.enabled = false;
     }
 
+    public void SetWeaponInt(int weapon)
+    {
+        currentGunIndex = weapon;
+    }
+
     public void PlayPickUpSfx()
     {
         if (hasPlayedEquipSound)
@@ -40,7 +66,27 @@ public class GhostWeaponController : MonoBehaviour
 
         hasPlayedEquipSound = true;
         Debug.Log("Cocking Gun");
-        gunAudio.PlayOneShot(pickUpClip);
+
+        //switch (currentGunIndex)
+        //{
+        //    case 0:
+        //        gunAudio.PlayOneShot(RevolverpickUpClip);
+        //        break;
+        //    case 1:
+        //        gunAudio.PlayOneShot(SMGpickUpClip);
+        //        break;
+        //    case 2:
+        //        gunAudio.PlayOneShot(ShotgunpickUpClip);
+        //        break;
+        //    case 3:
+        //        gunAudio.PlayOneShot(LMGpickUpClip);
+        //        break;
+        //    case 4:
+        //        gunAudio.PlayOneShot(SniperpickUpClip);
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
     public bool CanFire => !reloading && currentAmmo > 0;
 
@@ -51,7 +97,26 @@ public class GhostWeaponController : MonoBehaviour
         currentAmmo--;
 
         // Play SFX & flash
-        if (gunAudio && shotClip) gunAudio.PlayOneShot(shotClip);
+        switch (currentGunIndex)
+        {
+            case 0:
+                gunAudio.PlayOneShot(RevolvershotClip);
+                break;
+            case 1:
+                gunAudio.PlayOneShot(SMGshotClip);
+                break;
+            case 2:
+                gunAudio.PlayOneShot(ShotgunshotClip);
+                break;
+            case 3:
+                gunAudio.PlayOneShot(LMGshotClip);
+                break;
+            case 4:
+                gunAudio.PlayOneShot(SnipershotClip);
+                break;
+            default:
+                break;
+        }
         if (muzzleFlash != null) StartCoroutine(FlashLight());
 
         // Miss-first-shot logic
@@ -157,7 +222,26 @@ public class GhostWeaponController : MonoBehaviour
     private IEnumerator ReloadRoutine()
     {
         reloading = true;
-        if (gunAudio && reloadClip) gunAudio.PlayOneShot(reloadClip);
+        switch (currentGunIndex)
+        {
+            case 0:
+                gunAudio.PlayOneShot(RevolverreloadClip);
+                break;
+            case 1:
+                gunAudio.PlayOneShot(SMGreloadClip);
+                break;
+            case 2:
+                gunAudio.PlayOneShot(ShotgunreloadClip);
+                break;
+            case 3:
+                gunAudio.PlayOneShot(LMGreloadClip);
+                break;
+            case 4:
+                gunAudio.PlayOneShot(SniperreloadClip);
+                break;
+            default:
+                break;
+        }
 
         float wait = Random.Range(_currentWeaponTuning.reloadDelayRange.x, _currentWeaponTuning.reloadDelayRange.y);
         yield return new WaitForSeconds(wait);
@@ -181,4 +265,6 @@ public class GhostWeaponController : MonoBehaviour
             0
         ) * dir;
     }
+
+
 }

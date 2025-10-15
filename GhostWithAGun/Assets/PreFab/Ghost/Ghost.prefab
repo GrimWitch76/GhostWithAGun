@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 6477332126609902708}
   - component: {fileID: 7294243191781831617}
   - component: {fileID: 9089369803691504652}
+  - component: {fileID: 5940699656210573296}
   m_Layer: 10
   m_Name: Ghost
   m_TagString: Ghost
@@ -200,6 +201,7 @@ MonoBehaviour:
   _suspectColor: {r: 1, g: 0, b: 1, a: 1}
   _wanderRadiusColor: {r: 0, g: 1, b: 0, a: 1}
   _targetedRadiusColor: {r: 0, g: 0, b: 1, a: 1}
+  animations: {fileID: 9089369803691504652}
 --- !u!114 &3796682534354723620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,12 +229,25 @@ MonoBehaviour:
   _currentWeaponTuning: {fileID: 11400000, guid: 29a5d9c1c83a79543b174e785264799e, type: 2}
   tracerPrefab: {fileID: 0}
   tracerLife: 0.05
-  gunAudio: {fileID: 0}
-  shotClip: {fileID: 0}
-  reloadClip: {fileID: 0}
-  pickUpClip: {fileID: 0}
+  gunAudio: {fileID: 5940699656210573296}
+  RevolvershotClip: {fileID: 8300000, guid: afb65fced0923714faaac60e4f6a6a75, type: 3}
+  RevolverreloadClip: {fileID: 8300000, guid: 8cd5532d089dd3e45902e480c198240b, type: 3}
+  RevolverpickUpClip: {fileID: 0}
+  SMGshotClip: {fileID: 8300000, guid: c9ec225a1db3d904787addc533bb8c4c, type: 3}
+  SMGreloadClip: {fileID: 8300000, guid: ea553f6478bdfa1408cff496578005ce, type: 3}
+  SMGpickUpClip: {fileID: 0}
+  ShotgunshotClip: {fileID: 8300000, guid: 9e1a669311bc5e348876939a5e62a6db, type: 3}
+  ShotgunreloadClip: {fileID: 8300000, guid: 5c00a5926ada3884b8f56aaf9d474689, type: 3}
+  ShotgunpickUpClip: {fileID: 0}
+  LMGshotClip: {fileID: 8300000, guid: faaa426e12c88ef4b9c9384de6251731, type: 3}
+  LMGreloadClip: {fileID: 8300000, guid: bf2b393d7b561ce4ea1648a06228bbae, type: 3}
+  LMGpickUpClip: {fileID: 0}
+  SnipershotClip: {fileID: 8300000, guid: 0da46d20dcf56864eb66f93271ee603a, type: 3}
+  SniperreloadClip: {fileID: 8300000, guid: ea553f6478bdfa1408cff496578005ce, type: 3}
+  SniperpickUpClip: {fileID: 0}
   muzzleFlash: {fileID: 7407015861508975055}
   flashDuration: 0.05
+  currentGunIndex: 0
 --- !u!114 &2254838503104542434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +373,103 @@ MonoBehaviour:
   _ShotGunGhost: {fileID: 9006455010800201515}
   _machineGunGhost: {fileID: 63584200931753900}
   _sniperGhost: {fileID: 1453117350521504237}
+--- !u!82 &5940699656210573296
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043967352267577481}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &9197579605515064506
 GameObject:
   m_ObjectHideFlags: 0
@@ -3050,6 +3162,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: m_Name
       value: revolverghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

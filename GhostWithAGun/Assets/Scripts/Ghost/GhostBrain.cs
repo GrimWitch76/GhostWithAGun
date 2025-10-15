@@ -45,6 +45,7 @@ public class GhostBrain : MonoBehaviour
     public GhostTuning Tuning => _tuning;
 
     public GhostWeaponController Gun => gun;
+    public GhostAnimationController animations;
 
     private float shootTimer = 0f;
     private float searchTimer;
@@ -66,6 +67,7 @@ public class GhostBrain : MonoBehaviour
         _movement.StartWander();
         ApplyTuningToSensors();
         _player = FindFirstObjectByType<PlayerController>();
+        gun.SetWeaponInt(DayCycleManager.Instance.CurrentNightIndex);
     }
 
     void Update()
@@ -114,6 +116,7 @@ public class GhostBrain : MonoBehaviour
     {
         // “Drop” the weapon: disable gun root, remember location
         _droppedGunPos = transform.position;
+        animations.DropGun();
         _gunRoot.SetActive(false);
         _hasGun = false;
         _gunDroppedThisCycle = true;
@@ -347,6 +350,7 @@ public class GhostBrain : MonoBehaviour
 
             _gunRoot.SetActive(true);
             gun.PlayPickUpSfx();
+            animations.PickupGun();
 
             // After re-arming, go toward last known pos and Search/Chase
             if (lastKnownPlayerPos != Vector3.zero)
@@ -385,9 +389,14 @@ public class GhostBrain : MonoBehaviour
                     if (gun.CanFire)
                     {
                         gun.Fire(origin, playerPos);
+                        animations.Shoot();
                         Debug.Log("Bang");
-                    } 
-                    else gun.Reload();
+                    }
+                    else
+                    {
+                        gun.Reload();
+                        animations.Reload();
+                    }
 
                     shootTimer = _tuning.shootCooldown;
                 }
