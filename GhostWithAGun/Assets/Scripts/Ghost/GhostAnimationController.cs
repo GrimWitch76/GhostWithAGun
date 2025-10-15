@@ -14,13 +14,14 @@ public class GhostAnimationController : MonoBehaviour
 
     private Animator _currentAnimator;
 
-    private void Start()
+    private void OnEnable()
     {
-        _revolverGhost.SetActive(false);
-        _SMGGhost.SetActive(false);
-        _ShotGunGhost.SetActive(false);
-        _machineGunGhost.SetActive(false);
-        _sniperGhost.SetActive(false);
+        DayCycleManager.Instance.OnGhostSpawned += SetModel;
+    }
+
+    private void OnDisable()
+    {
+        DayCycleManager.Instance.OnGhostSpawned += SetModel;
     }
 
     public void Shoot()
@@ -45,6 +46,12 @@ public class GhostAnimationController : MonoBehaviour
 
     public void SetModel(int index)
     {
+        _revolverGhost.SetActive(false);
+        _SMGGhost.SetActive(false);
+        _ShotGunGhost.SetActive(false);
+        _machineGunGhost.SetActive(false);
+        _sniperGhost.SetActive(false);
+
         _currentAnimator = _animationController[index];
         switch (index)
         {
