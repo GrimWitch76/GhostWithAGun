@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 1583098109502481260}
   - component: {fileID: 6477332126609902708}
   - component: {fileID: 7294243191781831617}
+  - component: {fileID: 9089369803691504652}
   m_Layer: 10
   m_Name: Ghost
   m_TagString: Ghost
@@ -166,7 +167,7 @@ Transform:
   m_Children:
   - {fileID: 1577451750653230980}
   - {fileID: 3513612236646582909}
-  - {fileID: 3738811524914250522}
+  - {fileID: 1350261091283787781}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &819846039123826581
@@ -328,6 +329,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &9089369803691504652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043967352267577481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b12d1b36b9b1ea4b8dcfcc5d364a5f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GhostAnimationController
+  _brain: {fileID: 819846039123826581}
+  _currentGhost: 0
+  _animationController:
+  - {fileID: 8443111897516115796}
+  _revolverGhost: {fileID: 0}
+  _SMGGhost: {fileID: 0}
+  _ShotGunGhost: {fileID: 0}
+  _machineGunGhost: {fileID: 0}
+  _sniperGhost: {fileID: 0}
 --- !u!1 &9197579605515064506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2873,7 +2895,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -570679673214062671, guid: 9c87ca228923b614cb458081c52961a5, type: 3}
   m_PrefabInstance: {fileID: 1328145720875522159}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &3776360889831908593
+--- !u!1001 &1528882134775564270
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2881,57 +2903,87 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7013576001720998462}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: a94807834ec418c468fbc68b3df31996, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a94807834ec418c468fbc68b3df31996, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.984
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a94807834ec418c468fbc68b3df31996, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.022
+      value: -0.693
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a94807834ec418c468fbc68b3df31996, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a94807834ec418c468fbc68b3df31996, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a94807834ec418c468fbc68b3df31996, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a94807834ec418c468fbc68b3df31996, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a94807834ec418c468fbc68b3df31996, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a94807834ec418c468fbc68b3df31996, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a94807834ec418c468fbc68b3df31996, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: a94807834ec418c468fbc68b3df31996, type: 3}
+    - target: {fileID: 919132149155446097, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: m_Name
-      value: Ghost_Model_v3
+      value: revolverghost
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a94807834ec418c468fbc68b3df31996, type: 3}
---- !u!4 &3738811524914250522 stripped
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8443111897516115796}
+  m_SourcePrefab: {fileID: 100100000, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
+--- !u!4 &1350261091283787781 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a94807834ec418c468fbc68b3df31996, type: 3}
-  m_PrefabInstance: {fileID: 3776360889831908593}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
+  m_PrefabInstance: {fileID: 1528882134775564270}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1870902470418381503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
+  m_PrefabInstance: {fileID: 1528882134775564270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8443111897516115796
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870902470418381503}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 5b5e88d76ca0d4b47a189c2dce57ecc5, type: 3}
+  m_Controller: {fileID: 9100000, guid: bea78a4cec987d64a9cd110f83ddfa01, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
