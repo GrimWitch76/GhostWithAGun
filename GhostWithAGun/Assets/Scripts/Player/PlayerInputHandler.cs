@@ -52,6 +52,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnPause(InputValue value)
     {
-        _pauseScreen.SetActive(true);
+        _pauseScreen.SetActive(!_pauseScreen.gameObject.activeInHierarchy);
     }
 }

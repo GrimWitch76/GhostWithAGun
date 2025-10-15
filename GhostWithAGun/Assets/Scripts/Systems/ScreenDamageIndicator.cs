@@ -71,8 +71,6 @@ public class ScreenDamageIndicator : MonoBehaviour
         _leftArm.SetActive(false);
         _rightLeg.SetActive(false);
         _rightArm.SetActive(false);
-
-        _finalCrack.SetActive(false);
     }
 
     
