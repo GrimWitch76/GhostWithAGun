@@ -1313,7 +1313,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 6e4bd4d1f2eee5b4684e015feda1bacb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5911,6 +5911,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5259981706308013539, guid: dbaefe3c8fa924b4c99acbc8c8a73519, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3871fba60f1beb544b9560a170689d90, type: 2}
     - target: {fileID: 7024338456132508553, guid: dbaefe3c8fa924b4c99acbc8c8a73519, type: 3}
       propertyPath: m_LocalPosition.x
       value: -46.24
@@ -5955,6 +5959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_lmg
       objectReference: {fileID: 0}
+    - target: {fileID: 8967313617211454665, guid: dbaefe3c8fa924b4c99acbc8c8a73519, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aedd0c2e15fd25d4ca0e6870eaf82816, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6903,6 +6911,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9053989686855769752, guid: 3e41063ec9f078e4497816550432e7ae, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ebfbceae5a594134b9f0a1c4f5e3ff9a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7534,6 +7546,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3232982941532007742, guid: 03b94d67d7446624e844436ebeabd628, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7ec6125ab89ff3c48824102f7566e8c9, type: 2}
     - target: {fileID: 3434430750764943785, guid: 03b94d67d7446624e844436ebeabd628, type: 3}
       propertyPath: m_Name
       value: SM_smg
@@ -10138,6 +10154,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_revolver
       objectReference: {fileID: 0}
+    - target: {fileID: 3989194393155645133, guid: 271b6fac65099644291a713922473f6e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2724cf2801450744f8ddacdfe7f0b300, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10151,6 +10171,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 800670361770137363, guid: 8dd38039100f39b4abfc5ecbaf5774d8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6eea4d0b737d119459c634bb3d742c5c, type: 2}
+    - target: {fileID: 4567571897323827119, guid: 8dd38039100f39b4abfc5ecbaf5774d8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0105fbe3c85e6e5479ee6343c2988f63, type: 2}
     - target: {fileID: 4940777943952182035, guid: 8dd38039100f39b4abfc5ecbaf5774d8, type: 3}
       propertyPath: m_Name
       value: SM_shotgun
@@ -10484,6 +10512,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_lmg_mag
       objectReference: {fileID: 0}
+    - target: {fileID: 8302175601524621438, guid: 2a9921193d35ca9469fec6c2fbc6e1a7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aedd0c2e15fd25d4ca0e6870eaf82816, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10564,7 +10596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5859393449639955711, guid: d4f40ed1df126724685358bee1c52dbd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.008117
+      value: 3.628
       objectReference: {fileID: 0}
     - target: {fileID: 5859393449639955711, guid: d4f40ed1df126724685358bee1c52dbd, type: 3}
       propertyPath: m_LocalPosition.z
