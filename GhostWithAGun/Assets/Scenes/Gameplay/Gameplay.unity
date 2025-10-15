@@ -6481,6 +6481,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2987905236738403104, guid: 821f49ed4f9835d42ae64a19d733ab38, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 660ffadf1dfa11c41bf657fdb14dfc63, type: 2}
     - target: {fileID: 3636612217282874101, guid: 821f49ed4f9835d42ae64a19d733ab38, type: 3}
       propertyPath: m_Name
       value: Toilet Sink
@@ -10196,6 +10200,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4691505687297374096, guid: d4f40ed1df126724685358bee1c52dbd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c3fadd4fd4cfa3d49856b98987f70cf6, type: 2}
     - target: {fileID: 5859393449639955711, guid: d4f40ed1df126724685358bee1c52dbd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -45.934788
