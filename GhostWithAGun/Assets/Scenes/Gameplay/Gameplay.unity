@@ -587,8 +587,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9115970935562943523}
     - target: {fileID: 6350627331901367103, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
+      propertyPath: dayDuration
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6350627331901367103, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
       propertyPath: nightDuration
-      value: 180
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 7824713751913439458, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
       propertyPath: m_Name
@@ -7571,6 +7575,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1101049496244846621, guid: ee8fe23a493412442912d6dd63629283, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563529845493734291, guid: ee8fe23a493412442912d6dd63629283, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
