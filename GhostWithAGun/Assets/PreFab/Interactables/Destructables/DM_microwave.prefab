@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &421534176688878319
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -43.4523
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.9399998
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.297193
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_Name
+      value: DM_microwave
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1010131414876797777, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840215074483916329, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 304614888252160542}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4737649435751030381}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6739546614345350164}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1884725688770049880}
+  m_SourcePrefab: {fileID: 100100000, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+--- !u!1 &655553881974443966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+  m_PrefabInstance: {fileID: 421534176688878319}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &304614888252160542
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655553881974443966}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4737649435751030381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655553881974443966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f233e481345b9d4c8bb608aac854316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Moveable
+  _isHeavy: 0
+  _dragSpeed: 2
+  _liftDistance: 2
+  _destructable: 0
+  _maxHealth: 0
+  _value: 0
+  _destructablePrefab: {fileID: 0}
+--- !u!114 &6739546614345350164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655553881974443966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49fb79a5c8d298488655e74c7d16440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableEntity
+  guid: 0ecae6398c274fc59f33416fab6f83e2
+--- !u!114 &1884725688770049880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655553881974443966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be24b048fffb1154cbe2dd5a03e55add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveableSaveable
+  rb: {fileID: 0}
