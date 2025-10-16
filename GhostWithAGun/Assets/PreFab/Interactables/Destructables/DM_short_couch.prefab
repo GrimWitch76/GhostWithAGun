@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8d7272000baddc4448e6e024f1060155, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a8e006b98c6848840b377c69bcdd3d40, type: 2}
     - target: {fileID: 919132149155446097, guid: 8d7272000baddc4448e6e024f1060155, type: 3}
       propertyPath: m_Name
       value: DM_short_couch
@@ -89,7 +93,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5150092684361974874}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 20
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -120,13 +124,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f233e481345b9d4c8bb608aac854316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Moveable
-  _isHeavy: 0
+  _isHeavy: 1
   _dragSpeed: 2
   _liftDistance: 2
   _destructable: 1
-  _maxHealth: 0
-  _value: 0
-  _destructablePrefab: {fileID: 0}
+  _maxHealth: 50
+  _value: 200
+  _destructablePrefab: {fileID: 241491821622071738, guid: 745cc96d58512f74bb82d0ee9debbf2d, type: 3}
 --- !u!114 &3690489902640599906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be24b048fffb1154cbe2dd5a03e55add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveableSaveable
-  rb: {fileID: 0}
+  rb: {fileID: 4451011224127963446}
 --- !u!114 &4352531933786655830
 MonoBehaviour:
   m_ObjectHideFlags: 0

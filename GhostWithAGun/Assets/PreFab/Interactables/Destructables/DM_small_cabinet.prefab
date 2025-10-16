@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 55ce48534a581144392ff08222ade615, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2da730529d7dc5f47b7165cc6e4c4f0e, type: 2}
     - target: {fileID: 919132149155446097, guid: 55ce48534a581144392ff08222ade615, type: 3}
       propertyPath: m_Name
       value: DM_small_cabinet
@@ -89,7 +93,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4849008607179158793}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -124,9 +128,9 @@ MonoBehaviour:
   _dragSpeed: 2
   _liftDistance: 2
   _destructable: 1
-  _maxHealth: 0
-  _value: 0
-  _destructablePrefab: {fileID: 0}
+  _maxHealth: 30
+  _value: 85
+  _destructablePrefab: {fileID: 2402239848367879566, guid: 66323a8c2733a0d409e1c7ff0a48837a, type: 3}
 --- !u!114 &5747282167038470228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be24b048fffb1154cbe2dd5a03e55add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveableSaveable
-  rb: {fileID: 0}
+  rb: {fileID: 8286272234086413305}
 --- !u!114 &3945595172559638051
 MonoBehaviour:
   m_ObjectHideFlags: 0

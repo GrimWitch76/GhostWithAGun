@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d8c40550cbf2a874b812f377c0a01bbd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6a63f1ed151f6f84e9dbafa9f0dc8aca, type: 2}
     - target: {fileID: 919132149155446097, guid: d8c40550cbf2a874b812f377c0a01bbd, type: 3}
       propertyPath: m_Name
       value: DM_med_couch
@@ -89,7 +93,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353465791912411037}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 25
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -120,13 +124,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f233e481345b9d4c8bb608aac854316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Moveable
-  _isHeavy: 0
-  _dragSpeed: 2
+  _isHeavy: 1
+  _dragSpeed: 1
   _liftDistance: 2
   _destructable: 1
-  _maxHealth: 0
-  _value: 0
-  _destructablePrefab: {fileID: 0}
+  _maxHealth: 60
+  _value: 300
+  _destructablePrefab: {fileID: 313329837764449518, guid: b6ef37499baeee4469ffdb6ee98184ee, type: 3}
 --- !u!114 &5613878202248377065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be24b048fffb1154cbe2dd5a03e55add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveableSaveable
-  rb: {fileID: 0}
+  rb: {fileID: 680549249655780682}
 --- !u!114 &8132666856674965602
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -130,10 +130,10 @@ MonoBehaviour:
   _isHeavy: 1
   _dragSpeed: 1
   _liftDistance: 2
-  _destructable: 0
+  _destructable: 1
   _maxHealth: 80
   _value: 2000
-  _destructablePrefab: {fileID: 0}
+  _destructablePrefab: {fileID: 176707548896276930, guid: ed59d85c4067339468d1372c394fc39e, type: 3}
 --- !u!114 &914911738727780858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be24b048fffb1154cbe2dd5a03e55add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveableSaveable
-  rb: {fileID: 0}
+  rb: {fileID: 3230772332978555455}
 --- !u!114 &468169129051160547
 MonoBehaviour:
   m_ObjectHideFlags: 0
