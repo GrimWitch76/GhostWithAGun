@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -27,6 +28,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask _groundMask;
     [SerializeField] private float _customGravity = 20f;
     [SerializeField] private float _groundStickForce = 10f;
+
+
+    [Header("sigh crouching is broken")]
+    [SerializeField] Transform CameraTarget;
+    [SerializeField] Vector3 standingPosition, crouchPosition;
+    [SerializeField] CapsuleCollider hitcollider;
 
 
 
@@ -72,7 +79,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.localScale = new Vector3(1, 1f, 1);
+        CameraTarget.localPosition = standingPosition;
+        hitcollider.height = 1.8f;
 
         if (_isClimbing)
         {
@@ -112,7 +120,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (_input.CrouchHeld)
         {
-            transform.localScale = new Vector3(1, 0.5f, 1);
+            CameraTarget.localPosition = crouchPosition;
+            hitcollider.height = 1.8f / 2f;
             targetSpeed = _crouchSpeed;
         }
         else
