@@ -2,6 +2,7 @@ using UnityEditor;
 using UnityEngine;
 
 
+#if UNITY_EDITOR
 public class RemoveMeshRenderers : MonoBehaviour
 {
     [MenuItem("Tools/Remove MeshRenderers From Children")]
@@ -23,3 +24,4 @@ public class RemoveMeshRenderers : MonoBehaviour
         }
     }
 }
+#endif

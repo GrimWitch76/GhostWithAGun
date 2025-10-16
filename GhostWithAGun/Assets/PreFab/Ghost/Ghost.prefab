@@ -1053,7 +1053,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundEmitter
   _audioClips:
-  - {fileID: 8300000, guid: 2ff2b9d375b2b1a4c93df0694c30a923, type: 3}
+  - {fileID: 8300000, guid: ff947f9c2cea78f47bc90f34cab303a4, type: 3}
+  - {fileID: 8300000, guid: 5fbfeba80ac696f4ebaf879e97e3da21, type: 3}
+  - {fileID: 8300000, guid: f34944d8064137143bc57997674c9e51, type: 3}
+  - {fileID: 8300000, guid: d40c76c77747a3c4f9a7c8603b4e749a, type: 3}
+  - {fileID: 8300000, guid: a6dedf42850d964489ef50720f42f7d4, type: 3}
+  - {fileID: 8300000, guid: e804f77b2d028aa488ddae73e4f33484, type: 3}
+  - {fileID: 8300000, guid: fb858fae7c9ceb34d91c0ccbd0d9e079, type: 3}
+  - {fileID: 8300000, guid: 96b8985670b32a846a900693189f6031, type: 3}
+  - {fileID: 8300000, guid: abf565e3588ea2e439d36f250ccedb13, type: 3}
   _audioSource: {fileID: 6425797607729066246}
   _minVolume: 0.4
   _maxVolume: 0.4
@@ -1075,7 +1083,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4379646640485915239, guid: 13b858dab1213134c90404e8af78bd43, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 2ff2b9d375b2b1a4c93df0694c30a923, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
