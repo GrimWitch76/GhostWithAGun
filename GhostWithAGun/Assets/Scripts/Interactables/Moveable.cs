@@ -20,6 +20,11 @@ public class Moveable : MonoBehaviour, IInteractable, IDestructable
     public float DragSpeed => _dragSpeed;
     public float LiftDistance => _liftDistance;
 
+    private void Start()
+    {
+        _currentHealth = _maxHealth;
+    }
+
     public void Interact(PlayerInteraction interactor)
     {
         interactor.TryPickup(this);
@@ -29,7 +34,11 @@ public class Moveable : MonoBehaviour, IInteractable, IDestructable
 
     public void TakeDamage(float amount)
     {
-        throw new System.NotImplementedException();
+        _currentHealth -= amount;
+        if (_currentHealth <= 0)
+        {
+            Shatter();
+        }
     }
 
     public void Shatter()
