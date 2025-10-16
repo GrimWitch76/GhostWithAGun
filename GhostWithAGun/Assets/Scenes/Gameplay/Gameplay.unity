@@ -7488,7 +7488,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5859393449639955711, guid: d4f40ed1df126724685358bee1c52dbd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.148445
+      value: 16.1848
       objectReference: {fileID: 0}
     - target: {fileID: 5859393449639955711, guid: d4f40ed1df126724685358bee1c52dbd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15820,6 +15820,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5454664541317760384, guid: c401d97a22475124fb579e9c01a08d99, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454664541317760384, guid: c401d97a22475124fb579e9c01a08d99, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7487258905796463925, guid: c401d97a22475124fb579e9c01a08d99, type: 3}
       propertyPath: m_Name
       value: FirstFloor_v2
@@ -18501,6 +18509,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1416024820658234465, guid: 7a9d2a670a381244db848336f9a4218c, type: 3}
       propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936651656727936920, guid: 7a9d2a670a381244db848336f9a4218c, type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7175246736601263511, guid: 7a9d2a670a381244db848336f9a4218c, type: 3}
