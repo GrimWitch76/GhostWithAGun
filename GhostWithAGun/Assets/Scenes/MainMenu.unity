@@ -176,8 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I loved my stay here and I will definitely come back! I stayed in one of
-    the bedrooms and it was quiet and comfortable with AC
+  m_text: Dont listen to other negative reviews, this place is gonna blow your mind
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -449,7 +448,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Designer
+  m_text: VFX Artist
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -820,8 +819,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 49.9, y: 45.1}
-  m_SizeDelta: {x: 92.2, y: 15.4}
+  m_AnchoredPosition: {x: 55.08422, y: 45.1}
+  m_SizeDelta: {x: 102.5684, y: 15.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &135573175
 MonoBehaviour:
@@ -843,7 +842,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stayed one night
+  m_text: Stayed four nights
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -1666,7 +1665,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &214464008
 MonoBehaviour:
@@ -1675,7 +1674,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214464006}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1688,7 +1687,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a2afe876ae1417f4297f1cca5c882809, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e7a7ac25c1bfab429d700bd9c05acf8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1763,8 +1762,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I loved my stay here and I will definitely come back! I stayed in one of
-    the bedrooms and it was quiet and comfortable with AC
+  m_text: I once stayed in this house due to winning an Airbnb Coupon in a lottery
+    right before I was dumped. I was going to take my girlfriend, sorry, ex-girlfriend
+    with me. The house was interesting needless to say but it also came with a unexpected
+    guest that kept me company. I had fun playing with and forgot all about the breakup!
+    5/5 would come here again if needed. (P.S I still miss you Diana! Come back to
+    me >_<)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -2243,7 +2246,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &280587486
 MonoBehaviour:
@@ -2252,7 +2255,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280587484}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2265,7 +2268,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a2afe876ae1417f4297f1cca5c882809, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ddf6fa4554ea85b49aad0b33b522dc90, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2565,8 +2568,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I loved my stay here and I will definitely come back! I stayed in one of
-    the bedrooms and it was quiet and comfortable with AC
+  m_text: Best toilet int he world, I love the design of the toilet!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -3941,7 +3943,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &503439483
 MonoBehaviour:
@@ -3950,7 +3952,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503439481}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3963,7 +3965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a2afe876ae1417f4297f1cca5c882809, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 154fbe1fdb77f204ca1d68637b8cbc33, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4174,8 +4176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I loved my stay here and I will definitely come back! I stayed in one of
-    the bedrooms and it was quiet and comfortable with AC
+  m_text: NOT family friendly, despite beautiful decor
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -4526,7 +4527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Designer
+  m_text: Technical Artist
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -5180,7 +5181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stayed one night
+  m_text: Stayed five night
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -5536,7 +5537,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: User Name
+  m_text: Grimwitch
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -5958,8 +5959,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I loved my stay here and I will definitely come back! I stayed in one of
-    the bedrooms and it was quiet and comfortable with AC
+  m_text: Nostalgic decor with a charming retro vibe, though some amenities could
+    use an update to offer more modern comfort.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -6095,7 +6096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stayed one night
+  m_text: Stayed 5 nights
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -7299,7 +7300,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Designer
+  m_text: Cattle Content Creator
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -7563,7 +7564,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &837874340
 MonoBehaviour:
@@ -7572,7 +7573,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837874338}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -7585,7 +7586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a2afe876ae1417f4297f1cca5c882809, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e84318871790098459e375b87629aa51, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -8107,7 +8108,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &882393596
 MonoBehaviour:
@@ -8116,7 +8117,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882393594}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -8129,7 +8130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a2afe876ae1417f4297f1cca5c882809, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22f6ec4e4918b004996e62507bc8c1bd, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -8649,7 +8650,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Designer
+  m_text: Karate Teacher
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -8922,7 +8923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: User Name
+  m_text: Adrian
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -10345,7 +10346,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stayed one night
+  m_text: Stayed one week
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -10614,7 +10615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: User Name
+  m_text: Gregory McTown
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -10890,7 +10891,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Designer
+  m_text: Sound Designer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -11114,7 +11115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Designer
+  m_text: 3D Animator
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -11340,7 +11341,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 25a87d38b696fef4b9cddc0e23f1743a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0bfeceb900770b4e91564f80d9f450c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11415,7 +11416,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: User Name
+  m_text: Happy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -11607,8 +11608,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 49.9, y: 45.1}
-  m_SizeDelta: {x: 92.2, y: 15.4}
+  m_AnchoredPosition: {x: 55.925, y: 45.1}
+  m_SizeDelta: {x: 104.25, y: 15.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1186480422
 MonoBehaviour:
@@ -11630,7 +11631,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stayed one night
+  m_text: Stayed five nights
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -12052,7 +12053,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: User Name
+  m_text: Anet
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -12466,7 +12467,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1 week ago
+  m_text: 3 week ago
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -12579,8 +12580,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 49.9, y: 45.1}
-  m_SizeDelta: {x: 92.2, y: 15.4}
+  m_AnchoredPosition: {x: 54.4884, y: 45.1}
+  m_SizeDelta: {x: 101.3769, y: 15.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1236487518
 MonoBehaviour:
@@ -12602,7 +12603,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stayed one night
+  m_text: Stayed five nights
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -12716,7 +12717,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1248585834
 MonoBehaviour:
@@ -12725,7 +12726,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248585832}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -12738,7 +12739,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a2afe876ae1417f4297f1cca5c882809, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e553cdba1f974043948feae9ad589dc, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -12949,8 +12950,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I loved my stay here and I will definitely come back! I stayed in one of
-    the bedrooms and it was quiet and comfortable with AC
+  m_text: 'Comments: Best Airbnb ever! Host was very welcoming and place was beautiful,
+    worth it for the accessibility to main roads and dirt cheap price. It even comes
+    with Guns for me to protect myself from home invaders. God Bless America yeehawr'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -13122,7 +13124,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1 week ago
+  m_text: 4 weeks ago
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -13539,7 +13541,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299247968}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -13552,7 +13554,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a2afe876ae1417f4297f1cca5c882809, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27c22f9878eaa9f4191d8143bd417307, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -13627,7 +13629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1 week ago
+  m_text: 2 weeks ago
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -13838,7 +13840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a2afe876ae1417f4297f1cca5c882809, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1362042b74acac4eb8399b66bd50c81, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -14318,7 +14320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Designer
+  m_text: Character/Prop Artist
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -14826,7 +14828,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: User Name
+  m_text: Andy-Van
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -15411,7 +15413,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stayed one night
+  m_text: Stayed 5 nights
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -15990,7 +15992,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Designer
+  m_text: Dog walker
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -16268,7 +16270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: User Name
+  m_text: Lavina
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -16404,8 +16406,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I loved my stay here and I will definitely come back! I stayed in one of
-    the bedrooms and it was quiet and comfortable with AC
+  m_text: This place has clean sheets, soft pillows and great coffee. I did hear
+    something bumping around in the walls, maybe old pipes?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -16541,7 +16543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1 week ago
+  m_text: 3 weeks ago
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -16813,7 +16815,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: User Name
+  m_text: Alona
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -17024,7 +17026,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1 week ago
+  m_text: 2 weeks ago
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -17302,7 +17304,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1 week ago
+  m_text: 3 weeks ago
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -18098,8 +18100,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I loved my stay here and I will definitely come back! I stayed in one of
-    the bedrooms and it was quiet and comfortable with AC
+  m_text: "My son booked this room for me. Said he was \u201Clooking forward to his
+    inheritance,\u201D whatever that means! Strange kid. Anyway, this was the best
+    hotel I\u2019ve stayed at in years. Finally, a place that respects real American
+    values. Only downside was one of the other guests kept making noise at night."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -18686,7 +18690,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1 week ago
+  m_text: 3 weeks ago
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -19363,7 +19367,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stayed one night
+  m_text: Stayed --- nights
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -19843,7 +19847,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Designer
+  m_text: Game Designer, 3D Generalist
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -20269,7 +20273,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: User Name
+  m_text: Cindy McQueen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -20982,8 +20986,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I loved my stay here and I will definitely come back! I stayed in one of
-    the bedrooms and it was quiet and comfortable with AC
+  m_text: The beer was a lie! I don't feel relax at all!!!! The toilet sucks! I can't
+    pee in peace with all the shooting happening. Never coming back again!!! >:(
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -21894,7 +21898,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Designer
+  m_text: Game Designer, Programmer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -22007,8 +22011,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 49.9, y: 45.1}
-  m_SizeDelta: {x: 92.2, y: 15.4}
+  m_AnchoredPosition: {x: 57.326073, y: 45.1}
+  m_SizeDelta: {x: 107.0521, y: 15.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1964644644
 MonoBehaviour:
@@ -22030,7 +22034,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stayed one night
+  m_text: Stayed three nights
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -22582,8 +22586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I loved my stay here and I will definitely come back! I stayed in one of
-    the bedrooms and it was quiet and comfortable with AC
+  m_text: Roommate tried shooting me in the MIDDLE OF THE NIGHT!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -22719,7 +22722,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: User Name
+  m_text: Kevin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -22966,7 +22969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: User Name
+  m_text: Bobby Foor
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -23638,7 +23641,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 25a87d38b696fef4b9cddc0e23f1743a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 53ae8799caeaf5b4183a94efa01caa6d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23850,7 +23853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1 week ago
+  m_text: 2 weeks ago
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -24128,7 +24131,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Designer
+  m_text: Houdini Generalist/Environment Artist
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
