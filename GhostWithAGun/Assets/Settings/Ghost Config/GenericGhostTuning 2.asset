@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04dd0b16e34b97841af058fce2867102, type: 3}
+  m_Name: GenericGhostTuning 2
+  m_EditorClassIdentifier: Assembly-CSharp::GhostTuning
+  suspicionMax: 100
+  suspicionDecay: 5
+  suspicionThresholdChase: 60
+  suspicionPerPrimaryVision: 15
+  suspicionPerSecondaryVision: 2
+  frustrationMax: 100
+  frustrationGainPerSecondSearching: 5
+  frustrationGainPerSecondWandering: 1.25
+  frustrationDecayPerSecondWhenStimulated: 8
+  frustrationToDropGun: 70
+  targetedWanderDuration: 30
+  targetedWanderMaxRadius: 20
+  targetedWanderMinRadius: 3
+  targetedWanderTightenRate: 0.9
+  targetedWanderTightenInterval: 5
+  _turnSpeed: 2
+  roamRadius: 10
+  roamDelay: 3
+  roomCenterBiasRadius: 2
+  longRangeChance: 0.25
+  primaryConeAngle: 90
+  primaryRange: 10
+  secondaryConeAngle: 160
+  secondaryRange: 4
+  crouchVisibilityMultiplier: 0.6
+  darknessVisibilityMultiplier: 0.7
+  investigateRoomDuration: 60
+  lookAroundInterval: 1.5
+  searchDuration: 5
+  shootRange: 15
+  shootCooldown: 0.1
+  breakDoorSuspicionGate: 80

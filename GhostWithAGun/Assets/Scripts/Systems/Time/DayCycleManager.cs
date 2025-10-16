@@ -241,6 +241,7 @@ public class DayCycleManager : MonoBehaviour
 
     private void ApplyGhostConfig(GameObject ghost, NightConfig cfg)
     {
+        ghost.GetComponent<GhostBrain>().SetTuning(cfg.ghostTuning, cfg.weaponTuning);
     }
 
     private void DespawnGhost()

@@ -75,6 +75,11 @@ public class GhostWeaponController : MonoBehaviour
         currentGunIndex = weapon;
     }
 
+    public void SetTuning(WeaponTuning tuning)
+    {
+        _currentWeaponTuning = tuning;
+    }    
+
     public void PlayPickUpSfx()
     {
         if (hasPlayedEquipSound)

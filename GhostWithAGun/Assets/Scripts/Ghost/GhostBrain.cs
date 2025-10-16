@@ -70,6 +70,12 @@ public class GhostBrain : MonoBehaviour
         gun.SetWeaponInt(DayCycleManager.Instance.CurrentNightIndex);
     }
 
+    public void SetTuning(GhostTuning tuning, WeaponTuning weaponTuning)
+    {
+        _tuning = tuning;
+        gun.SetTuning(weaponTuning);
+    }    
+
     void Update()
     {
         // Suspicion decay when no strong stimuli
