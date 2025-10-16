@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
         else if (_input.CrouchHeld)
         {
             CameraTarget.localPosition = crouchPosition;
-            hitcollider.height = 1.8f / 2f;
+            hitcollider.height = 1.8f / 1.25f;
             targetSpeed = _crouchSpeed;
         }
         else
