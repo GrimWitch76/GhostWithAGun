@@ -70,6 +70,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 58b6dce9b6ab4384b8852a318bbc2696, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5569710836568106515}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 58b6dce9b6ab4384b8852a318bbc2696, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7007861541834514498}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 58b6dce9b6ab4384b8852a318bbc2696, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 759420747904476133}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 58b6dce9b6ab4384b8852a318bbc2696, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2394923432339278580}
   m_SourcePrefab: {fileID: 100100000, guid: 58b6dce9b6ab4384b8852a318bbc2696, type: 3}
 --- !u!1 &830524836653294343 stripped
 GameObject:
@@ -124,3 +133,48 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7007861541834514498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830524836653294343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f233e481345b9d4c8bb608aac854316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Moveable
+  _isHeavy: 0
+  _dragSpeed: 2
+  _liftDistance: 2
+  _destructable: 1
+  _maxHealth: 1
+  _value: 5
+  _destructablePrefab: {fileID: 0}
+--- !u!114 &759420747904476133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830524836653294343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49fb79a5c8d298488655e74c7d16440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableEntity
+  guid: 2fe014faa9c9430aa37a83df562fbab3
+--- !u!114 &2394923432339278580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830524836653294343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be24b048fffb1154cbe2dd5a03e55add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveableSaveable
+  rb: {fileID: 0}

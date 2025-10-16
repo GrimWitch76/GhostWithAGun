@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -43.4523
+      value: 21.955532
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9399998
+      value: -4.7812953
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.297193
+      value: -11.78978
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
       propertyPath: m_LocalRotation.z
@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -88,6 +88,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1884725688770049880}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3705699807640728452}
     - targetCorrespondingSourceObject: {fileID: 1010131414876797777, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3342742728838696959}
@@ -169,6 +172,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveableSaveable
   rb: {fileID: 304614888252160542}
+--- !u!65 &3705699807640728452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655553881974443966}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.42022976, y: 0.22370195, z: 0.30804813}
+  m_Center: {x: -0.0040195286, y: 0.108091116, z: -0.00728637}
 --- !u!1 &854877103186479550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1010131414876797777, guid: 2f875bedab2610e409cd5449a2b014e9, type: 3}
