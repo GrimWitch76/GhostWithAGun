@@ -21,6 +21,8 @@ public class MainMenu : MonoBehaviour
     {
         UI_CloseReviews();
         UI_CloseSettings();
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
     public void UI_PlayGame()

@@ -54,9 +54,12 @@ public class PostProcessingSettings : MonoBehaviour
 
     void SetBrightness(string name, float value)
     {
-        if(name == "Brightness")
+        if (_colorAdjustments != null)
         {
-            _colorAdjustments.postExposure.value = Mathf.Lerp(-1f, 1f, value / 100); // maps 0–1 to -1–1 exposure
+            if (name == "Brightness")
+            {
+                _colorAdjustments.postExposure.value = Mathf.Lerp(-1f, 1f, value / 100); // maps 0–1 to -1–1 exposure
+            }
         }
     }
 
