@@ -44,6 +44,10 @@ public class DayCycleManager : MonoBehaviour
     public GameObject _playerGuideOld;     // simple full-screen canvas group
     public TMPro.TMP_Text surviveText;     // optional “You Survived” text
     public AudioSource _gameOverMusic;     // optional “You Survived” text
+    public AudioSource _ghostFootsteps;
+    public GameObject _ghostCamera;
+    public Animator _ghostAnimator;
+    public AudioSource _ghostGunshot;
 
     [Header("Skybox and Lighting")]
     [SerializeField] private Material skyboxMaterial;  // Reference to your skybox material
@@ -355,18 +359,26 @@ public class DayCycleManager : MonoBehaviour
 
     private IEnumerator GameLoss()
     {
+        _ghostCamera.SetActive(false);
+
         _gameOverMusic.Play();
         yield return new WaitForSeconds(2f);
 
         //Fade in crack
         yield return FadeCanvas(deathCrack, 0f, .25f, fadeOutDuration);
         //Fade in ghost
-        yield return new WaitForSeconds(2f);
-        //Gun shot
-
+        _ghostFootsteps.Play();
+        yield return new WaitForSeconds(1f);
+        _ghostFootsteps.Play();
+        yield return new WaitForSeconds(1f);
+        _ghostFootsteps.Play();
         yield return new WaitForSeconds(1f);
 
-
+        _ghostCamera.SetActive(true);
+        _ghostAnimator.SetTrigger("scream");
+        yield return new WaitForSeconds(0.25f);
+        //Gun shot
+        _ghostGunshot.Play();
         yield return FadeCanvas(blackoutCanvas, 0f, 1f, fadeOutDuration);
         yield return FadeCanvas(_deathCanvas, 0f, 1f, fadeOutDuration);
         Cursor.lockState = CursorLockMode.None;
