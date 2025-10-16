@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1289329219090931913}
   - component: {fileID: 2241152525763285787}
   - component: {fileID: 3185771276260567935}
+  - component: {fileID: 4683276779689553618}
   m_Layer: 0
   m_Name: PostEffectController
   m_TagString: Untagged
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeProfile: {fileID: 11400000, guid: 7bbe35cdf5d69e14abbb03eccedaa5bd, type: 2}
-  isEnabled: 0
+  isEnabled: 1
   fogDensity: 0.0014
   fogDistance: 2
   fogNear: 25
@@ -73,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeProfile: {fileID: 11400000, guid: 7bbe35cdf5d69e14abbb03eccedaa5bd, type: 2}
-  isEnabled: 0
+  isEnabled: 1
   widthPixelation: 640
   heightPixelation: 480
   colorPrecision: 32
@@ -90,10 +91,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeProfile: {fileID: 11400000, guid: 7bbe35cdf5d69e14abbb03eccedaa5bd, type: 2}
-  isEnabled: 0
+  isEnabled: 1
   patternIndex: 1
   ditherThreshold: 13.24
-  ditherStrength: 0.71
+  ditherStrength: 0
   ditherScale: 2.74
 --- !u!114 &2241152525763285787
 MonoBehaviour:
@@ -148,3 +149,20 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 7bbe35cdf5d69e14abbb03eccedaa5bd, type: 2}
+--- !u!114 &4683276779689553618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380909551807485290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac1ab9279a998547b31a6eb85469235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _colorAdjustments: {fileID: 0}
+  _fogController: {fileID: 4696649910015944191}
+  DitheringController: {fileID: 1289329219090931913}
+  PixelationController: {fileID: 2366988007232706438}
+  _volume: {fileID: 3185771276260567935}

@@ -606,6 +606,10 @@ MonoBehaviour:
     m_Bits: 64
   _customGravity: 20
   _groundStickForce: 10
+  CameraTarget: {fileID: 2322396844455001073}
+  standingPosition: {x: 0, y: 1.65, z: 0}
+  crouchPosition: {x: 0, y: 0.825, z: 0}
+  hitcollider: {fileID: 3469926623215665897}
 --- !u!114 &1337593742159726769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,10 +660,10 @@ MonoBehaviour:
   onPlayerDied:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DayCycleManager, Assembly-CSharp
-        m_MethodName: OnPlayerDied
-        m_Mode: 1
+      - m_Target: {fileID: 3749552979492340859}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -890,6 +894,10 @@ PrefabInstance:
     - target: {fileID: 1602700307365580107, guid: ae3e6c922b3a488489490713d4448542, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3589161281308239729, guid: ae3e6c922b3a488489490713d4448542, type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4213580919402903537, guid: ae3e6c922b3a488489490713d4448542, type: 3}
       propertyPath: m_Pivot.x

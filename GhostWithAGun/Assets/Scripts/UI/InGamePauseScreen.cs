@@ -21,12 +21,6 @@ public class InGamePauseScreen : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         return;
-#elif PLATFORM_WEBGL
-        unityInstance.Quit().then(function() {
-            console.log("Unity WebGL instance quit successfully.");
-        });
-        unityInstance = null; // Clear the reference
-        return;
 #endif
 
         Application.Quit();

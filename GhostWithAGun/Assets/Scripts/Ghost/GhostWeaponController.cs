@@ -205,15 +205,6 @@ public class GhostWeaponController : MonoBehaviour
                     health.ApplyDamage(part, _currentWeaponTuning.damage);
                 }
             }
-            if (hit.collider.CompareTag("Interactable"))
-            {
-                IDestructable health = hit.collider.GetComponent<IDestructable>();
-                if (health != null)
-                {
-                    health.TakeDamage(_currentWeaponTuning.damage);
-                }
-            }
-
         }
     }
 

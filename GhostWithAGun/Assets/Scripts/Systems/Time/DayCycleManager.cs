@@ -45,6 +45,7 @@ public class DayCycleManager : MonoBehaviour
     public TMPro.TMP_Text surviveText;     // optional “You Survived” text
     public AudioSource _gameOverMusic;     // optional “You Survived” text
     public AudioSource _ghostFootsteps;
+    public AudioSource _ghostScream;
     public GameObject _ghostCamera;
     public Animator _ghostAnimator;
     public AudioSource _ghostGunshot;
@@ -377,7 +378,8 @@ public class DayCycleManager : MonoBehaviour
 
         _ghostCamera.SetActive(true);
         _ghostAnimator.SetTrigger("scream");
-        yield return new WaitForSeconds(0.25f);
+        _ghostScream.Play();
+        yield return new WaitForSeconds(0.1f);
         //Gun shot
         _ghostGunshot.Play();
         yield return FadeCanvas(blackoutCanvas, 0f, 1f, fadeOutDuration);
