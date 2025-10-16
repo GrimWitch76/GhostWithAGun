@@ -8,7 +8,7 @@ public class CameraSettings : MonoBehaviour
 
     private void Start()
     {
-        var val = PlayerPrefs.GetFloat("Sensitivity", 1);
+        var val = PlayerPrefs.GetFloat("Sensitivity", 100);
         _controller.Controllers[0].Input.Gain = val / 100;
         _controller.Controllers[1].Input.Gain = -(val / 100);
     }
