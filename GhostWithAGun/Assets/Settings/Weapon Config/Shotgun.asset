@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: Assembly-CSharp::WeaponTuning
   maxAmmo: 2
-  reloadTime: 4
+  reloadTime: 2
   missFirstShot: 1
   damage: 75
-  range: 10
+  range: 15
   spreadAngle: 5
   shotgunPellets: 10
   reloadDelayRange: {x: 4, y: 6}
