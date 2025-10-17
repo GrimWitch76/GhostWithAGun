@@ -12,12 +12,12 @@ public class PostProcessingSettings : MonoBehaviour
     [SerializeField] FogController _fogController;
     [SerializeField] DitheringController DitheringController;
     [SerializeField] PixelationController PixelationController;
-    [SerializeField] Volume _volume;
+    [SerializeField] VolumeProfile _volume;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (_volume != null)
-            _volume.profile.TryGet(out _colorAdjustments);
+            _volume.TryGet(out _colorAdjustments);
 
 
         var val = PlayerPrefs.GetFloat("Brightness", 0.5f);
@@ -54,9 +54,12 @@ public class PostProcessingSettings : MonoBehaviour
 
     void SetBrightness(string name, float value)
     {
-        if(name == "Brightness")
+        if (_colorAdjustments != null)
         {
-            _colorAdjustments.postExposure.value = Mathf.Lerp(-1f, 1f, value / 100); // maps 0–1 to -1–1 exposure
+            if (name == "Brightness")
+            {
+                _colorAdjustments.postExposure.value = Mathf.Lerp(-1f, 1f, value / 100); // maps 0–1 to -1–1 exposure
+            }
         }
     }
 

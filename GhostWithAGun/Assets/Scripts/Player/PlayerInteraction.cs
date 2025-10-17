@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.UI.Image;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -78,6 +79,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void TryInteract()
     {
+        Vector3 origin = cam.transform.position;
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, _interactDistance, _interactMask))
         {
@@ -88,6 +90,17 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
         Debug.DrawRay(cam.transform.position, cam.transform.forward * _interactDistance, Color.red, 5f);
+
+        // Fallback check if inside an interactable volume
+        Collider[] hits = Physics.OverlapSphere(origin, 0.3f, _interactMask);
+        foreach (var h in hits)
+        {
+            if (h.TryGetComponent<IInteractable>(out var interactable))
+            {
+                interactable.Interact(this);
+                break;
+            }
+        }
     }
 
     public void TryPickup(Moveable obj)
