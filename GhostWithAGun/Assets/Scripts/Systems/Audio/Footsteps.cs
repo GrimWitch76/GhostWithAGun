@@ -35,7 +35,7 @@ public class Footsteps : MonoBehaviour
 
                 if (stepTimer <= 0f)
                 {
-                    PlayFootstep(scaledInterval);
+                    _soundEmitter.PlayOnce();
                     stepTimer = scaledInterval;
                 }
             }

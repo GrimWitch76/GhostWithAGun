@@ -1215,8 +1215,8 @@ MonoBehaviour:
   _audioSource: {fileID: 6425797607729066246}
   _minVolume: 0.4
   _maxVolume: 0.4
-  _baseLoudness: 14
-  _maxLoudness: 14
+  _baseLoudness: 30
+  _maxLoudness: 30
   _importance: 0
   _surfaceModifier: 0
   _broadcastOnCollision: 0
@@ -1233,9 +1233,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4379646640485915239, guid: 13b858dab1213134c90404e8af78bd43, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: e1b8834c8a3a96c40bc1dd18cb722683, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1244,7 +1244,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
