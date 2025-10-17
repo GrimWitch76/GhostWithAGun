@@ -79,6 +79,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_health.Dead)
+        {
+            return;
+        }
         CameraTarget.localPosition = standingPosition;
         hitcollider.height = 1.8f;
 
@@ -191,6 +195,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (_health.Dead)
+        {
+            return;
+        }
         _isCrouching = false;
 
         // --- Rotate player root with camera yaw ---
