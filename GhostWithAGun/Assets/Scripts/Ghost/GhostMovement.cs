@@ -196,17 +196,12 @@ public class GhostMovement : MonoBehaviour
 
         // If still blocked: decide to break or path around
         bool canReachAround = false;
-        {
-            // quick probe: can we reach our destination anyway?
-            if (agent.hasPath && agent.path.corners.Length > 0)
-                canReachAround = agent.path.status == NavMeshPathStatus.PathComplete;
-        }
 
         if (!canReachAround)
         {
             // If we have (or will have) a gun, break through
             // Gate on suspicion/frustration via the brain's thresholds
-            if (_brain.HasGun || _brain.Suspicion >= _brain.Tuning.breakDoorSuspicionGate /*expose if needed*/)
+            if (_brain.HasGun /*expose if needed*/)
             {
                 yield return BreakDoorRoutine(door);
             }
