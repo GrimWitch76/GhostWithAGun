@@ -9,12 +9,6 @@ public class ScreenDamageIndicator : MonoBehaviour
 
     private void Start()
     {
-        ResetHealth(0);
-    }
-
-
-    private void OnEnable()
-    {
         DayCycleManager.Instance.OnDayStart += ResetHealth;
     }
 
