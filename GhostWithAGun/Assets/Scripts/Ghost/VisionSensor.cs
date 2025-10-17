@@ -53,7 +53,7 @@ public class VisionSensor : MonoBehaviour
 
     private bool DrawVisionCone(float angle, float range, out Vector3 hitPos)
     {
-        Vector3 origin = transform.position + Vector3.up * 1.5f;
+        Vector3 origin = transform.position + Vector3.up * 1f;
         Vector3 forward = transform.forward;
         float half = angle * 0.5f;
 

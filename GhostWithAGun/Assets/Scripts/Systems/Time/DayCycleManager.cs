@@ -114,7 +114,7 @@ public class DayCycleManager : MonoBehaviour
     {
         blackoutCanvas.alpha = 0;
         // Initialize progression
-        CurrentNightIndex = Mathf.Clamp(night, 0, MaxNightIndex());
+        CurrentNightIndex = Mathf.Clamp(night-1, 0, MaxNightIndex());
         State = DayCycleState.Day;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         if(_dayText != null)

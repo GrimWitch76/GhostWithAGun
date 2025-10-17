@@ -1164,11 +1164,11 @@ PrefabInstance:
       objectReference: {fileID: 9115970935562943523}
     - target: {fileID: 6350627331901367103, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
       propertyPath: dayDuration
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6350627331901367103, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
       propertyPath: nightDuration
-      value: 120
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7824713751913439458, guid: 8aaa80b4d3ca8bf47b67d9a6766c9859, type: 3}
       propertyPath: m_Name
@@ -3677,13 +3677,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375177839}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0021362975, y: 0.99685115, z: -0.07520682, w: 0.025044318}
-  m_LocalPosition: {x: -48.20006, y: -4.4768567, z: -1.3746457}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -48.206, y: -5.236, z: -1.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &389767150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8142,9 +8142,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
+      propertyPath: onPlayerDied.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
       propertyPath: onPlayerDied.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 95192588}
+    - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
+      propertyPath: onPlayerDied.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPlayerDied
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652896926413614612, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
+      propertyPath: onPlayerDied.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DayCycleManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4142466266008526922, guid: e0e5218537bbaf14d8b6e4f9b6614113, type: 3}
       propertyPath: m_Color.b
       value: 0.27450982
