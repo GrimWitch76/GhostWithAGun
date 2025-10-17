@@ -7,8 +7,8 @@ public class SoundSettings : MonoBehaviour
     [SerializeField] AudioMixer _mixer;
     private void Start()
     {
-        var sfx = PlayerPrefs.GetFloat("SFX", 1);
-        var music = PlayerPrefs.GetFloat("Music", 1);
+        var sfx = PlayerPrefs.GetFloat("SFX", 100);
+        var music = PlayerPrefs.GetFloat("Music", 100);
         float dB = Mathf.Lerp(-80f, 0f, sfx / 100f);
         _mixer.SetFloat("SFX", dB);
 
@@ -29,7 +29,7 @@ public class SoundSettings : MonoBehaviour
 
     private void UpdateSettings(string name, float value)
     {
-        var music = PlayerPrefs.GetFloat(name, 1);
+        var music = PlayerPrefs.GetFloat(name, 100);
         float dB = Mathf.Lerp(-80f, 0f, value / 100f);
         _mixer.SetFloat(name, dB);
     }
