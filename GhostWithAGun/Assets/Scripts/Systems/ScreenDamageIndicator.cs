@@ -9,7 +9,18 @@ public class ScreenDamageIndicator : MonoBehaviour
 
     private void Start()
     {
-        ResetHealth();
+        ResetHealth(0);
+    }
+
+
+    private void OnEnable()
+    {
+        DayCycleManager.Instance.OnDayStart += ResetHealth;
+    }
+
+    private void OnDisable()
+    {
+        DayCycleManager.Instance.OnDayStart -= ResetHealth;
     }
 
     public void UpdateBaseHealth(float normilizedHealth)
@@ -61,7 +72,7 @@ public class ScreenDamageIndicator : MonoBehaviour
         }
     }
 
-    public void ResetHealth()
+    public void ResetHealth(int i)
     {
         _torsoOne.SetActive(false);
         _torsoTwo.SetActive(false);

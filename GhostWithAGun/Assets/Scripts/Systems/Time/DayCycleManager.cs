@@ -346,7 +346,7 @@ public class DayCycleManager : MonoBehaviour
         {
             _saveManager = FindFirstObjectByType<SaveManager>();
         }
-        _saveManager.SetCurrentNight(CurrentNightIndex);
+        _saveManager.SetCurrentNight(CurrentNightIndex+1);
         _saveManager.SaveNight();
     }
 
