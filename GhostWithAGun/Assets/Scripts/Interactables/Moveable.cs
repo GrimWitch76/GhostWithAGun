@@ -7,7 +7,9 @@ public class Moveable : MonoBehaviour, IInteractable, IDestructable
     [SerializeField] private bool _isHeavy = false;
     [SerializeField] private float _dragSpeed = 2f; // how fast you can pull a heavy item
     [SerializeField] private float _liftDistance = 2f; // distance from camera when held
+    [SerializeField] private bool _playSoundOnInteract = true;
 
+    private SoundEmitter _emitter;
     [Header("Destruction")]
     [SerializeField] private bool _destructable;
     [SerializeField] private float _maxHealth;
@@ -23,11 +25,14 @@ public class Moveable : MonoBehaviour, IInteractable, IDestructable
     private void Start()
     {
         _currentHealth = _maxHealth;
+
+        if (_emitter == null) gameObject.GetComponent<SoundEmitter>();
     }
 
     public void Interact(PlayerInteraction interactor)
     {
         interactor.TryPickup(this);
+        if (_playSoundOnInteract) _emitter.PlayOnce();
     }
 
     public void GhostInteract(GameObject interactor) { }
