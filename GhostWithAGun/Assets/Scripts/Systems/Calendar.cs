@@ -6,7 +6,7 @@ public class Calendar : MonoBehaviour
     [SerializeField] DayCycleManager dayCycleManager;
     [SerializeField] private TextMeshProUGUI _date;
     private int _currentDay;
-    private void OnEnable()
+    private void Start()
     {
         dayCycleManager.OnDayStart += SetCalendarDate;
     }
