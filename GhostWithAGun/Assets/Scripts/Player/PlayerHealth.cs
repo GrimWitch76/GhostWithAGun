@@ -35,15 +35,6 @@ public class PlayerHealth : MonoBehaviour
         torsoHealth = maxTorsoHealth;
     }
 
-    private void Update()
-    {
-        if (bleeding && !dead)
-        {
-            torsoHealth -= bleedDamagePerSecond * Time.deltaTime;
-            if (torsoHealth <= 0) Die();
-        }
-    }
-
     public void ApplyDamage(BodyPart part, float amount)
     {
         if (dead) return;
@@ -56,7 +47,6 @@ public class PlayerHealth : MonoBehaviour
             case BodyPart.Torso:
                 torsoHealth -= amount;
                 _screenDamage.UpdateBaseHealth(torsoHealth / maxTorsoHealth);
-                if (torsoHealth <= 0) Die();
                 break;
 
             case BodyPart.Arm:
@@ -79,6 +69,8 @@ public class PlayerHealth : MonoBehaviour
                 break;
         }
 
+
+        if (torsoHealth <= 0) Die();
         onPlayerDamaged?.Invoke();
     }
 

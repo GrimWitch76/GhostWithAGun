@@ -14,7 +14,7 @@ public class GhostAnimationController : MonoBehaviour
 
     private Animator _currentAnimator;
 
-    private void OnEnable()
+    private void Start()
     {
         DayCycleManager.Instance.OnGhostSpawned += SetModel;
     }

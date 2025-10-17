@@ -49,6 +49,7 @@ public class DayCycleManager : MonoBehaviour
     public GameObject _ghostCamera;
     public Animator _ghostAnimator;
     public AudioSource _ghostGunshot;
+    public AudioSource _nightQueue;
 
     [Header("Skybox and Lighting")]
     [SerializeField] private Material skyboxMaterial;  // Reference to your skybox material
@@ -114,7 +115,7 @@ public class DayCycleManager : MonoBehaviour
     {
         blackoutCanvas.alpha = 0;
         // Initialize progression
-        CurrentNightIndex = Mathf.Clamp(night, 0, MaxNightIndex());
+        CurrentNightIndex = Mathf.Clamp(night-1, 0, MaxNightIndex());
         State = DayCycleState.Day;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         if(_dayText != null)
@@ -176,6 +177,7 @@ public class DayCycleManager : MonoBehaviour
     private void HandleNightStarted()
     {
         if (State == DayCycleState.GameComplete) return;
+        _nightQueue.Play();
         musicManager.TransitionToNight();
         ambienceManager.TransitionToNight();
         State = DayCycleState.NightWaitingForSpawn;
@@ -233,7 +235,7 @@ public class DayCycleManager : MonoBehaviour
             : null;
 
         activeGhost = Instantiate(ghostPrefab, spawn ? spawn.position : Vector3.zero, spawn ? spawn.rotation : Quaternion.identity);
-
+        activeGhost.GetComponent<GhostAnimationController>().SetModel(CurrentNightIndex);
         // Apply behavior config to ghost
         ApplyGhostConfig(activeGhost, CurrentNight);
 
@@ -287,6 +289,7 @@ public class DayCycleManager : MonoBehaviour
             _gameWon = true;
             yield return GameWinSequence();
             Debug.Log("You win");
+            SaveStorage.ClearAll();
             yield break;
         }
 
@@ -346,7 +349,7 @@ public class DayCycleManager : MonoBehaviour
         {
             _saveManager = FindFirstObjectByType<SaveManager>();
         }
-        _saveManager.SetCurrentNight(CurrentNightIndex);
+        _saveManager.SetCurrentNight(CurrentNightIndex+1);
         _saveManager.SaveNight();
     }
 
