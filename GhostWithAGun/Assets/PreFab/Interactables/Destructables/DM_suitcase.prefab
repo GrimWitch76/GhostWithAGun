@@ -85,6 +85,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de1822751d8bd8b40bb9d98f810f6ee1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1126569810200734657}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de1822751d8bd8b40bb9d98f810f6ee1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3395628329834316377}
   m_SourcePrefab: {fileID: 100100000, guid: de1822751d8bd8b40bb9d98f810f6ee1, type: 3}
 --- !u!1 &908284922861846374 stripped
 GameObject:
@@ -120,7 +123,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908284922861846374}
   serializedVersion: 5
-  m_Mass: 3
+  m_Mass: 10
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -154,6 +157,7 @@ MonoBehaviour:
   _isHeavy: 0
   _dragSpeed: 2
   _liftDistance: 2
+  _playSoundOnInteract: 1
   _destructable: 1
   _maxHealth: 25
   _value: 0
@@ -305,3 +309,23 @@ MonoBehaviour:
   _broadcastOnCollision: 1
   _velocityScale: 1
   _minVelocityThreshold: 1
+--- !u!114 &3395628329834316377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908284922861846374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
