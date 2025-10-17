@@ -620,7 +620,7 @@ MonoBehaviour:
   ShotgunshotClip: {fileID: 8300000, guid: 9e1a669311bc5e348876939a5e62a6db, type: 3}
   ShotgunreloadClip: {fileID: 8300000, guid: 5c00a5926ada3884b8f56aaf9d474689, type: 3}
   ShotgunpickUpClip: {fileID: 0}
-  LMGshotClip: {fileID: 8300000, guid: faaa426e12c88ef4b9c9384de6251731, type: 3}
+  LMGshotClip: {fileID: 8300000, guid: d58f1ca6fc055bd45a2077472a6be3dc, type: 3}
   LMGreloadClip: {fileID: 8300000, guid: bf2b393d7b561ce4ea1648a06228bbae, type: 3}
   LMGpickUpClip: {fileID: 0}
   SnipershotClip: {fileID: 8300000, guid: 0da46d20dcf56864eb66f93271ee603a, type: 3}
@@ -772,7 +772,7 @@ AudioSource:
   m_GameObject: {fileID: 4043967352267577481}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4379646640485915239, guid: 13b858dab1213134c90404e8af78bd43, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -820,7 +820,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3894,7 +3894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2192677301477192999, guid: 2160c7c86a25ea843b341ee8414ebf5a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4614,7 +4614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3629162752170109416, guid: ca8145de34578d842b16e26ce8ca1999, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5191101112995829064, guid: ca8145de34578d842b16e26ce8ca1999, type: 3}
       propertyPath: m_Icon
