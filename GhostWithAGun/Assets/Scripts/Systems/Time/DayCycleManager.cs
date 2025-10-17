@@ -155,7 +155,7 @@ public class DayCycleManager : MonoBehaviour
         musicManager.TransitionToDay();
         ambienceManager.TransitionToDay();
 
-        OnDayStart.Invoke(CurrentNightIndex);
+        OnDayStart?.Invoke(CurrentNightIndex);
         // If we came from night, handle sunrise transition
         if (nightWasActiveThisCycle)
         {
@@ -343,9 +343,10 @@ public class DayCycleManager : MonoBehaviour
         yield return FadeCanvas(blackoutCanvas, 1f, 0f, fadeInDuration);
 
         State = DayCycleState.Day;
+        OnDayStart?.Invoke(CurrentNightIndex);
 
         // Optional: trigger save here
-        if(_saveManager == null)
+        if (_saveManager == null)
         {
             _saveManager = FindFirstObjectByType<SaveManager>();
         }
