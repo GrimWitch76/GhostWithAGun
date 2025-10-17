@@ -46,29 +46,29 @@ public class GhostAnimationController : MonoBehaviour
 
     public void SetModel(int index)
     {
-        _revolverGhost.SetActive(false);
-        _SMGGhost.SetActive(false);
-        _ShotGunGhost.SetActive(false);
+        _revolverGhost?.SetActive(false);
+        _SMGGhost?.SetActive(false);
+        _ShotGunGhost?.SetActive(false);
         _machineGunGhost.SetActive(false);
-        _sniperGhost.SetActive(false);
+        _sniperGhost?.SetActive(false);
 
         _currentAnimator = _animationController[index];
         switch (index)
         {
             case 0:
-                _revolverGhost.SetActive(true);
+                _revolverGhost?.SetActive(true);
                 break;
             case 1:
-                _SMGGhost.SetActive(true);
+                _SMGGhost?.SetActive(true);
                 break;
             case 2:
-                _ShotGunGhost.SetActive(true);
+                _ShotGunGhost?.SetActive(true);
                 break;
             case 3:
-                _machineGunGhost.SetActive(true);
+                _machineGunGhost?.SetActive(true);
                 break;
             case 4:
-                _sniperGhost.SetActive(true);
+                _sniperGhost?.SetActive(true);
                 break;
             default:
                 break;
