@@ -367,17 +367,10 @@ public class DayCycleManager : MonoBehaviour
         _ghostCamera.SetActive(false);
 
         _gameOverMusic.Play();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
 
         //Fade in crack
-        yield return FadeCanvas(deathCrack, 0f, .25f, fadeOutDuration);
-        //Fade in ghost
-        _ghostFootsteps.Play();
-        yield return new WaitForSeconds(1f);
-        _ghostFootsteps.Play();
-        yield return new WaitForSeconds(1f);
-        _ghostFootsteps.Play();
-        yield return new WaitForSeconds(1f);
+        yield return FadeCanvas(deathCrack, 0f, .05f, fadeOutDuration);
 
         _ghostCamera.SetActive(true);
         _ghostAnimator.SetTrigger("scream");
