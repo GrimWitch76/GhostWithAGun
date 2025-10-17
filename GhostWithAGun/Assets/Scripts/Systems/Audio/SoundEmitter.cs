@@ -80,7 +80,7 @@ public class SoundEmitter : MonoBehaviour
 
     public void PlayOnce()
     {
-        PlaySound(_baseLoudness);
+        PlaySound(_baseLoudness, false);
     }
 
     /// <summary>Starts a looping sound and periodically broadcasts noise while playing.</summary>
@@ -112,14 +112,14 @@ public class SoundEmitter : MonoBehaviour
         Stop();
     }
 
-    private void PlaySound(float loudness)
+    private void PlaySound(float loudness, bool adjustDistance = true)
     {
         if (_audioClips.Length == 0)
             return;
 
         _audioSource.clip = GetRandomClip();
         _audioSource.volume = Normalize(loudness, _minVolume, _maxVolume, _minVolume, _maxVolume);
-        _audioSource.maxDistance = Normalize(loudness, _baseLoudness, _maxLoudness, 5f, 25f);
+        if(adjustDistance) _audioSource.maxDistance = Normalize(loudness, _baseLoudness, _maxLoudness, 5f, 25f);
         _audioSource.Play();
     }
 
