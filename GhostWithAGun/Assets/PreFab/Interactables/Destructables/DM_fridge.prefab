@@ -131,6 +131,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e0d4e5bccc5bacc42a0be66019f5a9ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8112787866947456285}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e0d4e5bccc5bacc42a0be66019f5a9ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7173911657558142757}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e0d4e5bccc5bacc42a0be66019f5a9ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6401711281670448321}
     - targetCorrespondingSourceObject: {fileID: 6649374872082643734, guid: e0d4e5bccc5bacc42a0be66019f5a9ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7840732449769535427}
@@ -182,6 +188,7 @@ MonoBehaviour:
   _isHeavy: 1
   _dragSpeed: 10
   _liftDistance: 2
+  _playSoundOnInteract: 1
   _destructable: 1
   _maxHealth: 100
   _value: 300
@@ -232,6 +239,127 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!82 &-7173911657558142757
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3588005246511521541}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -4379646640485915239, guid: 13b858dab1213134c90404e8af78bd43, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 93d419a107e5d8840a7798657ca5a88c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &6401711281670448321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3588005246511521541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd315fc27a400144b611afb9026cd6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEmitter
+  _audioClips:
+  - {fileID: 8300000, guid: 917be96f5535dd544b884e4fb129a77a, type: 3}
+  _audioSource: {fileID: 0}
+  _minVolume: 0.2
+  _maxVolume: 1
+  _baseLoudness: 1
+  _maxLoudness: 10
+  _importance: 1
+  _surfaceModifier: 1
+  _broadcastOnCollision: 0
+  _velocityScale: 1
+  _minVelocityThreshold: 1
 --- !u!1 &7011292236455827778 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6649374872082643734, guid: e0d4e5bccc5bacc42a0be66019f5a9ca, type: 3}
