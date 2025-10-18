@@ -4812,12 +4812,14 @@ MonoBehaviour:
 
     Run - Shift
 
-    Crouch - Ctrl or C
+    Flashlight - F
 
-    Interact - E
+    Crouch - Ctrl or
+    C
 
-    Pause
-    - ESC or P'
+    Interact - E or LMB
+
+    Pause - ESC or P'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
   m_sharedMaterial: {fileID: 768529852295159716, guid: 193b73b5fed629e4c85f0e06b5321da5, type: 2}
@@ -20001,8 +20003,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 366707940}
   m_HandleRect: {fileID: 366707939}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.8721453
+  m_Value: 0.9999994
+  m_Size: 0.87214524
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

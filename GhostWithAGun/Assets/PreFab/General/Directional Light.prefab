@@ -44,7 +44,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6698113, g: 0.5971431, b: 0.5971431, a: 1}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _globalLight: {fileID: 3502426634220775565}
-  _dayColour: {r: 1, g: 0.75189257, b: 0.4198113, a: 1}
+  _dayColour: {r: 0.6603774, g: 0.5131942, b: 0.31461376, a: 1}
   _dayIntensity: 1.35
-  _nightColour: {r: 0.19517623, g: 0.61391556, b: 0.9622642, a: 1}
+  _nightColour: {r: 0.23474056, g: 0.3679245, b: 0.06768423, a: 1}
   _nightIntensity: 0.15
   _transitionDuration: 5
   _matchInitialState: 1
