@@ -7397,6 +7397,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4011414076327427673, guid: 6d2f259302988274a8bbf913d0949f1f, type: 3}
   m_PrefabInstance: {fileID: 627959692}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &628483125 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1975590276395922978, guid: 66776073ccbb88a4498acacd972d1d29, type: 3}
+  m_PrefabInstance: {fileID: 69792387}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &631425722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8205,6 +8210,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7528504041649566411, guid: 66776073ccbb88a4498acacd972d1d29, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 628483125}
     - target: {fileID: 8366361439895710049, guid: 66776073ccbb88a4498acacd972d1d29, type: 3}
       propertyPath: m_Name
       value: SM_beer (6)

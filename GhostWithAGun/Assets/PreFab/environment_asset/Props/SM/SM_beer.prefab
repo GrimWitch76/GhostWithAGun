@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0bdaf2c04d5173458e05ce45b436e3e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39.85
+      value: -36.682175
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0bdaf2c04d5173458e05ce45b436e3e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.94
+      value: -5.6678467
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0bdaf2c04d5173458e05ce45b436e3e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.99245
+      value: -9.884598
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0bdaf2c04d5173458e05ce45b436e3e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -69,6 +69,10 @@ PrefabInstance:
       value: SM_beer
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b0bdaf2c04d5173458e05ce45b436e3e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0bdaf2c04d5173458e05ce45b436e3e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -82,6 +86,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b0bdaf2c04d5173458e05ce45b436e3e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1975590276395922978}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b0bdaf2c04d5173458e05ce45b436e3e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8904195705310697972}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b0bdaf2c04d5173458e05ce45b436e3e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8065269419513134135}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b0bdaf2c04d5173458e05ce45b436e3e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7528504041649566411}
   m_SourcePrefab: {fileID: 100100000, guid: b0bdaf2c04d5173458e05ce45b436e3e, type: 3}
 --- !u!1 &8366361439895710049 stripped
 GameObject:
@@ -136,3 +149,49 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8904195705310697972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8366361439895710049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f233e481345b9d4c8bb608aac854316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Moveable
+  _isHeavy: 0
+  _dragSpeed: 2
+  _liftDistance: 2
+  _playSoundOnInteract: 1
+  _destructable: 1
+  _maxHealth: 1
+  _value: 0
+  _destructablePrefab: {fileID: 0}
+--- !u!114 &8065269419513134135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8366361439895710049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49fb79a5c8d298488655e74c7d16440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableEntity
+  guid: 1006dc6d79b941a2b368c046aa21c78a
+--- !u!114 &7528504041649566411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8366361439895710049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be24b048fffb1154cbe2dd5a03e55add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveableSaveable
+  rb: {fileID: 1975590276395922978}
