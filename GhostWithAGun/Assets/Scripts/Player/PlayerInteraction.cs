@@ -15,6 +15,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private float _maxHoldTime = 1.5f;
     [SerializeField] private float verticalOffsetRange = 0.5f;
 
+    [SerializeField] private GameObject _interactText;
 
     private float _holdStartTime;
 
@@ -75,6 +76,35 @@ public class PlayerInteraction : MonoBehaviour
 
 
 
+    }
+
+    private void Update()
+    {
+        _interactText.SetActive(false);
+
+        Vector3 origin = cam.transform.position;
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        if (Physics.Raycast(ray, out RaycastHit hit, _interactDistance, _interactMask))
+        {
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+            if (interactable != null)
+            {
+                _interactText.SetActive(true);
+                return;
+            }
+        }
+        Debug.DrawRay(cam.transform.position, cam.transform.forward * _interactDistance, Color.red, 5f);
+
+        // Fallback check if inside an interactable volume
+        Collider[] hits = Physics.OverlapSphere(origin, 0.3f, _interactMask);
+        foreach (var h in hits)
+        {
+            if (h.TryGetComponent<IInteractable>(out var interactable))
+            {
+                _interactText.SetActive(true);
+                break;
+            }
+        }
     }
 
     private void TryInteract()
