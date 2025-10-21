@@ -9,16 +9,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0e670e1bb90c65849bc0fa8177c676ec, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2338269
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e670e1bb90c65849bc0fa8177c676ec, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2338269
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e670e1bb90c65849bc0fa8177c676ec, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2338269
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e670e1bb90c65849bc0fa8177c676ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -63.62148
+      value: 21.232191
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e670e1bb90c65849bc0fa8177c676ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.94
+      value: 0.35178
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e670e1bb90c65849bc0fa8177c676ec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.74
+      value: 3.6930087
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e670e1bb90c65849bc0fa8177c676ec, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e670e1bb90c65849bc0fa8177c676ec, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e670e1bb90c65849bc0fa8177c676ec, type: 3}
       propertyPath: m_LocalRotation.y
@@ -127,6 +139,8 @@ MonoBehaviour:
   _isHeavy: 0
   _dragSpeed: 2
   _liftDistance: 2
+  _playSoundOnInteract: 1
+  _staticUntilInteractedWith: 1
   _destructable: 1
   _maxHealth: 10
   _value: 1000
@@ -176,6 +190,6 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2486060073338802644, guid: 0e670e1bb90c65849bc0fa8177c676ec, type: 3}

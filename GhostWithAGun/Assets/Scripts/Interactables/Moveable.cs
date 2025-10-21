@@ -8,6 +8,7 @@ public class Moveable : MonoBehaviour, IInteractable, IDestructable
     [SerializeField] private float _dragSpeed = 2f; // how fast you can pull a heavy item
     [SerializeField] private float _liftDistance = 2f; // distance from camera when held
     [SerializeField] private bool _playSoundOnInteract = true;
+    [SerializeField] private bool _staticUntilInteractedWith = false;
 
     private SoundEmitter _emitter;
     [Header("Destruction")]
@@ -17,13 +18,24 @@ public class Moveable : MonoBehaviour, IInteractable, IDestructable
     [SerializeField] private GameObject _destructablePrefab;
 
     private float _currentHealth;
-
+    private Rigidbody _rigidBody;
     public bool IsHeavy => _isHeavy;
     public float DragSpeed => _dragSpeed;
     public float LiftDistance => _liftDistance;
 
     private void Start()
     {
+        if(_rigidBody == null)
+        {
+           _rigidBody = gameObject.GetComponent<Rigidbody>();
+        }
+
+        if(_staticUntilInteractedWith)
+        {
+            _rigidBody.useGravity = false;
+            _rigidBody.isKinematic = true;
+        }
+
         _currentHealth = _maxHealth;
 
         if (_emitter == null) gameObject.GetComponent<SoundEmitter>();
@@ -32,7 +44,12 @@ public class Moveable : MonoBehaviour, IInteractable, IDestructable
     public void Interact(PlayerInteraction interactor)
     {
         interactor.TryPickup(this);
-        if (_playSoundOnInteract) _emitter.PlayOnce();
+        if (_playSoundOnInteract) _emitter?.PlayOnce();
+        if (_staticUntilInteractedWith && _rigidBody.isKinematic)
+        {
+            _rigidBody.useGravity = true;
+            _rigidBody.isKinematic = false;
+        }
     }
 
     public void GhostInteract(GameObject interactor) { }
