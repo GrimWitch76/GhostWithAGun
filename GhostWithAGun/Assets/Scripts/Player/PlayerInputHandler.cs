@@ -10,6 +10,9 @@ public class PlayerInputHandler : MonoBehaviour
     public bool CrouchHeld { get; private set; }
     public bool SprintHeld { get; private set; }
 
+    public bool HoldPickupHeld { get; private set; }
+    public bool RotateHeld { get; private set; }
+
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private PlayerInteraction _playerInteraction;
     [SerializeField] private FlashLight _flashLight;
@@ -53,5 +56,16 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnPause(InputValue value)
     {
         _pauseScreen.SetActive(!_pauseScreen.gameObject.activeInHierarchy);
+    }
+
+    public void OnPickup(InputValue value)
+    {
+        HoldPickupHeld = value.Get<float>() > 0.5f;
+        _playerInteraction.TryHoldPressed(HoldPickupHeld);
+    }
+
+    public void OnRotate(InputValue value)
+    {
+        RotateHeld = value.Get<float>() > 0.5f;
     }
 }

@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Moveable : MonoBehaviour, IInteractable, IDestructable
+public class Moveable : MonoBehaviour, IDestructable
 {
     [SerializeField] private bool _isHeavy = false;
     [SerializeField] private float _dragSpeed = 2f; // how fast you can pull a heavy item
@@ -41,7 +41,7 @@ public class Moveable : MonoBehaviour, IInteractable, IDestructable
         if (_emitter == null) gameObject.GetComponent<SoundEmitter>();
     }
 
-    public void Interact(PlayerInteraction interactor)
+    public void Pickup(PlayerInteraction interactor)
     {
         interactor.TryPickup(this);
         if (_playSoundOnInteract) _emitter?.PlayOnce();
@@ -51,8 +51,6 @@ public class Moveable : MonoBehaviour, IInteractable, IDestructable
             _rigidBody.isKinematic = false;
         }
     }
-
-    public void GhostInteract(GameObject interactor) { }
 
     public void TakeDamage(float amount)
     {
