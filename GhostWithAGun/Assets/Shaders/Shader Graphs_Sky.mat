@@ -43,9 +43,14 @@ Material:
     - _AuroraNoiseScale: 0
     - _AuroraPower: 0
     - _AuroraTwirlStrength: 0
+    - _CloudDensity: 0.637
+    - _CloudHeight: 0
+    - _CloudIntensity: 1
+    - _CloudScale: 33.51
+    - _CloudScatter: 0.134
     - _ColourSpeed: 0
     - _Corruption: 1
-    - _DayNightLerp: 1
+    - _DayNightLerp: 0
     - _DistortionSpeed: 0
     - _Float: 0
     - _GradientOffset: 0
@@ -53,6 +58,7 @@ Material:
     - _MoonSize: 0
     - _MoonSize_Two: 0
     - _NadirBlend: 1
+    - _NightCloudIntensity: 0.1
     - _PerlinScale: 0
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -65,6 +71,7 @@ Material:
     m_Colors:
     - _AuroraScrollSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _AuroraTiling: {r: 0, g: 0, b: 0, a: 0}
+    - _CloudSpeed: {r: 0.05, g: 0.03, b: 0, a: 0}
     - _DistortionMinMAx: {r: 0, g: 0, b: 0, a: 0}
     - _GroundColour: {r: 0.3537736, g: 0.78965944, b: 1, a: 0}
     - _HorizonColour: {r: 0, g: 0.6745095, b: 1, a: 1}
